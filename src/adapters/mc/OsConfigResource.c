@@ -37,6 +37,23 @@ static OSCONFIG_LOG_HANDLE g_log = NULL;
 const char* g_osconfig = "osconfig";
 const char* g_mpiServer = "osconfig-platform";
 
+typedef struct _Component
+{
+    const char * Name;
+    void (*Initialize)(void* log);
+    void (*Shutdown)(void* log);
+    int (*MmiGet)(const char* componentName, const char* objectName, char** payload, int* payloadSizeBytes, unsigned int maxPayloadSizeBytes, void* log);
+    int (*MmiSet)(const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes, void* log);
+    int (*IsValidResourceIdRuleId)(const char* resourceId, const char* ruleId, const char* payloadKey, void* log);
+} Component;
+
+static const Component g_components[] =
+{
+    {"LinuxBaseline", AsbInitialize, AsbShutdown, AsbMmiGet, AsbMmiSet, AsbIsValidResourceIdRuleId},
+    {NULL, NULL, NULL, NULL, NULL, NULL}
+};
+
+
 OSCONFIG_LOG_HANDLE GetLog(void)
 {
     if (NULL == g_log)
@@ -160,6 +177,7 @@ void MI_CALL OsConfigResource_Load(
     MI_Context* context)
 {
     MI_UNREFERENCED_PARAMETER(selfModule);
+    const Component* component = NULL;
 
     *self = NULL;
 
@@ -169,7 +187,10 @@ void MI_CALL OsConfigResource_Load(
         g_mpiHandle = NULL;
     }
     
-    AsbInitialize(GetLog());
+    for (component = g_components; NULL != component->Initialize; ++component)
+    {
+        component->Initialize(GetLog());
+    }
 
     LogInfo(context, GetLog(), "[OsConfigResource] Load (PID: %d)", getpid());
 
@@ -182,11 +203,15 @@ void MI_CALL OsConfigResource_Unload(
 {
     MI_UNREFERENCED_PARAMETER(self);
 
+    const Component* component = NULL;
+
     if (NULL == g_mpiHandle)
     {
         LogInfo(context, GetLog(), "[OsConfigResource] Unload (PID: %d)", getpid());
-
-        AsbShutdown(GetLog());
+        for (component = g_components; NULL != component->Shutdown; ++component)
+        {
+            component->Shutdown(GetLog());
+        }
     }
     else
     {
@@ -328,12 +353,30 @@ static MI_Result SetDesiredObjectValueToDevice(const char* who, char* objectName
         payloadSize = (int)strlen(serializedValue);
         if (NULL != (payloadString = malloc(payloadSize + 1)))
         {
+            const Component *component = NULL;
+
             memset(payloadString, 0, payloadSize + 1);
             memcpy(payloadString, serializedValue, payloadSize);
 
-            mpiResult = AsbMmiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
-            LogInfo(context, GetLog(), "[%s] AsbMmiSet(%s, %s, '%.*s', %d) returned %d", 
-                who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+            for (component = g_components; NULL != component->Name; ++component)
+            {
+                if (!strcmp(component->Name, g_componentName))
+                {
+                    break;
+                }
+            }
+            if (NULL != component->MmiSet)
+            {
+                mpiResult = component->MmiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
+                LogInfo(context, GetLog(), "[%s] MmiSet(%s, %s, '%.*s', %d) returned %d",
+                    who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+
+            }
+            else
+            {
+                mpiResult = EINVAL;
+                LogError(context, MI_RESULT_FAILED, GetLog(), "[%s] No component found for ComponentName %s", who, g_componentName);
+            }
 
             if (MPI_OK != mpiResult) 
             {
@@ -387,6 +430,7 @@ static MI_Result GetReportedObjectValueFromDevice(const char* who, MI_Context* c
     char* payloadString = NULL;
     int mpiResult = MPI_OK;
     MI_Result miResult = MI_RESULT_OK;
+    const Component *component = NULL;
 
     // If this reported object has a corresponding init object, initalize it with the desired object value
     if ((NULL != g_initObjectName) && (0 != strcmp(g_initObjectName, g_defaultValue)))
@@ -394,8 +438,23 @@ static MI_Result GetReportedObjectValueFromDevice(const char* who, MI_Context* c
         SetDesiredObjectValueToDevice(who, g_initObjectName, context);
     }
     
-    mpiResult = AsbMmiGet(g_componentName, g_reportedObjectName, &objectValue, &objectValueLength, MAX_PAYLOAD_LENGTH, GetLog());
-    LogInfo(context, GetLog(), "[%s] AsbMmiGet(%s, %s): '%s' (%d)", who, g_componentName, g_reportedObjectName, objectValue, objectValueLength);
+    for (component = g_components; NULL != component->Name; ++component)
+    {
+        if (!strcmp(component->Name, g_componentName))
+        {
+            break;
+        }
+    }
+    if (NULL != component->MmiGet)
+    {
+        mpiResult = component->MmiGet(g_componentName, g_reportedObjectName, &objectValue, &objectValueLength, MAX_PAYLOAD_LENGTH, GetLog());
+        LogInfo(context, GetLog(), "[%s] MmiGet(%s, %s): '%s' (%d)", who, g_componentName, g_reportedObjectName, objectValue, objectValueLength);
+    }
+    else
+    {
+        mpiResult = EINVAL;
+        LogError(context, MI_RESULT_FAILED, GetLog(), "[%s] No component found for ComponentName %s", who, g_componentName);
+    }
 
     if (MPI_OK != mpiResult)
     {
@@ -501,6 +560,8 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
     char* reasonCode = NULL;
     char* reasonPhrase = NULL;
 
+    const Component* component = NULL;
+
     MI_Result miResult = MI_RESULT_OK;
     MI_Result miCleanup = MI_RESULT_OK;
     MI_Instance* resultResourceObject = NULL;
@@ -584,6 +645,21 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
     else
     {
         LogError(context, miResult, GetLog(), "[OsConfigResource.Get] No ComponentName");
+        miResult = MI_RESULT_FAILED;
+        goto Exit;
+    }
+
+    for (component = g_components; NULL != component->Name; ++component)
+    {
+        if (!strcmp(component->Name, g_componentName))
+        {
+            break;
+        }
+    }
+
+    if (NULL == component->IsValidResourceIdRuleId)
+    {
+        LogError(context, miResult, GetLog(), "[OsConfigResource.Get] No component for ComponentName %s", g_componentName);
         miResult = MI_RESULT_FAILED;
         goto Exit;
     }
@@ -789,7 +865,7 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
 
     if (MI_TRUE == isCompliant)
     {
-        if (0 == AsbIsValidResourceIdRuleId(g_resourceId, g_ruleId, g_payloadKey, GetLog()))
+        if (0 == component->IsValidResourceIdRuleId(g_resourceId, g_ruleId, g_payloadKey, GetLog()))
         {
             reasonCode = FormatAllocateString(auditPassedCodeTemplate, g_ruleId);
         }
@@ -806,7 +882,7 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
     }
     else
     {
-        if (0 == AsbIsValidResourceIdRuleId(g_resourceId, g_ruleId, g_payloadKey, GetLog()))
+        if (0 == component->IsValidResourceIdRuleId(g_resourceId, g_ruleId, g_payloadKey, GetLog()))
         {
             reasonCode = FormatAllocateString(auditFailedCodeTemplate, g_ruleId);
         }
