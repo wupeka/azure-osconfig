@@ -19,7 +19,6 @@
 #include <Logging.h>
 #include <Mpi.h>
 #include <MpiClient.h>
-#include <Asb.h>
 
 #include "MI.h"
 #include "MSFT_Credential.h"
@@ -51,5 +50,24 @@
 }\
 
 OSCONFIG_LOG_HANDLE GetLog(void);
+
+typedef struct _OsConfigComponent
+{
+    const char * Name;
+    void (*Initialize)(void* log);
+    void (*Shutdown)(void* log);
+    int (*MmiGet)(const char* componentName, const char* objectName, char** payload, int* payloadSizeBytes, unsigned int maxPayloadSizeBytes, void* log);
+    int (*MmiSet)(const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes, void* log);
+    int (*IsValidResourceIdRuleId)(const char* resourceId, const char* ruleId, const char* payloadKey, void* log);
+} OsConfigComponent;
+
+void osConfigRegisterComponent(const OsConfigComponent* component);
+
+#define OSCONFIG_REGISTER_COMPONENT(name, initialize, shutdown, get, set, validresource) static void __attribute__((constructor)) __osconfig_register_component_##name() \
+                                                                                                {\
+                                                                                                  static const OsConfigComponent component = {#name, initialize, shutdown, get, set, validresource};\
+                                                                                                  osConfigRegisterComponent(&component);\
+                                                                                                }
+
 
 #endif
