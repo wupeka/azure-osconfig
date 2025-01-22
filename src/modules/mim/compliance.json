@@ -1,0 +1,18 @@
+{
+  "name": "ComplianceModel",
+  "type": "mimModel",
+  "contents": [
+    {
+      "name": "Compliance",
+      "type": "mimComponent",
+      "contents": [
+        {
+          "name": "complianceRule",
+          "type": "mimObject",
+          "desired": false,
+          "schema": "string"
+        }
+     ]
+    }
+  ]
+}
