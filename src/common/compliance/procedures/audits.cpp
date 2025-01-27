@@ -3,7 +3,7 @@
 #include <string.h>
 #include <grp.h>
 #include <pwd.h>
-#include "ComplianceInt.hpp"
+#include "../ComplianceInt.hpp"
 
 AUDIT_FN(ensureFilePermissions) {
         (void)vlog;

@@ -3,9 +3,18 @@
 
 project(compliance)
 
-add_library(compliance OBJECT
+FILE(GLOB PROCEDURES procedures/*.cpp)
+add_library(compliance STATIC
     Compliance.cpp
-    audits.cpp)
+    ProcedureMap.cpp
+    ${PROCEDURES}
+)
+
+add_custom_command(
+        OUTPUT ProcedureMap.cpp
+        COMMAND python3 ${CMAKE_CURRENT_SOURCE_DIR}/gen_procedures_map.py ${CMAKE_CURRENT_SOURCE_DIR}/procedures/
+        DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/gen_procedures_map.py ${PROCEDURES}
+        VERBATIM)
 
 target_compile_options(compliance PRIVATE -Wno-psabi)
 
