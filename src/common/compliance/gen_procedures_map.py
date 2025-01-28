@@ -23,7 +23,7 @@ for filename in os.listdir(sys.argv[1]):
                     procedure_name = remediate_match.group(1)
                     if procedure_name not in procedure_map:
                         procedure_map[procedure_name] = [None, None]
-                    procedure_map[procedure_name][1] = "___Remediation_{}".format(procedure_name)
+                    procedure_map[procedure_name][1] = "___Remediate_{}".format(procedure_name)
 
 with open('ProcedureMap.cpp', 'w') as cpp_file:
     cpp_file.write("""#include <map>
