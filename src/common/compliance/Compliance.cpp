@@ -171,6 +171,15 @@ tristate_t EvaluateProcedure(JSON_Object *json, bool remediate, std::string &vlo
                 return FAILURE;
             }
             arguments[key] = json_value_get_string(val);
+            if (!arguments[key].empty() && arguments[key][0] == '$') {
+                auto f = gParameters.find(arguments[key].substr(1));
+                if (f == gParameters.end()) {
+                    vlog += "Unknown parameter " + arguments[key];
+                    return FAILURE;
+                }
+                arguments[key] = f->second;
+            }
+
         }
 
         auto f = complianceProcedureMap.find(name);
@@ -244,14 +253,15 @@ int ComplianceMmiGet(const char *componentName, const char *objectName, char **p
     }
 
     if (!strcmp(name, "audit")) {
-        result = EvaluateProcedure(root, false, vlog, log);
+        JSON_Object *subObject = json_value_get_object(value);
+        result = EvaluateProcedure(subObject, false, vlog, log);
     } else {
         OsConfigLogError(log, "ComplianceMmiGet root JSON is not an audit object");
         return EINVAL;
     }
     
     if (result == FAILURE) {
-        OsConfigLogError(log, "ComplianceMmiGet failed to evaluate procedure");
+        OsConfigLogError(log, "ComplianceMmiGet failed to evaluate procedure - %s", vlog.c_str());
         return EINVAL;
     }
     vlog = vlog.substr(0, maxPayloadSizeBytes - (1 + 4 + 2)); // 4 for "PASS" or "FAIL", 2 for quotes
@@ -269,7 +279,6 @@ int ComplianceMmiGet(const char *componentName, const char *objectName, char **p
 
 int ComplianceMmiSet(const char *componentName, const char *objectName, const char *payload, const int payloadSizeBytes, void *log) {
     int status = 0; 
-    tristate_t result = FAILURE;
     std::string vlog;
     OsConfigLogInfo(log, "ComplianceMmiSet(%s, %s, %s, %d) called with arguments", componentName, objectName, payload, payloadSizeBytes);
     if ((NULL == componentName) || (NULL == objectName))
@@ -290,23 +299,31 @@ int ComplianceMmiSet(const char *componentName, const char *objectName, const ch
         return EINVAL;
     }
     JSON_Object *root = json_value_get_object(inputJSON);
-    const char *name = json_object_get_name(root, 0);
-    JSON_Value *value = json_object_get_value_at(root, 0);
-
-    if (json_value_get_type(value) != JSONObject) {
-        OsConfigLogError(log, "ComplianceMmiSet audit JSON is not an object");
-        return EINVAL;
+    if (json_object_get_count(root) == 0) {
+        // No object, nothing to do
+        return 0;
     }
+    const char *name = json_object_get_name(root, 0);
+
 
     if (!strcmp(name, "remediate")) {
-        result = EvaluateProcedure(root, true, vlog, log);
+        JSON_Value *value = json_object_get_value_at(root, 0);
+        if (json_value_get_type(value) != JSONObject) {
+            OsConfigLogError(log, "ComplianceMmiSet audit JSON is not an object");
+            return EINVAL;
+        }
+        JSON_Object *subObject = json_value_get_object(value);
+        if (EvaluateProcedure(subObject, true, vlog, log) != TRUE) {
+            OsConfigLogError(log, "ComplianceMmiSet failed to evaluate procedure - %s", vlog.c_str());
+            return EINVAL;
+        }
     } else if (!strcmp(name, "parameters")) {
-        gParameters = parseKeyValueString(payload);
+        char *trimmedPayload = strndup(payload + 1, payloadSizeBytes - 2); // remove quotes
+        gParameters = parseKeyValueString(trimmedPayload);
     } else {
-        OsConfigLogError(log, "ComplianceMmiSet root JSON is not an audit object");
+        OsConfigLogError(log, "ComplianceMmiSet root JSON is not an known object");
         return EINVAL;
     }
-    
     return status;
 
 };
