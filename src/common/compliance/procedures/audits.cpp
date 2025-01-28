@@ -1,9 +1,18 @@
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <unistd.h>
 #include <string.h>
 #include <grp.h>
 #include <pwd.h>
 #include "../ComplianceInt.hpp"
+
+AUDIT_FN(returnFailure) {
+    (void)args;
+    (void)vlog;
+    (void)name;
+    (void)log;
+    return FAILURE;
+}
 
 AUDIT_FN(ensureFilePermissions) {
         (void)vlog;
@@ -64,7 +73,7 @@ AUDIT_FN(packageInstalled) {
         return FAILURE;
     }
   char buf[256];
-  snprintf(buf, 256, "dpkg -l %s > /dev/null", args["packageName"].c_str());
+  snprintf(buf, 256, "dpkg -L %s > /dev/null 2>&1", args["packageName"].c_str());
   int rv = system(buf);
   return (rv == 0) ? TRUE : FALSE;
 }
