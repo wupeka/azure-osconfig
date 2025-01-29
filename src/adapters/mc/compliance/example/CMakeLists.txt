@@ -23,7 +23,7 @@ add_custom_target(create_compliance_example_zip ALL
 
 add_custom_target(stage_create_compliance_poc_zip
     COMMAND ${CMAKE_COMMAND} -E make_directory ${PROJECT_BINARY_DIR}/Staging-POC
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/ComplianceExample.metaconfig.json" ${PROJECT_BINARY_DIR}/Staging-POC/
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/ComplianceExample.metaconfig.json" ${PROJECT_BINARY_DIR}/Staging-POC/CompliancePOC.metaconfig.json
     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/compliance.mof" ${PROJECT_BINARY_DIR}/Staging-POC/CompliancePOC.mof
     COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_FILE:OsConfigResourceCompliance> ${PROJECT_BINARY_DIR}/Staging-POC/Modules/DscNativeResources/OsConfigResource/libOsConfigResource.so
     DEPENDS OsConfigResourceCompliance)
