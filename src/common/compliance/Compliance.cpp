@@ -278,7 +278,7 @@ int ComplianceMmiGet(const char *componentName, const char *objectName, char **p
     if (result == TRUE) {
         vlog = "\"PASS" + vlog + "\"";
     } else {
-        vlog = "\"FAIL" + vlog + "\"";
+        vlog = "\"" + vlog + "\"";
     }
     *payloadSizeBytes = vlog.size();
     *payload = (char *)malloc(*payloadSizeBytes + 1);
