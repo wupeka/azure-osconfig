@@ -1,0 +1,3799 @@
+instance of OsConfigResource as $OsConfigResource0ref
+{
+    ResourceID = "Ensure cramfs kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource1ref
+{
+    ResourceID = "Ensure freevxfs kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource2ref
+{
+    ResourceID = "Ensure hfs kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource3ref
+{
+    ResourceID = "Ensure hfsplus kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource4ref
+{
+    ResourceID = "Ensure jffs2 kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource5ref
+{
+    ResourceID = "Ensure usb-storage kernel module is not available";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource6ref
+{
+    ResourceID = "Ensure /tmp is a separate partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource7ref
+{
+    ResourceID = "Ensure nodev option set on /tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource8ref
+{
+    ResourceID = "Ensure nosuid option set on /tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource9ref
+{
+    ResourceID = "Ensure noexec option set on /tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource10ref
+{
+    ResourceID = "Ensure /dev/shm is a separate partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource11ref
+{
+    ResourceID = "Ensure nodev option set on /dev/shm partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource12ref
+{
+    ResourceID = "Ensure nosuid option set on /dev/shm partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource13ref
+{
+    ResourceID = "Ensure noexec option set on /dev/shm partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource14ref
+{
+    ResourceID = "Ensure nodev option set on /home partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource15ref
+{
+    ResourceID = "Ensure nosuid option set on /home partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/3/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource16ref
+{
+    ResourceID = "Ensure nodev option set on /var partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/4/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource17ref
+{
+    ResourceID = "Ensure nosuid option set on /var partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/4/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource18ref
+{
+    ResourceID = "Ensure nodev option set on /var/tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource19ref
+{
+    ResourceID = "Ensure nosuid option set on /var/tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource20ref
+{
+    ResourceID = "Ensure noexec option set on /var/tmp partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource21ref
+{
+    ResourceID = "Ensure nodev option set on /var/log partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource22ref
+{
+    ResourceID = "Ensure nosuid option set on /var/log partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource23ref
+{
+    ResourceID = "Ensure noexec option set on /var/log partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource24ref
+{
+    ResourceID = "Ensure nodev option set on /var/log/audit partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource25ref
+{
+    ResourceID = "Ensure nosuid option set on /var/log/audit partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource26ref
+{
+    ResourceID = "Ensure noexec option set on /var/log/audit partition";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource27ref
+{
+    ResourceID = "Ensure AppArmor is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource28ref
+{
+    ResourceID = "Ensure AppArmor is enabled in the bootloader configuration";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource29ref
+{
+    ResourceID = "Ensure all AppArmor Profiles are in enforce or complain mode";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource30ref
+{
+    ResourceID = "Ensure bootloader password is set";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/4/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource31ref
+{
+    ResourceID = "Ensure access to bootloader config is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/4/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource32ref
+{
+    ResourceID = "Ensure address space layout randomization is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource33ref
+{
+    ResourceID = "Ensure ptrace_scope is restricted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource34ref
+{
+    ResourceID = "Ensure core dumps are restricted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource35ref
+{
+    ResourceID = "Ensure prelink is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource36ref
+{
+    ResourceID = "Ensure Automatic Error Reporting is not enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource37ref
+{
+    ResourceID = "Ensure message of the day is configured properly";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource38ref
+{
+    ResourceID = "Ensure local login warning banner is configured properly";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource39ref
+{
+    ResourceID = "Ensure remote login warning banner is configured properly";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource40ref
+{
+    ResourceID = "Ensure access to /etc/motd is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource41ref
+{
+    ResourceID = "Ensure access to /etc/issue is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource42ref
+{
+    ResourceID = "Ensure access to /etc/issue.net is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource43ref
+{
+    ResourceID = "Ensure GDM login banner is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource44ref
+{
+    ResourceID = "Ensure GDM disable-user-list option is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource45ref
+{
+    ResourceID = "Ensure GDM screen locks when the user is idle";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource46ref
+{
+    ResourceID = "Ensure GDM screen locks cannot be overridden";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource47ref
+{
+    ResourceID = "Ensure GDM automatic mounting of removable media is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource48ref
+{
+    ResourceID = "Ensure GDM disabling automatic mounting of removable media is not overridden";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource49ref
+{
+    ResourceID = "Ensure GDM autorun-never is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource50ref
+{
+    ResourceID = "Ensure GDM autorun-never is not overridden";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource51ref
+{
+    ResourceID = "Ensure XDCMP is not enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource52ref
+{
+    ResourceID = "Ensure autofs services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource53ref
+{
+    ResourceID = "Ensure avahi daemon services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource54ref
+{
+    ResourceID = "Ensure dhcp server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource55ref
+{
+    ResourceID = "Ensure dns server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource56ref
+{
+    ResourceID = "Ensure dnsmasq services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource57ref
+{
+    ResourceID = "Ensure ftp server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource58ref
+{
+    ResourceID = "Ensure ldap server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource59ref
+{
+    ResourceID = "Ensure message access server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource60ref
+{
+    ResourceID = "Ensure network file system services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource61ref
+{
+    ResourceID = "Ensure nis server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource62ref
+{
+    ResourceID = "Ensure print server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/11";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource63ref
+{
+    ResourceID = "Ensure rpcbind services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/12";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource64ref
+{
+    ResourceID = "Ensure rsync services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/13";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource65ref
+{
+    ResourceID = "Ensure samba file server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/14";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource66ref
+{
+    ResourceID = "Ensure snmp services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/15";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource67ref
+{
+    ResourceID = "Ensure tftp server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/16";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource68ref
+{
+    ResourceID = "Ensure web proxy server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/17";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource69ref
+{
+    ResourceID = "Ensure web server services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/18";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource70ref
+{
+    ResourceID = "Ensure xinetd services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/19";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource71ref
+{
+    ResourceID = "Ensure mail transfer agent is configured for local-only mode";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/21";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource72ref
+{
+    ResourceID = "Ensure NIS Client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogeyJOSVNfUEtHX05BTUUiOiAibmlzIn19";
+    ReportedObjectName = "eyJhdWRpdCI6IHsibm90IjogeyJwYWNrYWdlSW5zdGFsbGVkIjogeyJwYWNrYWdlTmFtZSI6ICIkTklTX1BLR19OQU1FIn19fX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZW1lZGlhdGUiOiBbeyJub3QiOiB7InBhY2thZ2VJbnN0YWxsZWQiOiB7InBhY2thZ2VOYW1lIjogIiROSVNfUEtHX05BTUUifX19XX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource73ref
+{
+    ResourceID = "Ensure rsh client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource74ref
+{
+    ResourceID = "Ensure talk client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource75ref
+{
+    ResourceID = "Ensure telnet client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource76ref
+{
+    ResourceID = "Ensure ldap client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource77ref
+{
+    ResourceID = "Ensure ftp client is not installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource78ref
+{
+    ResourceID = "Ensure a single time synchronization daemon is in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource79ref
+{
+    ResourceID = "Ensure systemd-timesyncd configured with authorized timeserver";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource80ref
+{
+    ResourceID = "Ensure chrony is running as user _chrony";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource81ref
+{
+    ResourceID = "Ensure chrony is enabled and running";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/3/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource82ref
+{
+    ResourceID = "Ensure cron daemon is enabled and active";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource83ref
+{
+    ResourceID = "Ensure permissions on /etc/crontab are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogeyJDUk9OX1BLR19OQU1FMSI6ICJjcm9uIiwgIkNST05fUEtHX05BTUUyIjogImNyb25pZSJ9fQ==";
+    ReportedObjectName = "eyJhdWRpdCI6IHsiYW55T2YiOiBbeyJub3QiOiB7ImFsbE9mIjogW3sicGFja2FnZUluc3RhbGxlZCI6IHsicGFja2FnZU5hbWUiOiAiJENST05fUEtHX05BTUUxIn19LCB7InBhY2thZ2VJbnN0YWxsZWQiOiB7InBhY2thZ2VOYW1lIjogIiRDUk9OX1BLR19OQU1FMiJ9fV19fSwgeyJlbnN1cmVGaWxlUGVybWlzc2lvbnMiOiB7ImZpbGVuYW1lIjogIi9ldGMvY3JvbnRhYiIsICJ1c2VyIjogInJvb3QiLCAiZ3JvdXAiOiAicm9vdCIsICJwZXJtaXNzaW9ucyI6ICI2MDAifX1dfX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJhdWRpdCI6IHsiYW55T2YiOiBbeyJub3QiOiB7ImFsbE9mIjogW3sicGFja2FnZUluc3RhbGxlZCI6IHsicGFja2FnZU5hbWUiOiAiJENST05fUEtHX05BTUUxIn19LCB7InBhY2thZ2VJbnN0YWxsZWQiOiB7InBhY2thZ2VOYW1lIjogIiRDUk9OX1BLR19OQU1FMiJ9fV19fSwgeyJlbnN1cmVGaWxlUGVybWlzc2lvbnMiOiB7ImZpbGVuYW1lIjogIi9ldGMvY3JvbnRhYiIsICJ1c2VyIjogInJvb3QiLCAiZ3JvdXAiOiAicm9vdCIsICJwZXJtaXNzaW9ucyI6ICI2MDAifX1dfX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource84ref
+{
+    ResourceID = "Ensure permissions on /etc/cron.hourly are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource85ref
+{
+    ResourceID = "Ensure permissions on /etc/cron.daily are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource86ref
+{
+    ResourceID = "Ensure permissions on /etc/cron.weekly are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource87ref
+{
+    ResourceID = "Ensure permissions on /etc/cron.monthly are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource88ref
+{
+    ResourceID = "Ensure permissions on /etc/cron.d are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource89ref
+{
+    ResourceID = "Ensure crontab is restricted to authorized users";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource90ref
+{
+    ResourceID = "Ensure at is restricted to authorized users";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource91ref
+{
+    ResourceID = "Ensure wireless interfaces are disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource92ref
+{
+    ResourceID = "Ensure bluetooth services are not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource93ref
+{
+    ResourceID = "Ensure ip forwarding is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource94ref
+{
+    ResourceID = "Ensure packet redirect sending is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource95ref
+{
+    ResourceID = "Ensure bogus icmp responses are ignored";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource96ref
+{
+    ResourceID = "Ensure broadcast icmp requests are ignored";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource97ref
+{
+    ResourceID = "Ensure icmp redirects are not accepted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource98ref
+{
+    ResourceID = "Ensure secure icmp redirects are not accepted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource99ref
+{
+    ResourceID = "Ensure reverse path filtering is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource100ref
+{
+    ResourceID = "Ensure source routed packets are not accepted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource101ref
+{
+    ResourceID = "Ensure suspicious packets are logged";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource102ref
+{
+    ResourceID = "Ensure tcp syn cookies is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource103ref
+{
+    ResourceID = "Ensure ipv6 router advertisements are not accepted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/11";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource104ref
+{
+    ResourceID = "Ensure ufw is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource105ref
+{
+    ResourceID = "Ensure iptables-persistent is not installed with ufw";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource106ref
+{
+    ResourceID = "Ensure ufw service is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource107ref
+{
+    ResourceID = "Ensure ufw loopback traffic is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource108ref
+{
+    ResourceID = "Ensure ufw firewall rules exist for all open ports";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource109ref
+{
+    ResourceID = "Ensure ufw default deny firewall policy";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource110ref
+{
+    ResourceID = "Ensure nftables is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource111ref
+{
+    ResourceID = "Ensure ufw is uninstalled or disabled with nftables";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource112ref
+{
+    ResourceID = "Ensure a nftables table exists";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource113ref
+{
+    ResourceID = "Ensure nftables base chains exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource114ref
+{
+    ResourceID = "Ensure nftables loopback traffic is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource115ref
+{
+    ResourceID = "Ensure nftables default deny firewall policy";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource116ref
+{
+    ResourceID = "Ensure nftables service is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource117ref
+{
+    ResourceID = "Ensure nftables rules are permanent";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource118ref
+{
+    ResourceID = "Ensure iptables packages are installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource119ref
+{
+    ResourceID = "Ensure nftables is not installed with iptables";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource120ref
+{
+    ResourceID = "Ensure ufw is uninstalled or disabled with iptables";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource121ref
+{
+    ResourceID = "Ensure iptables default deny firewall policy";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource122ref
+{
+    ResourceID = "Ensure iptables loopback traffic is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource123ref
+{
+    ResourceID = "Ensure iptables firewall rules exist for all open ports";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource124ref
+{
+    ResourceID = "Ensure ip6tables default deny firewall policy";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource125ref
+{
+    ResourceID = "Ensure ip6tables loopback traffic is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource126ref
+{
+    ResourceID = "Ensure ip6tables firewall rules exist for all open ports";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource127ref
+{
+    ResourceID = "Ensure permissions on /etc/ssh/sshd_config are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource128ref
+{
+    ResourceID = "Ensure permissions on SSH private host key files are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource129ref
+{
+    ResourceID = "Ensure permissions on SSH public host key files are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource130ref
+{
+    ResourceID = "Ensure sshd access is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource131ref
+{
+    ResourceID = "Ensure sshd Banner is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource132ref
+{
+    ResourceID = "Ensure sshd Ciphers are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource133ref
+{
+    ResourceID = "Ensure sshd ClientAliveInterval and ClientAliveCountMax are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource134ref
+{
+    ResourceID = "Ensure sshd HostbasedAuthentication is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource135ref
+{
+    ResourceID = "Ensure sshd IgnoreRhosts is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/11";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource136ref
+{
+    ResourceID = "Ensure sshd KexAlgorithms is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/12";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource137ref
+{
+    ResourceID = "Ensure sshd LoginGraceTime is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/13";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource138ref
+{
+    ResourceID = "Ensure sshd LogLevel is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/14";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource139ref
+{
+    ResourceID = "Ensure sshd MACs are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/15";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource140ref
+{
+    ResourceID = "Ensure sshd MaxAuthTries is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/16";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource141ref
+{
+    ResourceID = "Ensure sshd MaxSessions is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/17";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource142ref
+{
+    ResourceID = "Ensure sshd MaxStartups is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/18";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource143ref
+{
+    ResourceID = "Ensure sshd PermitEmptyPasswords is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/19";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource144ref
+{
+    ResourceID = "Ensure sshd PermitRootLogin is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/20";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource145ref
+{
+    ResourceID = "Ensure sshd PermitUserEnvironment is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/21";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource146ref
+{
+    ResourceID = "Ensure sshd UsePAM is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/22";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource147ref
+{
+    ResourceID = "Ensure sudo is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource148ref
+{
+    ResourceID = "Ensure sudo commands use pty";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource149ref
+{
+    ResourceID = "Ensure sudo log file exists";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource150ref
+{
+    ResourceID = "Ensure re-authentication for privilege escalation is not disabled globally";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource151ref
+{
+    ResourceID = "Ensure sudo authentication timeout is configured correctly";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource152ref
+{
+    ResourceID = "Ensure access to the su command is restricted";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource153ref
+{
+    ResourceID = "Ensure latest version of pam is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource154ref
+{
+    ResourceID = "Ensure libpam-modules is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource155ref
+{
+    ResourceID = "Ensure libpam-pwquality is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource156ref
+{
+    ResourceID = "Ensure pam_unix module is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource157ref
+{
+    ResourceID = "Ensure pam_faillock module is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource158ref
+{
+    ResourceID = "Ensure pam_pwquality module is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource159ref
+{
+    ResourceID = "Ensure pam_pwhistory module is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource160ref
+{
+    ResourceID = "Ensure password failed attempts lockout is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource161ref
+{
+    ResourceID = "Ensure password unlock time is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource162ref
+{
+    ResourceID = "Ensure password number of changed characters is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource163ref
+{
+    ResourceID = "Ensure minimum password length is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource164ref
+{
+    ResourceID = "Ensure password same consecutive characters is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource165ref
+{
+    ResourceID = "Ensure password maximum sequential characters is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource166ref
+{
+    ResourceID = "Ensure password dictionary check is enabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource167ref
+{
+    ResourceID = "Ensure password quality checking is enforced";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource168ref
+{
+    ResourceID = "Ensure password quality is enforced for the root user";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource169ref
+{
+    ResourceID = "Ensure password history remember is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource170ref
+{
+    ResourceID = "Ensure password history is enforced for the root user";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource171ref
+{
+    ResourceID = "Ensure pam_pwhistory includes use_authtok";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource172ref
+{
+    ResourceID = "Ensure pam_unix does not include nullok";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource173ref
+{
+    ResourceID = "Ensure pam_unix does not include remember";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource174ref
+{
+    ResourceID = "Ensure pam_unix includes a strong password hashing algorithm";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource175ref
+{
+    ResourceID = "Ensure pam_unix includes use_authtok";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource176ref
+{
+    ResourceID = "Ensure password expiration is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource177ref
+{
+    ResourceID = "Ensure password expiration warning days is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource178ref
+{
+    ResourceID = "Ensure strong password hashing algorithm is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource179ref
+{
+    ResourceID = "Ensure inactive password lock is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource180ref
+{
+    ResourceID = "Ensure all users last password change date is in the past";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource181ref
+{
+    ResourceID = "Ensure root is the only UID 0 account";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource182ref
+{
+    ResourceID = "Ensure root is the only GID 0 account";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource183ref
+{
+    ResourceID = "Ensure group root is the only GID 0 group";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource184ref
+{
+    ResourceID = "Ensure root password is set";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource185ref
+{
+    ResourceID = "Ensure root path integrity";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource186ref
+{
+    ResourceID = "Ensure root user umask is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource187ref
+{
+    ResourceID = "Ensure system accounts do not have a valid login shell";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource188ref
+{
+    ResourceID = "Ensure accounts without a valid login shell are locked";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource189ref
+{
+    ResourceID = "Ensure default user shell timeout is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/3/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource190ref
+{
+    ResourceID = "Ensure default user umask is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/3/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource191ref
+{
+    ResourceID = "Ensure AIDE is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource192ref
+{
+    ResourceID = "Ensure filesystem integrity is regularly checked";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource193ref
+{
+    ResourceID = "Ensure journald service is enabled and active";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource194ref
+{
+    ResourceID = "Ensure journald ForwardToSyslog is disabled";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource195ref
+{
+    ResourceID = "Ensure journald Storage is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource196ref
+{
+    ResourceID = "Ensure journald Compress is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource197ref
+{
+    ResourceID = "Ensure systemd-journal-remote is installed";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource198ref
+{
+    ResourceID = "Ensure systemd-journal-upload is enabled and active";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource199ref
+{
+    ResourceID = "Ensure systemd-journal-remote service is not in use";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource200ref
+{
+    ResourceID = "Ensure access to all logfiles has been configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource201ref
+{
+    ResourceID = "Ensure permissions on /etc/passwd are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource202ref
+{
+    ResourceID = "Ensure permissions on /etc/passwd- are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource203ref
+{
+    ResourceID = "Ensure permissions on /etc/group are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource204ref
+{
+    ResourceID = "Ensure permissions on /etc/group- are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource205ref
+{
+    ResourceID = "Ensure permissions on /etc/shadow are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource206ref
+{
+    ResourceID = "Ensure permissions on /etc/shadow- are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource207ref
+{
+    ResourceID = "Ensure permissions on /etc/gshadow are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource208ref
+{
+    ResourceID = "Ensure permissions on /etc/gshadow- are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource209ref
+{
+    ResourceID = "Ensure permissions on /etc/shells are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource210ref
+{
+    ResourceID = "Ensure permissions on /etc/security/opasswd are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource211ref
+{
+    ResourceID = "Ensure world writable files and directories are secured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/11";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource212ref
+{
+    ResourceID = "Ensure no files or directories without an owner and a group exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/12";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource213ref
+{
+    ResourceID = "Ensure accounts in /etc/passwd use shadowed passwords";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/1";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource214ref
+{
+    ResourceID = "Ensure /etc/shadow password fields are not empty";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/2";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource215ref
+{
+    ResourceID = "Ensure all groups in /etc/passwd exist in /etc/group";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/3";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource216ref
+{
+    ResourceID = "Ensure shadow group is empty";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/4";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource217ref
+{
+    ResourceID = "Ensure no duplicate UIDs exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/5";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource218ref
+{
+    ResourceID = "Ensure no duplicate GIDs exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/6";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource219ref
+{
+    ResourceID = "Ensure no duplicate user names exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/7";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource220ref
+{
+    ResourceID = "Ensure no duplicate group names exist";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/8";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource221ref
+{
+    ResourceID = "Ensure local interactive user home directories are configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/9";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OsConfigResource as $OsConfigResource222ref
+{
+    ResourceID = "Ensure local interactive user dot files access is configured";
+    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/10";
+    RuleId = "PLACEHOLDER - match with MDC json definition";
+    ComponentName = "Compliance";
+    InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
+    ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    ExpectedObjectValue = "PASS";
+    DesiredObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
+    DesiredObjectValue = "";
+    ModuleName = "GuestConfiguration";
+    ModuleVersion = "1.0.0";
+    ConfigurationName = "Compliance";
+    SourceInfo = "::4::5::OsConfigResource";
+};
+
+instance of OMI_ConfigurationDocument
+{
+    Version="3.0.0";
+    CompatibleVersionAdditionalProperties= {"Omi_BaseResource:ConfigurationName"};
+    Author="Microsoft";
+    GenerationDate="01/29/2025 09:29:28 UTC";
+    Name="ComplianceExample";
+};
