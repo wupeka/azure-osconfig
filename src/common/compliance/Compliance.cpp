@@ -26,9 +26,19 @@ extern std::map<std::string, std::pair<action_func_t, action_func_t>> compliance
 // state part...
 static std::map<std::string, std::string> gParameters;
 
-static std::map<std::string, std::string> parseKeyValueString(const std::string &input)
+static std::map<std::string, std::string> parseParameters(JSON_Object *jsonObject, const std::string &input)
 {
     std::map<std::string, std::string> result;
+    size_t count = json_object_get_count(jsonObject);
+    for (size_t i = 0; i < count; ++i) {
+        const char *key = json_object_get_name(jsonObject, i);
+        const char *value = json_object_get_string(jsonObject, key);
+        if (key && value) {
+            result[key] = value;
+        }
+    }
+
+    // Update map with values from input string
     std::istringstream stream(input);
     std::string token;
 
@@ -319,8 +329,15 @@ int ComplianceMmiSet(const char *componentName, const char *objectName, const ch
             return EINVAL;
         }
     } else if (!strcmp(name, "parameters")) {
+        JSON_Value *value = json_object_get_value_at(root, 0);
+        if (json_value_get_type(value) != JSONObject) {
+            OsConfigLogError(log, "ComplianceMmiSet audit JSON is not an object");
+            return EINVAL;
+        }
+        JSON_Object *subObject = json_value_get_object(value);
         char *trimmedPayload = strndup(payload + 1, payloadSizeBytes - 2); // remove quotes
-        gParameters = parseKeyValueString(trimmedPayload);
+        gParameters = parseParameters(subObject, trimmedPayload);
+        free(trimmedPayload);
     } else {
         OsConfigLogError(log, "ComplianceMmiSet root JSON is not an known object");
         return EINVAL;
