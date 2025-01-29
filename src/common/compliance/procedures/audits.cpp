@@ -6,12 +6,13 @@
 #include <pwd.h>
 #include "../ComplianceInt.hpp"
 
-AUDIT_FN(returnFailure) {
-    (void)args;
-    (void)vlog;
+AUDIT_FN(returnFail) {
     (void)name;
     (void)log;
-    return FAILURE;
+    if (args.find("message") != args.end()) {
+        vlog += args["message"];
+    }
+    return FALSE;
 }
 
 AUDIT_FN(ensureFilePermissions) {
