@@ -2,7 +2,7 @@ instance of OsConfigResource as $OsConfigResource0ref
 {
     ResourceID = "Ensure cramfs kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8a2313061c6f4d399a8cb4652cc4151d4b817a224c56cee5f6f029475d005022";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -19,7 +19,7 @@ instance of OsConfigResource as $OsConfigResource1ref
 {
     ResourceID = "Ensure freevxfs kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "cc40ab2a5a37cc6ae4554da4a2f3c5ac355dc8641022201d26ae93ec78aee730";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -36,7 +36,7 @@ instance of OsConfigResource as $OsConfigResource2ref
 {
     ResourceID = "Ensure hfs kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d75730c1c5b97ab956095a27d4091c448f179172a27bbd6eb19630f30a4725d8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -53,7 +53,7 @@ instance of OsConfigResource as $OsConfigResource3ref
 {
     ResourceID = "Ensure hfsplus kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "88b3eb0c3cc69ecc9a8c573000a92aabb1b8408b2d39ad44ee27e68f19272805";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -70,7 +70,7 @@ instance of OsConfigResource as $OsConfigResource4ref
 {
     ResourceID = "Ensure jffs2 kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f8589f35101f5acaefd02938e2e3093475c00a9f107d5c6399f4b191540c6d67";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -87,7 +87,7 @@ instance of OsConfigResource as $OsConfigResource5ref
 {
     ResourceID = "Ensure usb-storage kernel module is not available";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/1/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8795a27fd0baaf060609f0d09d092062a3a33ad80c42b2e7e9b4c5fd5c96efa6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -104,7 +104,7 @@ instance of OsConfigResource as $OsConfigResource6ref
 {
     ResourceID = "Ensure /tmp is a separate partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8fe3c14c53c6e33663ac919159edb770ea7b8a203cddb3ab6ba2c4cf36844f43";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -121,7 +121,7 @@ instance of OsConfigResource as $OsConfigResource7ref
 {
     ResourceID = "Ensure nodev option set on /tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "682b9ca230c84c1724a60671665da9fb381072a38a8c284d2a6d8ef8df114ae3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -138,7 +138,7 @@ instance of OsConfigResource as $OsConfigResource8ref
 {
     ResourceID = "Ensure nosuid option set on /tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "7394d86c863161d7c688d40a052faba6d47cf4a5d876498919d5d61b234c4021";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -155,7 +155,7 @@ instance of OsConfigResource as $OsConfigResource9ref
 {
     ResourceID = "Ensure noexec option set on /tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "057956393ca1fb7ab9089b2b7d3bb46a0d6b7ce35be4b14dc5499cb30337f4fd";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -172,7 +172,7 @@ instance of OsConfigResource as $OsConfigResource10ref
 {
     ResourceID = "Ensure /dev/shm is a separate partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "85fe263426542bb023408eabb9d9b1e890d13102a5cc584e559aac3538d5928f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -189,7 +189,7 @@ instance of OsConfigResource as $OsConfigResource11ref
 {
     ResourceID = "Ensure nodev option set on /dev/shm partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3241ed06898f6c1e7ab98a097b8aa7fc94d85ffcfccb93448626bcef3398e128";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -206,7 +206,7 @@ instance of OsConfigResource as $OsConfigResource12ref
 {
     ResourceID = "Ensure nosuid option set on /dev/shm partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "1b3f224dfeb9e1722c354810ce4c367d7dd9011791747a9a38ec63ec234ae8b2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -223,7 +223,7 @@ instance of OsConfigResource as $OsConfigResource13ref
 {
     ResourceID = "Ensure noexec option set on /dev/shm partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "089676cc304b8157b6fb3304ba3412919feb806935f0f9c5763b12fd8ce6dac0";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -240,7 +240,7 @@ instance of OsConfigResource as $OsConfigResource14ref
 {
     ResourceID = "Ensure nodev option set on /home partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ef82f4d334507a258f7810b530e2d88932d14a44c7f3efce9ec0d3cf1a946080";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -257,7 +257,7 @@ instance of OsConfigResource as $OsConfigResource15ref
 {
     ResourceID = "Ensure nosuid option set on /home partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/3/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "168bad996bf3dd7d5cbfbdb8149a1eefffda9ff8796071c65ef7c155a826f77d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -274,7 +274,7 @@ instance of OsConfigResource as $OsConfigResource16ref
 {
     ResourceID = "Ensure nodev option set on /var partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/4/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "5329dd81fdab94951644f25e02f1888330f611dcb15c7e0d85a00324b58b36c1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -291,7 +291,7 @@ instance of OsConfigResource as $OsConfigResource17ref
 {
     ResourceID = "Ensure nosuid option set on /var partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/4/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "23574f26b328eff3d5303c554fdb24af99ce536476524e8fec9ef1c8d4fc2ef0";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -308,7 +308,7 @@ instance of OsConfigResource as $OsConfigResource18ref
 {
     ResourceID = "Ensure nodev option set on /var/tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e914052b473e125f845d3f9d561bbd63d6fb567a3fa428f87b034d13283552bc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -325,7 +325,7 @@ instance of OsConfigResource as $OsConfigResource19ref
 {
     ResourceID = "Ensure nosuid option set on /var/tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "1dede94a2eb9c8a880b4043dc6d1985625d040851f25e2b0d2a7e8c495d7ae0f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -342,7 +342,7 @@ instance of OsConfigResource as $OsConfigResource20ref
 {
     ResourceID = "Ensure noexec option set on /var/tmp partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/5/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2250a05bd2d2087448de86c098a3acdc7033a3058698f166673a08312e409588";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -359,7 +359,7 @@ instance of OsConfigResource as $OsConfigResource21ref
 {
     ResourceID = "Ensure nodev option set on /var/log partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "cbbfae1adf1735dad1d6f7747416d2e59b087548a5baa710db0cab71c7f551c4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -376,7 +376,7 @@ instance of OsConfigResource as $OsConfigResource22ref
 {
     ResourceID = "Ensure nosuid option set on /var/log partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4ef662849c90a880afb3f035e10635dd0dab9f0c600ba8f1b519dfe2310d3dcc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -393,7 +393,7 @@ instance of OsConfigResource as $OsConfigResource23ref
 {
     ResourceID = "Ensure noexec option set on /var/log partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/6/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0652573284b439de65739c92b3570ae0fb021948512f6b37271526cc2c9c486a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -410,7 +410,7 @@ instance of OsConfigResource as $OsConfigResource24ref
 {
     ResourceID = "Ensure nodev option set on /var/log/audit partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "73b11cace378f57fe20f645d324c04f51d7d625844a34f2065f8f5ae86f2d85a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -427,7 +427,7 @@ instance of OsConfigResource as $OsConfigResource25ref
 {
     ResourceID = "Ensure nosuid option set on /var/log/audit partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b253c54cc249f8b57be5f9f571c208993c58eeede4597387684a3f18df38c1d1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -444,7 +444,7 @@ instance of OsConfigResource as $OsConfigResource26ref
 {
     ResourceID = "Ensure noexec option set on /var/log/audit partition";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/1/2/7/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "442d91ab7efa909a131b961a1605d7a4db325404b4cfbba1e52bce26ce808596";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -461,7 +461,7 @@ instance of OsConfigResource as $OsConfigResource27ref
 {
     ResourceID = "Ensure AppArmor is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e1d09e8c9820ea0ccbf4ea36a5412c9cbaabce7d72ff297f7cd7a3a319a5bd8c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -478,7 +478,7 @@ instance of OsConfigResource as $OsConfigResource28ref
 {
     ResourceID = "Ensure AppArmor is enabled in the bootloader configuration";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b10424c4a40dd34968d72cf6d5a255fa0c7bfe7603e17cbc622efd8a95bf3a49";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -495,7 +495,7 @@ instance of OsConfigResource as $OsConfigResource29ref
 {
     ResourceID = "Ensure all AppArmor Profiles are in enforce or complain mode";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/3/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "93e79e4e46b9199ca72020c80265fdca0fa077497ddd1be1e1cf35306b7131b2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -512,7 +512,7 @@ instance of OsConfigResource as $OsConfigResource30ref
 {
     ResourceID = "Ensure bootloader password is set";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/4/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "7bf9369c068d4c53315f96737981b0ae21fd6411b2205febd8fda221f335e4e4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -529,7 +529,7 @@ instance of OsConfigResource as $OsConfigResource31ref
 {
     ResourceID = "Ensure access to bootloader config is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/4/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a98efc71ce06a8bbcdd17a8711782ce5466e0bfbe4ecf72945d2a6257e843fee";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -546,7 +546,7 @@ instance of OsConfigResource as $OsConfigResource32ref
 {
     ResourceID = "Ensure address space layout randomization is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "af560f2ff4463c32e2510713d17936f02709b2db074166259775777ddb567430";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -563,7 +563,7 @@ instance of OsConfigResource as $OsConfigResource33ref
 {
     ResourceID = "Ensure ptrace_scope is restricted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "90788c09509d55005f4b4ff4be07bbe61735be7a83a5b4ae14a9431bdfbaea37";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -580,7 +580,7 @@ instance of OsConfigResource as $OsConfigResource34ref
 {
     ResourceID = "Ensure core dumps are restricted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "60d4ef0364c321e6cd889a79876d4381edb8982047c6bfe6719a3b323c3f48b6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -597,7 +597,7 @@ instance of OsConfigResource as $OsConfigResource35ref
 {
     ResourceID = "Ensure prelink is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c293705c2b2f524261e0d83e848163e99579450273bc04c8865902d720ce09ed";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -614,7 +614,7 @@ instance of OsConfigResource as $OsConfigResource36ref
 {
     ResourceID = "Ensure Automatic Error Reporting is not enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/5/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e3d7e664e9673c798c8325126af2b4607f9ecbb0b1053ad99856afaaa5f051f7";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -631,7 +631,7 @@ instance of OsConfigResource as $OsConfigResource37ref
 {
     ResourceID = "Ensure message of the day is configured properly";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "1f82d9cdb688addc1db2f2de777b4327e42dd5e7bec997a241ca1b789429e5a4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -648,7 +648,7 @@ instance of OsConfigResource as $OsConfigResource38ref
 {
     ResourceID = "Ensure local login warning banner is configured properly";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b5755ac2133b9c1e053befd3de48a0849af874aec8083dbe1a28459f7c940813";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -665,7 +665,7 @@ instance of OsConfigResource as $OsConfigResource39ref
 {
     ResourceID = "Ensure remote login warning banner is configured properly";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "1c0e073ef6c52b04a7d055c399b8c014b0edd9da38ab50bf6dac03125e64cb20";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -682,7 +682,7 @@ instance of OsConfigResource as $OsConfigResource40ref
 {
     ResourceID = "Ensure access to /etc/motd is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b841d5e084f5c26b13b2a4d8c404fe667c13c4ec2bca8974e2590d5d7548fc43";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -699,7 +699,7 @@ instance of OsConfigResource as $OsConfigResource41ref
 {
     ResourceID = "Ensure access to /etc/issue is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "101a8e549d17d2d355141762b045d58c1b8108bd90d9a20f7ee19c844e98ea18";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -716,7 +716,7 @@ instance of OsConfigResource as $OsConfigResource42ref
 {
     ResourceID = "Ensure access to /etc/issue.net is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/6/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2d41682b96908feab686668795670524d23181fc2223bed8f1156a2510d05bd2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -733,7 +733,7 @@ instance of OsConfigResource as $OsConfigResource43ref
 {
     ResourceID = "Ensure GDM login banner is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "601abefe5ea6d60a9f9691d871cd5cd5d6b7d31cd0a9459090f95a60f9e17a82";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -750,7 +750,7 @@ instance of OsConfigResource as $OsConfigResource44ref
 {
     ResourceID = "Ensure GDM disable-user-list option is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ae9cbf2c4362870e8a4803d0835bbfb611df485c7a95ab6e1248016f1983aa2f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -767,7 +767,7 @@ instance of OsConfigResource as $OsConfigResource45ref
 {
     ResourceID = "Ensure GDM screen locks when the user is idle";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f426c2f62b953ec4ca653f2bc86b5d064aab49f207695f63b157ee60188b2151";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -784,7 +784,7 @@ instance of OsConfigResource as $OsConfigResource46ref
 {
     ResourceID = "Ensure GDM screen locks cannot be overridden";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a08d21b82e5f9862743a7780ac21dd0e2100eac2ee1997e84a9fd7ab8e8c87db";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -801,7 +801,7 @@ instance of OsConfigResource as $OsConfigResource47ref
 {
     ResourceID = "Ensure GDM automatic mounting of removable media is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "68fe1118c6a702b2402275b6b326d12a7482e56c529e273d141f818dd9a7fbf3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -818,7 +818,7 @@ instance of OsConfigResource as $OsConfigResource48ref
 {
     ResourceID = "Ensure GDM disabling automatic mounting of removable media is not overridden";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "158f3365bd48629b8beb72718f40b4e09a16ff3eef6873c2f294283fd209c871";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -835,7 +835,7 @@ instance of OsConfigResource as $OsConfigResource49ref
 {
     ResourceID = "Ensure GDM autorun-never is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4fb3a794f700607c6e228815baa7e0afc3ed7a84fa0be25d47fa41e7aaf9c7ea";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -852,7 +852,7 @@ instance of OsConfigResource as $OsConfigResource50ref
 {
     ResourceID = "Ensure GDM autorun-never is not overridden";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "470762d0d5c1f32012d6d830cd8765a04b39a0a2f6562216fb1ff0f858efe523";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -869,7 +869,7 @@ instance of OsConfigResource as $OsConfigResource51ref
 {
     ResourceID = "Ensure XDCMP is not enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/1/7/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "412ae04687097dac07bee0ec7a980a055de55061ece8cc6ed84f758e05dc4bd6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -886,7 +886,7 @@ instance of OsConfigResource as $OsConfigResource52ref
 {
     ResourceID = "Ensure autofs services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4c07e2a289d1bc8a8462672d3340dc6c78630ac662b54e1595c2c47b9f73b395";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -903,7 +903,7 @@ instance of OsConfigResource as $OsConfigResource53ref
 {
     ResourceID = "Ensure avahi daemon services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a0a4c62010da64d9da4b1a9138b4e12a5fc0b36c13916b96fa9f22d5a75d2b86";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -920,7 +920,7 @@ instance of OsConfigResource as $OsConfigResource54ref
 {
     ResourceID = "Ensure dhcp server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6e2f2a6dc827bb819991f996f6fa449ba06690dbcf23ead3d98eb04f59586a80";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -937,7 +937,7 @@ instance of OsConfigResource as $OsConfigResource55ref
 {
     ResourceID = "Ensure dns server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6fa1e8420fa371ba05caf10a0bf5cd3849b03c81d39b5467a6f99bda864d684d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -954,7 +954,7 @@ instance of OsConfigResource as $OsConfigResource56ref
 {
     ResourceID = "Ensure dnsmasq services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "bae1f0b57d3c4012d5c9ee06d35ed1d0b1b933ceaa01c466f1d0c9b3e084a8b3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -971,7 +971,7 @@ instance of OsConfigResource as $OsConfigResource57ref
 {
     ResourceID = "Ensure ftp server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "73251a7098b89617bd827ba6fb6e2dbcd6c2c5ecd97c5d2a01b58ea4bc0054d4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -988,7 +988,7 @@ instance of OsConfigResource as $OsConfigResource58ref
 {
     ResourceID = "Ensure ldap server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fad0b351d1f77bb909fd8cc6630c8f6e3e031eafb972fca3ff6f401ac7fd2d1d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1005,7 +1005,7 @@ instance of OsConfigResource as $OsConfigResource59ref
 {
     ResourceID = "Ensure message access server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9cb27920e9d77f2a6c1a77a7a8a8b2ebe8294f46acfbd2abd2d1fc8de84a365a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1022,7 +1022,7 @@ instance of OsConfigResource as $OsConfigResource60ref
 {
     ResourceID = "Ensure network file system services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c67deccc646e0c331d44640aaf2b8607217e3b754a27eba42513fc7f7207439a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1039,7 +1039,7 @@ instance of OsConfigResource as $OsConfigResource61ref
 {
     ResourceID = "Ensure nis server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e1faead01fd9a5733752a7c26c78c319eeabd839c7378a91b8882f02b6f473a6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1056,7 +1056,7 @@ instance of OsConfigResource as $OsConfigResource62ref
 {
     ResourceID = "Ensure print server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/11";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "82401e0f17466df547da8876777081c11ad065e40a7ba4681a9aa8ccdec601a3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1073,7 +1073,7 @@ instance of OsConfigResource as $OsConfigResource63ref
 {
     ResourceID = "Ensure rpcbind services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/12";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ce74a5e4a4979aee25b3619f957b970a477e380a8bd635ec73c2b9a6290b75ff";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1090,7 +1090,7 @@ instance of OsConfigResource as $OsConfigResource64ref
 {
     ResourceID = "Ensure rsync services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/13";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "18be0b67e840b5b92108d30546688bee50a01442e9b4628286ed402fc03cafb0";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1107,7 +1107,7 @@ instance of OsConfigResource as $OsConfigResource65ref
 {
     ResourceID = "Ensure samba file server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/14";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0f5f0933ad17d4a4b47d2a0b1a6f481b2084cd43c5ac607a841b6f69a295411a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1124,7 +1124,7 @@ instance of OsConfigResource as $OsConfigResource66ref
 {
     ResourceID = "Ensure snmp services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/15";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a382386884ea893717533858a9c1d421fd90f04b7fdb7389ea946608b3e71584";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1141,7 +1141,7 @@ instance of OsConfigResource as $OsConfigResource67ref
 {
     ResourceID = "Ensure tftp server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/16";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "94fb6ac68c9fc6b68f7831090141f70086a04f3012efdf70c6338545b493ef7e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1158,7 +1158,7 @@ instance of OsConfigResource as $OsConfigResource68ref
 {
     ResourceID = "Ensure web proxy server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/17";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4a4cdb975699afe6aa2d06e6937cc8107773e33a56b0571a8266fe53335ecf86";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1175,7 +1175,7 @@ instance of OsConfigResource as $OsConfigResource69ref
 {
     ResourceID = "Ensure web server services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/18";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b66df13dc415363a2595bd6755c3d4a237bca6f939b8d61a535f5b0b4150092c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1192,7 +1192,7 @@ instance of OsConfigResource as $OsConfigResource70ref
 {
     ResourceID = "Ensure xinetd services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/19";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6c524eeb3cb955eee67929e9b27e62e349a3f71cf194463fde5df6a34db84802";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1209,7 +1209,7 @@ instance of OsConfigResource as $OsConfigResource71ref
 {
     ResourceID = "Ensure mail transfer agent is configured for local-only mode";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/1/21";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f243163266a451c40bd4ac872855469295c492e091e2c015876994379c51ebe2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1226,7 +1226,7 @@ instance of OsConfigResource as $OsConfigResource72ref
 {
     ResourceID = "Ensure NIS Client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "079122c144215be3f89792a1655e922867b9104f3c6612cc5030d5619193094c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogeyJOSVNfUEtHX05BTUUiOiAibmlzIn19";
     ReportedObjectName = "eyJhdWRpdCI6IHsibm90IjogeyJwYWNrYWdlSW5zdGFsbGVkIjogeyJwYWNrYWdlTmFtZSI6ICIkTklTX1BLR19OQU1FIn19fX0=";
@@ -1243,7 +1243,7 @@ instance of OsConfigResource as $OsConfigResource73ref
 {
     ResourceID = "Ensure rsh client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d4c91ef94d618697d85a4909d96844a5c95359f821d959fdac14a4e8ab4c89e6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1260,7 +1260,7 @@ instance of OsConfigResource as $OsConfigResource74ref
 {
     ResourceID = "Ensure talk client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "433975b0f1ebb05dc04a3bfaa208a8822c7fc352b8f176839c138d8d93f01383";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1277,7 +1277,7 @@ instance of OsConfigResource as $OsConfigResource75ref
 {
     ResourceID = "Ensure telnet client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3292424c7ecf17e94d0a85dd5aab4c0524272632a92905efa2f6d5d72586d0c1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1294,7 +1294,7 @@ instance of OsConfigResource as $OsConfigResource76ref
 {
     ResourceID = "Ensure ldap client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f3bb7fa05400688cb2ddde5934761b3cd2d03f33fad9ea62708c6012473f8e0c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1311,7 +1311,7 @@ instance of OsConfigResource as $OsConfigResource77ref
 {
     ResourceID = "Ensure ftp client is not installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b969e4879064fc6a4f32921fe65034ffb6dc2ad3c5793706f8f22875ca47ff62";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1328,7 +1328,7 @@ instance of OsConfigResource as $OsConfigResource78ref
 {
     ResourceID = "Ensure a single time synchronization daemon is in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ac2bddb90bde739027dfe677a9915dad949e7fb6adb4474fe0247c14e06e9376";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1345,7 +1345,7 @@ instance of OsConfigResource as $OsConfigResource79ref
 {
     ResourceID = "Ensure systemd-timesyncd configured with authorized timeserver";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f6d9b2de8814cc8d12adbc1178d862c15c075d53dcf05f0c6bfd592b7464fa30";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1362,7 +1362,7 @@ instance of OsConfigResource as $OsConfigResource80ref
 {
     ResourceID = "Ensure chrony is running as user _chrony";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f2896acabc96470f9b5f735b69ea17e0e11849e15111cccab0356b7080336ced";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1379,7 +1379,7 @@ instance of OsConfigResource as $OsConfigResource81ref
 {
     ResourceID = "Ensure chrony is enabled and running";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/3/3/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e13bc4f7e931090b78e8c69357f35c93831db9040ca1ac0fb431816c7238f01e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1396,7 +1396,7 @@ instance of OsConfigResource as $OsConfigResource82ref
 {
     ResourceID = "Ensure cron daemon is enabled and active";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c4ee22ce9febaaabd5f55cf6736af3298e81af3497bf6067d703fd3637a143b2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1413,7 +1413,7 @@ instance of OsConfigResource as $OsConfigResource83ref
 {
     ResourceID = "Ensure permissions on /etc/crontab are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "65e74f750eac58d01a5a668ccb5c8f35f942f8847f43ec54386108b45e6986ba";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogeyJDUk9OX1BLR19OQU1FMSI6ICJjcm9uIiwgIkNST05fUEtHX05BTUUyIjogImNyb25pZSJ9fQ==";
     ReportedObjectName = "eyJhdWRpdCI6IHsiYW55T2YiOiBbeyJub3QiOiB7ImFsbE9mIjogW3sicGFja2FnZUluc3RhbGxlZCI6IHsicGFja2FnZU5hbWUiOiAiJENST05fUEtHX05BTUUxIn19LCB7InBhY2thZ2VJbnN0YWxsZWQiOiB7InBhY2thZ2VOYW1lIjogIiRDUk9OX1BLR19OQU1FMiJ9fV19fSwgeyJlbnN1cmVGaWxlUGVybWlzc2lvbnMiOiB7ImZpbGVuYW1lIjogIi9ldGMvY3JvbnRhYiIsICJ1c2VyIjogInJvb3QiLCAiZ3JvdXAiOiAicm9vdCIsICJwZXJtaXNzaW9ucyI6ICI2MDAifX1dfX0=";
@@ -1430,7 +1430,7 @@ instance of OsConfigResource as $OsConfigResource84ref
 {
     ResourceID = "Ensure permissions on /etc/cron.hourly are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fb59b8f09cf219bcdeccbde4c7f49c7dff0cfb3882af3102983257725c08eb60";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1447,7 +1447,7 @@ instance of OsConfigResource as $OsConfigResource85ref
 {
     ResourceID = "Ensure permissions on /etc/cron.daily are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3c093b2bd61eeff331708ba52dfbc0734d011c06c7ee44b397975b8eac1cca0e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1464,7 +1464,7 @@ instance of OsConfigResource as $OsConfigResource86ref
 {
     ResourceID = "Ensure permissions on /etc/cron.weekly are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "42541d42bc8fdb387fb5ecae9e4ffde551b1d9f08ab3ddef75efb0e02aaf2278";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1481,7 +1481,7 @@ instance of OsConfigResource as $OsConfigResource87ref
 {
     ResourceID = "Ensure permissions on /etc/cron.monthly are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c6104627ba0d4af7bf71a6040d56a079cd47976c079ba872e3677a969560f856";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1498,7 +1498,7 @@ instance of OsConfigResource as $OsConfigResource88ref
 {
     ResourceID = "Ensure permissions on /etc/cron.d are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "bf77fd1fe25d214cebdc8162e0521bf567cb0af065fc2eb7c99a01496622db10";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1515,7 +1515,7 @@ instance of OsConfigResource as $OsConfigResource89ref
 {
     ResourceID = "Ensure crontab is restricted to authorized users";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c6d4568f920b2ce9c83b02ebce9d60930fb0b9592ae68f1f8cde866c308e939e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1532,7 +1532,7 @@ instance of OsConfigResource as $OsConfigResource90ref
 {
     ResourceID = "Ensure at is restricted to authorized users";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "49adfc3a6464a090e98d9aac4db2985fa4d64555bea4df91f2ec2f1d0b336a58";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1549,7 +1549,7 @@ instance of OsConfigResource as $OsConfigResource91ref
 {
     ResourceID = "Ensure wireless interfaces are disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "96ef3f875b4ec2d188aed6492f571c24265e66797e4b092da1e9deaa3f3e313d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1566,7 +1566,7 @@ instance of OsConfigResource as $OsConfigResource92ref
 {
     ResourceID = "Ensure bluetooth services are not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2c822cc89b03927190886d1283b980b5fdee047b4f770ca49fc425e488c21ca7";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1583,7 +1583,7 @@ instance of OsConfigResource as $OsConfigResource93ref
 {
     ResourceID = "Ensure ip forwarding is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "403c4d3ea731b4b770cdf830848318cfd4be534f2efba2fdb32bc79e3d629d94";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1600,7 +1600,7 @@ instance of OsConfigResource as $OsConfigResource94ref
 {
     ResourceID = "Ensure packet redirect sending is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "32e8d3a3cc80355fc8c00230a6b3084ca213b5c466d4617880a082f26fc9cfa6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1617,7 +1617,7 @@ instance of OsConfigResource as $OsConfigResource95ref
 {
     ResourceID = "Ensure bogus icmp responses are ignored";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d303f4aba1459874c81450dcc2ded6ec9164b2a98fb1c7547965a0079ca8b2d4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1634,7 +1634,7 @@ instance of OsConfigResource as $OsConfigResource96ref
 {
     ResourceID = "Ensure broadcast icmp requests are ignored";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "997a6bf5c50344d7a4912edbe87232a5e17136150af5ab7b2305ac913074aef8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1651,7 +1651,7 @@ instance of OsConfigResource as $OsConfigResource97ref
 {
     ResourceID = "Ensure icmp redirects are not accepted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d3375b83b803366175e94f06e6ffb29bd20a12b59886f51be59e481bdb5f9662";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1668,7 +1668,7 @@ instance of OsConfigResource as $OsConfigResource98ref
 {
     ResourceID = "Ensure secure icmp redirects are not accepted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "97ba56c062339a23164ae2790be20f688fc3ab89b69595853ed9c55a644d39fc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1685,7 +1685,7 @@ instance of OsConfigResource as $OsConfigResource99ref
 {
     ResourceID = "Ensure reverse path filtering is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fe9845d1da6eba166beac515024e761d910624240daa8d8b679498079bc80efc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1702,7 +1702,7 @@ instance of OsConfigResource as $OsConfigResource100ref
 {
     ResourceID = "Ensure source routed packets are not accepted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "24b8fbc27ce36f1b28008fbbefb866174f133552fcc9b66591ae0fcdeb5cf40b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1719,7 +1719,7 @@ instance of OsConfigResource as $OsConfigResource101ref
 {
     ResourceID = "Ensure suspicious packets are logged";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "58a39874fed75f9bdf3a362c3ff80e0767f3a2809dab3e792b598401a740a960";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1736,7 +1736,7 @@ instance of OsConfigResource as $OsConfigResource102ref
 {
     ResourceID = "Ensure tcp syn cookies is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "7227d05ab50ec4fdfcbd127188ddc7221e25d9c93d2726ad0982bdd064db150a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1753,7 +1753,7 @@ instance of OsConfigResource as $OsConfigResource103ref
 {
     ResourceID = "Ensure ipv6 router advertisements are not accepted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/3/3/11";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2940f9ffa2c624620f002c7dd4897fafdf4e6207e5726685fea6444e3fd99e3e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1770,7 +1770,7 @@ instance of OsConfigResource as $OsConfigResource104ref
 {
     ResourceID = "Ensure ufw is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8fc0669a660e8dae1092d340c7b81cef9d11bc8f1c87b94ee4bcab954f9f9eb3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1787,7 +1787,7 @@ instance of OsConfigResource as $OsConfigResource105ref
 {
     ResourceID = "Ensure iptables-persistent is not installed with ufw";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6a3febd0d9589b0a2eb734f02427d9acba139e3cfd8284fff56323e06ce3e4f1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1804,7 +1804,7 @@ instance of OsConfigResource as $OsConfigResource106ref
 {
     ResourceID = "Ensure ufw service is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9d848d483bda5babf90a3c0a75590d541ab6118bf059153bb620a681d168dec1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1821,7 +1821,7 @@ instance of OsConfigResource as $OsConfigResource107ref
 {
     ResourceID = "Ensure ufw loopback traffic is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "580ce68035c39b3e5c4bc8a4151010c223f76e7473cd87b52fc7df53966e7151";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1838,7 +1838,7 @@ instance of OsConfigResource as $OsConfigResource108ref
 {
     ResourceID = "Ensure ufw firewall rules exist for all open ports";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ea67a1cd1d57757cbce65d4f127b8f6de5bffef7653dd1247dd00c9f6c62c735";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1855,7 +1855,7 @@ instance of OsConfigResource as $OsConfigResource109ref
 {
     ResourceID = "Ensure ufw default deny firewall policy";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/1/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "40a0cff0c4f9ea138e073c582fb3e1c300c9c8702a7f9fb1346fff21bb272916";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1872,7 +1872,7 @@ instance of OsConfigResource as $OsConfigResource110ref
 {
     ResourceID = "Ensure nftables is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9d2cb9442c3543576970fe3e298b9720c1c928ad95c5c02bb5a02edbc0b70159";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1889,7 +1889,7 @@ instance of OsConfigResource as $OsConfigResource111ref
 {
     ResourceID = "Ensure ufw is uninstalled or disabled with nftables";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "7bd58c18ef882c07e03a1cbe413f0e43422b3635d48b8ce96520dd0d84540d9c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1906,7 +1906,7 @@ instance of OsConfigResource as $OsConfigResource112ref
 {
     ResourceID = "Ensure a nftables table exists";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "096c6da99c616868377a476431a109a71c2bf69bc95087ed64cc5ac6021d0e63";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1923,7 +1923,7 @@ instance of OsConfigResource as $OsConfigResource113ref
 {
     ResourceID = "Ensure nftables base chains exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6087c90cc0e0c6b59442f42bf9f90eaca27bc23f6fd53df11185117156c5a17f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1940,7 +1940,7 @@ instance of OsConfigResource as $OsConfigResource114ref
 {
     ResourceID = "Ensure nftables loopback traffic is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "1da03b761bd8aae50fe34df3c4bf92b889be5a76ac05c026e83c0068d89e9118";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1957,7 +1957,7 @@ instance of OsConfigResource as $OsConfigResource115ref
 {
     ResourceID = "Ensure nftables default deny firewall policy";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "85fb8b49aa79d5d8a6834c2a9825cf2f8e841f77bfbe78845dbad903b700230f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1974,7 +1974,7 @@ instance of OsConfigResource as $OsConfigResource116ref
 {
     ResourceID = "Ensure nftables service is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e8e97cfd0b50e34b43efd7a69e94cb2a004d8699279e5da5117465266adc82aa";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -1991,7 +1991,7 @@ instance of OsConfigResource as $OsConfigResource117ref
 {
     ResourceID = "Ensure nftables rules are permanent";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/2/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9da310b5a7439236ccda7ab1fcd2f57aee548596d262f3031985b06baf7f136c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2008,7 +2008,7 @@ instance of OsConfigResource as $OsConfigResource118ref
 {
     ResourceID = "Ensure iptables packages are installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ae18cb297103f6a60489ece9aa748cf1c7c1118406cc2c81bb0c6604cdfbcb09";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2025,7 +2025,7 @@ instance of OsConfigResource as $OsConfigResource119ref
 {
     ResourceID = "Ensure nftables is not installed with iptables";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b807479826a734a9a288e187d41e616e52e365a7298d698ed3ff300b25d5426b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2042,7 +2042,7 @@ instance of OsConfigResource as $OsConfigResource120ref
 {
     ResourceID = "Ensure ufw is uninstalled or disabled with iptables";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ccfb24371dae6d4a1fa81ec5cccb87d511f32dac87cdf37d16469c34d2b0d2a6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2059,7 +2059,7 @@ instance of OsConfigResource as $OsConfigResource121ref
 {
     ResourceID = "Ensure iptables default deny firewall policy";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "7a326e4381454558ec32d109ec819b37f2225f8f10d095a4f8e373b5d1057c22";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2076,7 +2076,7 @@ instance of OsConfigResource as $OsConfigResource122ref
 {
     ResourceID = "Ensure iptables loopback traffic is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ba224485afbe07705f95c284af91b7c3aeb4e04362448adf164eb8ca0d78017b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2093,7 +2093,7 @@ instance of OsConfigResource as $OsConfigResource123ref
 {
     ResourceID = "Ensure iptables firewall rules exist for all open ports";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "55652ef143f6a8fa0f03e1d53b687b8a0912393ef70dfe0836c96c35dd0a8a39";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2110,7 +2110,7 @@ instance of OsConfigResource as $OsConfigResource124ref
 {
     ResourceID = "Ensure ip6tables default deny firewall policy";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "892828491515e51201c83114958bc5e36bd018903eb4b983a6c982b921b4ece9";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2127,7 +2127,7 @@ instance of OsConfigResource as $OsConfigResource125ref
 {
     ResourceID = "Ensure ip6tables loopback traffic is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c9b29cc8187d5e1fa7af603c67c73132241aea55c87b5c3fe750c778619ff1fe";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2144,7 +2144,7 @@ instance of OsConfigResource as $OsConfigResource126ref
 {
     ResourceID = "Ensure ip6tables firewall rules exist for all open ports";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/4/3/3/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3942399fcbb5f6bde7de2742acd200b4392135896b0ff12f4e48852d95f5f707";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2161,7 +2161,7 @@ instance of OsConfigResource as $OsConfigResource127ref
 {
     ResourceID = "Ensure permissions on /etc/ssh/sshd_config are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "008a0c96ddc21f97e9eb2457c34d3eaee340d82eaf19a48035031d5b71c38d21";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2178,7 +2178,7 @@ instance of OsConfigResource as $OsConfigResource128ref
 {
     ResourceID = "Ensure permissions on SSH private host key files are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3c01bc354cd91e570451ee04e1eec7287ce01d74485a29042fc9d358332e9e68";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2195,7 +2195,7 @@ instance of OsConfigResource as $OsConfigResource129ref
 {
     ResourceID = "Ensure permissions on SSH public host key files are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b73afb6a4fd296d7a2bcbe4e6599aaba77f62c15991bbe27450cb24b7bf7abd1";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2212,7 +2212,7 @@ instance of OsConfigResource as $OsConfigResource130ref
 {
     ResourceID = "Ensure sshd access is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a5231d7a4fe2d566f590089e5fef84a2d510d1e11b31ffd8cea8ab9190b4743f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2229,7 +2229,7 @@ instance of OsConfigResource as $OsConfigResource131ref
 {
     ResourceID = "Ensure sshd Banner is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ed82944f3ec7987184a1e89e3f8483e835ee4e45f8e3083c41df7e2f8a31c73c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2246,7 +2246,7 @@ instance of OsConfigResource as $OsConfigResource132ref
 {
     ResourceID = "Ensure sshd Ciphers are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d2087f195c45f29304b31d60aea9c1358c7b2a3ba6048728151dda5b707fdbe4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2263,7 +2263,7 @@ instance of OsConfigResource as $OsConfigResource133ref
 {
     ResourceID = "Ensure sshd ClientAliveInterval and ClientAliveCountMax are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b7bdae0a65ab5b774b076bb0aa93aad900187cd47357ae96bc1b22b06a45c726";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2280,7 +2280,7 @@ instance of OsConfigResource as $OsConfigResource134ref
 {
     ResourceID = "Ensure sshd HostbasedAuthentication is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d00771c83ebeae47dc07d9f64c986f877ca1e9bc4c5335e9ac798d7bcc984b27";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2297,7 +2297,7 @@ instance of OsConfigResource as $OsConfigResource135ref
 {
     ResourceID = "Ensure sshd IgnoreRhosts is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/11";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f6fa12b97a28c6f765b238b7fb3a316a03c65c082b89a32d87531badef11b04d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2314,7 +2314,7 @@ instance of OsConfigResource as $OsConfigResource136ref
 {
     ResourceID = "Ensure sshd KexAlgorithms is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/12";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fdf72af5b4fcce1f409ada339ae52ce3ec3a76d267339d4e3df5f1ce1fc006c6";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2331,7 +2331,7 @@ instance of OsConfigResource as $OsConfigResource137ref
 {
     ResourceID = "Ensure sshd LoginGraceTime is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/13";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9473ef242109759209a9932d8d7fa8ce4f93571bc54160aed877a7e117d6f17f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2348,7 +2348,7 @@ instance of OsConfigResource as $OsConfigResource138ref
 {
     ResourceID = "Ensure sshd LogLevel is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/14";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2260e520afa05f2e06c8f7a657f2f560d11acb6b25ac29c6e34bcda9abca7c04";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2365,7 +2365,7 @@ instance of OsConfigResource as $OsConfigResource139ref
 {
     ResourceID = "Ensure sshd MACs are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/15";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fcad67293662b029c4a6509617ba6f7e9a8218189ce6c8dd2fcf7b1e876f47df";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2382,7 +2382,7 @@ instance of OsConfigResource as $OsConfigResource140ref
 {
     ResourceID = "Ensure sshd MaxAuthTries is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/16";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "39f7808be8d7b3cabae8dfb69ff244aabbbdd31c1489d8bf93cad8d29e3490fc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2399,7 +2399,7 @@ instance of OsConfigResource as $OsConfigResource141ref
 {
     ResourceID = "Ensure sshd MaxSessions is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/17";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "69dddf50a1b9f8edacff93adfb7d6a35167d5315413861dcce7bfd9dd0333e42";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2416,7 +2416,7 @@ instance of OsConfigResource as $OsConfigResource142ref
 {
     ResourceID = "Ensure sshd MaxStartups is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/18";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "60d7aae6e5b20e987632b73c9f207df32e8bc2b3f334e68dce4c64b82ef46cb8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2433,7 +2433,7 @@ instance of OsConfigResource as $OsConfigResource143ref
 {
     ResourceID = "Ensure sshd PermitEmptyPasswords is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/19";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3a44a9fcee3c77418ae8d0ce716b33861a2514dbfd040ac4c1f4e486a01f3c68";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2450,7 +2450,7 @@ instance of OsConfigResource as $OsConfigResource144ref
 {
     ResourceID = "Ensure sshd PermitRootLogin is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/20";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "97ef252c67d0f663ee3f17b74267fb6dd87fe64cd3c42f210f01b19041760752";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2467,7 +2467,7 @@ instance of OsConfigResource as $OsConfigResource145ref
 {
     ResourceID = "Ensure sshd PermitUserEnvironment is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/21";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b0d355fb3ad66a0f1a73d6e39b15a6711f4e32c133ff6b981c3b7ac2f4eb7a3e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2484,7 +2484,7 @@ instance of OsConfigResource as $OsConfigResource146ref
 {
     ResourceID = "Ensure sshd UsePAM is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/1/22";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6c4e7cf771a023daeea073fc322e592bee79fe41c408664cc7169a8c30acf45c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2501,7 +2501,7 @@ instance of OsConfigResource as $OsConfigResource147ref
 {
     ResourceID = "Ensure sudo is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0ae900b41dde026841b36b3b479d43d8b96cbf3ddbf92d46a7d9a828db1ea615";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2518,7 +2518,7 @@ instance of OsConfigResource as $OsConfigResource148ref
 {
     ResourceID = "Ensure sudo commands use pty";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "3b3bea260d726b8114477c7a6fcdc861805557357b7021cdd88cb7768aafaa0f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2535,7 +2535,7 @@ instance of OsConfigResource as $OsConfigResource149ref
 {
     ResourceID = "Ensure sudo log file exists";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0f44fffe82034debbd24bf4d9e9e995254342f01755ced43d5829ae42a9e3685";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2552,7 +2552,7 @@ instance of OsConfigResource as $OsConfigResource150ref
 {
     ResourceID = "Ensure re-authentication for privilege escalation is not disabled globally";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e3429091005386ff243edbe8543bd4c8af171ff551a5f272269baac736dcd842";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2569,7 +2569,7 @@ instance of OsConfigResource as $OsConfigResource151ref
 {
     ResourceID = "Ensure sudo authentication timeout is configured correctly";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "83586f336aee74133e6373d1d99c67cda61ed5619b40f8a3537ec3925c7219da";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2586,7 +2586,7 @@ instance of OsConfigResource as $OsConfigResource152ref
 {
     ResourceID = "Ensure access to the su command is restricted";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/2/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "26b1e0cea7a28ed3c637529a9c971c58134f8270e045e035eb4b97e5d37d037d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2603,7 +2603,7 @@ instance of OsConfigResource as $OsConfigResource153ref
 {
     ResourceID = "Ensure latest version of pam is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "73c7336b63c35ee8eb6808cfe8db67d51ff46a16bf36d291fc13d9a3554dcdf3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2620,7 +2620,7 @@ instance of OsConfigResource as $OsConfigResource154ref
 {
     ResourceID = "Ensure libpam-modules is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a3a45a115601119d7255288e27d24a4f7ed661e9138b52a8a2c9e88fd7dac3e8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2637,7 +2637,7 @@ instance of OsConfigResource as $OsConfigResource155ref
 {
     ResourceID = "Ensure libpam-pwquality is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "304aeeb191dc0675dc5e8458c121f82557c73ffbcd13b888f077930114d28e32";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2654,7 +2654,7 @@ instance of OsConfigResource as $OsConfigResource156ref
 {
     ResourceID = "Ensure pam_unix module is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2272219381598b32461a7a0e8399f6a62a0afe8866cfa4c5272e67a93fee3184";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2671,7 +2671,7 @@ instance of OsConfigResource as $OsConfigResource157ref
 {
     ResourceID = "Ensure pam_faillock module is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9e37b521eb97d1669daa93fb87939533f3852b2c5be79e0060c3365e51657dca";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2688,7 +2688,7 @@ instance of OsConfigResource as $OsConfigResource158ref
 {
     ResourceID = "Ensure pam_pwquality module is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9e916a4f59360ae5c8811abd345ea234929c21b92fa28771e248fe7ab0331b45";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2705,7 +2705,7 @@ instance of OsConfigResource as $OsConfigResource159ref
 {
     ResourceID = "Ensure pam_pwhistory module is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d01a9a1d81554af5a1b0ffe2f09d7a974ddda20c214d3a5272d37dad0c8b45be";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2722,7 +2722,7 @@ instance of OsConfigResource as $OsConfigResource160ref
 {
     ResourceID = "Ensure password failed attempts lockout is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c743793fb48f90f287a680b7991ef09d58237bf8b611be7a603c198b9d1e4557";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2739,7 +2739,7 @@ instance of OsConfigResource as $OsConfigResource161ref
 {
     ResourceID = "Ensure password unlock time is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "be2b17c52bea61b09694f9b1feb16bc1ca2123cde3c29154f83749f9eee2614b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2756,7 +2756,7 @@ instance of OsConfigResource as $OsConfigResource162ref
 {
     ResourceID = "Ensure password number of changed characters is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9afb33582053980097c2c1bf771b40027b3ad1fd0a60a2d3821e17c83ccfb507";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2773,7 +2773,7 @@ instance of OsConfigResource as $OsConfigResource163ref
 {
     ResourceID = "Ensure minimum password length is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ee5a35a043944e0bbb594ac172a11aeb666e7863c770b4d053799bfe8de9cae3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2790,7 +2790,7 @@ instance of OsConfigResource as $OsConfigResource164ref
 {
     ResourceID = "Ensure password same consecutive characters is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "25da71d4c69106ededdd23a5cfe01dfa1a0996e20937d675a2b6805d6dc2927a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2807,7 +2807,7 @@ instance of OsConfigResource as $OsConfigResource165ref
 {
     ResourceID = "Ensure password maximum sequential characters is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "09ffaa23fe2e2c8471be385fe159dace164ad890470f92cd72749cc34bc3ab02";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2824,7 +2824,7 @@ instance of OsConfigResource as $OsConfigResource166ref
 {
     ResourceID = "Ensure password dictionary check is enabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9320a9b1bd20ad2959623eeed71013ced40bc690d8dcf9dd5048f0ef10a340b2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2841,7 +2841,7 @@ instance of OsConfigResource as $OsConfigResource167ref
 {
     ResourceID = "Ensure password quality checking is enforced";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4a046991608e70f3a790e7ea5debaf6cb735bc1b5158ff05481021de59d3edce";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2858,7 +2858,7 @@ instance of OsConfigResource as $OsConfigResource168ref
 {
     ResourceID = "Ensure password quality is enforced for the root user";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/2/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c77a37755432d2259dbd97b1a6e543ee4b63f4f45b0912fe9364e44f2f913f2f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2875,7 +2875,7 @@ instance of OsConfigResource as $OsConfigResource169ref
 {
     ResourceID = "Ensure password history remember is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2d68aa68ae30f03e6efb4c69d325caf21d7edc5beedbce50696b18cf0df0fdbe";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2892,7 +2892,7 @@ instance of OsConfigResource as $OsConfigResource170ref
 {
     ResourceID = "Ensure password history is enforced for the root user";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ca20f5cc23fc980ad3ab23337953994156fc6c1ee600f721f8d569738237a142";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2909,7 +2909,7 @@ instance of OsConfigResource as $OsConfigResource171ref
 {
     ResourceID = "Ensure pam_pwhistory includes use_authtok";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/3/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b8939e8500f0cca1751588711cce8680175287856a1294497474f5bcb4ee0395";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2926,7 +2926,7 @@ instance of OsConfigResource as $OsConfigResource172ref
 {
     ResourceID = "Ensure pam_unix does not include nullok";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c034893b6b4fcd7f7c519757405a1a8af7aab323c82eacda82d08c83b86efbf5";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2943,7 +2943,7 @@ instance of OsConfigResource as $OsConfigResource173ref
 {
     ResourceID = "Ensure pam_unix does not include remember";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "825b63b16c59f89ec11aa573793229dbc3f6e523e1f13ad26f2a33d1ab66f107";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2960,7 +2960,7 @@ instance of OsConfigResource as $OsConfigResource174ref
 {
     ResourceID = "Ensure pam_unix includes a strong password hashing algorithm";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "857a1cc4b560baf9fc909ac40fc6f2dcd8b4ece1d274c1e26ab461c66b1156ac";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2977,7 +2977,7 @@ instance of OsConfigResource as $OsConfigResource175ref
 {
     ResourceID = "Ensure pam_unix includes use_authtok";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/3/3/4/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f5377afae58496338a45631dbde4420b1e2e780c5ef1f9e1a24b77db209c002b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -2994,7 +2994,7 @@ instance of OsConfigResource as $OsConfigResource176ref
 {
     ResourceID = "Ensure password expiration is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8df9937bfa7bcb0350e9518f2969179e5b43f73952460c5e73a1b7b21e4142df";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3011,7 +3011,7 @@ instance of OsConfigResource as $OsConfigResource177ref
 {
     ResourceID = "Ensure password expiration warning days is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2d404e07b47c74de983eccc4bf0d3d7b0593ea3a6a3470e8ff88cb97483b165f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3028,7 +3028,7 @@ instance of OsConfigResource as $OsConfigResource178ref
 {
     ResourceID = "Ensure strong password hashing algorithm is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e90b7681360bd0076a3a7181ca2c0b8f30eb85430612212403b58dcc7cf1c27e";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3045,7 +3045,7 @@ instance of OsConfigResource as $OsConfigResource179ref
 {
     ResourceID = "Ensure inactive password lock is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "eb8e5922a606986303e58f22ac3d107be0e4b5ab10f991484f5383d6b2da3e38";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3062,7 +3062,7 @@ instance of OsConfigResource as $OsConfigResource180ref
 {
     ResourceID = "Ensure all users last password change date is in the past";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c6912d67a3e10eeb46625dc49917dce7b672020dab48c37ac5aed7d8375b09bd";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3079,7 +3079,7 @@ instance of OsConfigResource as $OsConfigResource181ref
 {
     ResourceID = "Ensure root is the only UID 0 account";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0e6459a22e5e65a97cffacd555486d7cc5a8d0c065dfcde5a97e3d5b26a1111c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3096,7 +3096,7 @@ instance of OsConfigResource as $OsConfigResource182ref
 {
     ResourceID = "Ensure root is the only GID 0 account";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "9eb5939a491d91b0ad5491fc50db0b9e111f1ee84646bbc2fea1dc26bcee5dc8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3113,7 +3113,7 @@ instance of OsConfigResource as $OsConfigResource183ref
 {
     ResourceID = "Ensure group root is the only GID 0 group";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "4c4a19229982c14599110b4ee3a6db48c6f7b366d80aa81f8d980118fbcfc0ff";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3130,7 +3130,7 @@ instance of OsConfigResource as $OsConfigResource184ref
 {
     ResourceID = "Ensure root password is set";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "03fe39456db588849cc6b98ca095937c93550ab397aa5fc1146ce4b3fa3de05d";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3147,7 +3147,7 @@ instance of OsConfigResource as $OsConfigResource185ref
 {
     ResourceID = "Ensure root path integrity";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "22742c42c1edacf144fc83ed26de7d71087b500068b599f5a3415eb7f0994885";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3164,7 +3164,7 @@ instance of OsConfigResource as $OsConfigResource186ref
 {
     ResourceID = "Ensure root user umask is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "07402deacde52e5e2d2e0639d905a0ee64748e9115146950de8ccf38057d6769";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3181,7 +3181,7 @@ instance of OsConfigResource as $OsConfigResource187ref
 {
     ResourceID = "Ensure system accounts do not have a valid login shell";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "406d91bcbf5f8a921dd932f1473253856e4067b5f94ff705198155340f361e58";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3198,7 +3198,7 @@ instance of OsConfigResource as $OsConfigResource188ref
 {
     ResourceID = "Ensure accounts without a valid login shell are locked";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/2/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2fcb173fabd0c31565eb7503579f01159949c2b0e0f09a313f88349dcbf9f690";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3215,7 +3215,7 @@ instance of OsConfigResource as $OsConfigResource189ref
 {
     ResourceID = "Ensure default user shell timeout is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/3/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "14defbc67fd21b5334e7f89f7ec1e67bb4ce986e499bf6efcfc5029b26c4be17";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3232,7 +3232,7 @@ instance of OsConfigResource as $OsConfigResource190ref
 {
     ResourceID = "Ensure default user umask is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/5/4/3/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "003b66a9cdca735e479b57992d0f241cf497b84aa0133bd8d7a4afeb509ac171";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3249,7 +3249,7 @@ instance of OsConfigResource as $OsConfigResource191ref
 {
     ResourceID = "Ensure AIDE is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "91fb249acd9547637e6c708cd1435098710dbe29acacefda84065ce1abdb4cf3";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3266,7 +3266,7 @@ instance of OsConfigResource as $OsConfigResource192ref
 {
     ResourceID = "Ensure filesystem integrity is regularly checked";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "402c753078372bf0f21883b453809e322f334fe940381631038bd1aaef2f5324";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3283,7 +3283,7 @@ instance of OsConfigResource as $OsConfigResource193ref
 {
     ResourceID = "Ensure journald service is enabled and active";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "39a4ccd2b90a403fd4d10ecdc66b9ff894ebf9ec4ad433b69c4329405285e068";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3300,7 +3300,7 @@ instance of OsConfigResource as $OsConfigResource194ref
 {
     ResourceID = "Ensure journald ForwardToSyslog is disabled";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0698c73f680af7f386657c386db9d95f8fdc604263acdadbbf09be4e90f50602";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3317,7 +3317,7 @@ instance of OsConfigResource as $OsConfigResource195ref
 {
     ResourceID = "Ensure journald Storage is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "2d322f75c4bb2c130078b70b296d9bc73e5f01501490c9fe260cf082507a2a40";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3334,7 +3334,7 @@ instance of OsConfigResource as $OsConfigResource196ref
 {
     ResourceID = "Ensure journald Compress is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "48d83b65133428ed8169eedead20c6221018badc4bc135ea5016ef7cb433b123";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3351,7 +3351,7 @@ instance of OsConfigResource as $OsConfigResource197ref
 {
     ResourceID = "Ensure systemd-journal-remote is installed";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "24d8ca27a18d847e27984a3657fdc4b3b6bc511f9098e62288b0648c2387699b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3368,7 +3368,7 @@ instance of OsConfigResource as $OsConfigResource198ref
 {
     ResourceID = "Ensure systemd-journal-upload is enabled and active";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "f85f221395db3a649b0972ff018b1aae8c08c1b71e898d7d3d2cb60dab969782";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3385,7 +3385,7 @@ instance of OsConfigResource as $OsConfigResource199ref
 {
     ResourceID = "Ensure systemd-journal-remote service is not in use";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/1/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e1ef9765df470da9ac55bb1ef90a5c345586b8c8bc41e2ff0861136b5f228218";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3402,7 +3402,7 @@ instance of OsConfigResource as $OsConfigResource200ref
 {
     ResourceID = "Ensure access to all logfiles has been configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/6/2/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "51d607fe4a4b2f7cdcc4a4bf3a5882ad1e99a8162835c58d0d0eff6ef9489c74";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3419,7 +3419,7 @@ instance of OsConfigResource as $OsConfigResource201ref
 {
     ResourceID = "Ensure permissions on /etc/passwd are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fc80cb591bd412b5c10796a374cafcbf08e4f7b61381cf7f865980ab38a14b4c";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3436,7 +3436,7 @@ instance of OsConfigResource as $OsConfigResource202ref
 {
     ResourceID = "Ensure permissions on /etc/passwd- are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "11ecf5ee7ccb8233b83e6bae276342990a8f4aa477cbfbaff8e7a6e6b334e31a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3453,7 +3453,7 @@ instance of OsConfigResource as $OsConfigResource203ref
 {
     ResourceID = "Ensure permissions on /etc/group are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "e6eb4ddbc18e113bc18f9c042864719bcbf4938f6166b08ecc0d6d6aea62674b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3470,7 +3470,7 @@ instance of OsConfigResource as $OsConfigResource204ref
 {
     ResourceID = "Ensure permissions on /etc/group- are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "5d9beb67d34d3366d05b45943db8a4531a6caa5a998c93c7d96c64fdbb926e82";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3487,7 +3487,7 @@ instance of OsConfigResource as $OsConfigResource205ref
 {
     ResourceID = "Ensure permissions on /etc/shadow are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "550c54ba4e11fa612888a91bbbc14ecb4704ef1b6f117b84af94289d07a8390b";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3504,7 +3504,7 @@ instance of OsConfigResource as $OsConfigResource206ref
 {
     ResourceID = "Ensure permissions on /etc/shadow- are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "484a4431b56596008d6424eacb73b499010babc8e43f57f1d2375ec586b62f12";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3521,7 +3521,7 @@ instance of OsConfigResource as $OsConfigResource207ref
 {
     ResourceID = "Ensure permissions on /etc/gshadow are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fbdb0d5a59dd1cc3079692cbd7204c9991c4fb3194fc781eae188259737135d4";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3538,7 +3538,7 @@ instance of OsConfigResource as $OsConfigResource208ref
 {
     ResourceID = "Ensure permissions on /etc/gshadow- are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "ed772c568577e241808c891ea0c7c58b5e0a944abb28bda8f49d6a3accff7ea5";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3555,7 +3555,7 @@ instance of OsConfigResource as $OsConfigResource209ref
 {
     ResourceID = "Ensure permissions on /etc/shells are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "6773a486b4bd0faf34e48199b192090816384ae1cd3ec5fc2225e61b26bea534";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3572,7 +3572,7 @@ instance of OsConfigResource as $OsConfigResource210ref
 {
     ResourceID = "Ensure permissions on /etc/security/opasswd are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a69950ed70770c94d7b3f8cb717f3761a1cc0fd03fdc63b3bc68db97b0994344";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3589,7 +3589,7 @@ instance of OsConfigResource as $OsConfigResource211ref
 {
     ResourceID = "Ensure world writable files and directories are secured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/11";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a0e19e3a9da652d09040220591e6a559d3def09ec374984a45ae394ee5b049f2";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3606,7 +3606,7 @@ instance of OsConfigResource as $OsConfigResource212ref
 {
     ResourceID = "Ensure no files or directories without an owner and a group exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/1/12";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0b1b74afc02a600fa834a2e3b10e62ccbba7a85eb0a050518f599a293b866f3a";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3623,7 +3623,7 @@ instance of OsConfigResource as $OsConfigResource213ref
 {
     ResourceID = "Ensure accounts in /etc/passwd use shadowed passwords";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/1";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "8956ed7eaa49ec35747c4cb5a9cc81e9e562dca5609333080ce06a81872d2c94";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3640,7 +3640,7 @@ instance of OsConfigResource as $OsConfigResource214ref
 {
     ResourceID = "Ensure /etc/shadow password fields are not empty";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/2";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "87ec481fa5c12f5f8fb2e58a41dc30d897288ee84335aeb5600d5491a41a0d66";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3657,7 +3657,7 @@ instance of OsConfigResource as $OsConfigResource215ref
 {
     ResourceID = "Ensure all groups in /etc/passwd exist in /etc/group";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/3";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "b5d0d44c0c17cbe065f5685df13e167fc1e1dc62e8a95bc98cfc5a55e70bb73f";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3674,7 +3674,7 @@ instance of OsConfigResource as $OsConfigResource216ref
 {
     ResourceID = "Ensure shadow group is empty";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/4";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "fceea3e852804c37fba37e49f818e886de989da07c7bd06a827acf1832ba6231";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3691,7 +3691,7 @@ instance of OsConfigResource as $OsConfigResource217ref
 {
     ResourceID = "Ensure no duplicate UIDs exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/5";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "eb53412155029312fc567d82c23e313d3b351d6b3dedafe79fc33bbbc453fbe0";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3708,7 +3708,7 @@ instance of OsConfigResource as $OsConfigResource218ref
 {
     ResourceID = "Ensure no duplicate GIDs exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/6";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "a86642594e6d7dcc66210fd7de0db97a0acc223b509f66ab95fbc49bbd096d89";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3725,7 +3725,7 @@ instance of OsConfigResource as $OsConfigResource219ref
 {
     ResourceID = "Ensure no duplicate user names exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/7";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "dcd82764b8935d91d85c18327f4b0ded17cef6beaec7bb1c297416e84f3d1cd8";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3742,7 +3742,7 @@ instance of OsConfigResource as $OsConfigResource220ref
 {
     ResourceID = "Ensure no duplicate group names exist";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/8";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "0ec07935b2cef6d960303143a195db0b3dc368e18f8f9bb0a03b3ce7e94e2358";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3759,7 +3759,7 @@ instance of OsConfigResource as $OsConfigResource221ref
 {
     ResourceID = "Ensure local interactive user home directories are configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/9";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "d4a40dda0517ce4bcb4971440ac3158d3c366bd279812063bdb9a73890c6cebc";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3776,7 +3776,7 @@ instance of OsConfigResource as $OsConfigResource222ref
 {
     ResourceID = "Ensure local interactive user dot files access is configured";
     PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/7/2/10";
-    RuleId = "PLACEHOLDER - match with MDC json definition";
+    RuleId = "c05304edf3a5fb19de1566b0f128ac6d9f095637e4b542b9a149e7e28b622932";
     ComponentName = "Compliance";
     InitObjectName = "eyJwYXJhbWV0ZXJzIjogW119";
     ReportedObjectName = "eyJyZXR1cm5GYWlsIjogeyJtZXNzYWdlIjogIk5vdCBpbXBsZW1lbnRlZCB5ZXQifX0=";
@@ -3794,6 +3794,6 @@ instance of OMI_ConfigurationDocument
     Version="3.0.0";
     CompatibleVersionAdditionalProperties= {"Omi_BaseResource:ConfigurationName"};
     Author="Microsoft";
-    GenerationDate="01/29/2025 09:29:28 UTC";
+    GenerationDate="01/29/2025 09:43:15 UTC";
     Name="ComplianceExample";
 };
