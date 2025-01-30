@@ -70,6 +70,7 @@ static bool g_iotHubManagementEnabled = false;
 static int g_iotHubProtocol = 0;
 static bool g_gitManagementEnabled = false;
 static char* g_gitBranch = NULL;
+static char* g_complianceDatabase = NULL;
 
 #if ((defined(__GNUC__) && ((__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 9)))) || defined(__clang__))
 static atomic_int g_referenceCount = 0;
@@ -101,6 +102,10 @@ static char* LoadConfigurationFromFile(const char* fileName)
 
         FREE_MEMORY(g_gitBranch);
         g_gitBranch = GetGitBranchFromJsonConfig(jsonConfiguration, ConfigurationGetLog());
+
+        // Note: This seems out of place here. Possibly each module should deal with its own configuration management.
+        FREE_MEMORY(g_complianceDatabase);
+        g_complianceDatabase = GetComplianceDatabaseFromJsonConfig(jsonConfiguration, ConfigurationGetLog());
     }
     else
     {
@@ -270,7 +275,17 @@ static int UpdateConfigurationFile(void)
             {
                 OsConfigLogError(ConfigurationGetLog(), "json_object_set_string(%s, %s) failed", g_gitBranchObject, gitBranch);
             }
-        }
+
+            if (JSONSuccess == json_object_set_string(jsonObject, gitBranchName, gitBranch))
+            {
+                FREE_MEMORY(g_gitBranch);
+                g_gitBranch = DuplicateString(gitBranch);
+            }
+            else
+            {
+                OsConfigLogError(ConfigurationGetLog(), "json_object_set_string(%s, %s) failed", g_gitBranchObject, gitBranch);
+            }
+       }
 
         if (MMI_OK == status)
         {
