@@ -35,15 +35,15 @@ typedef enum
   FAILURE
 } tristate_t;
 
-typedef tristate_t (*action_func_t)(const char *name, std::map<std::string, std::string> args, std::string &vlog, void *log);
+typedef tristate_t (*action_func_t)(const char *name, std::map<std::string, std::string> args, std::ostringstream &logstream, void *log);
 
 """)
 
     for procedure_name, functions in procedure_map.items():
         if functions[0]:
-            cpp_file.write('tristate_t {}(const char *name, std::map<std::string, std::string> args, std::string &vlog, void *log);\n'.format(functions[0]))
+            cpp_file.write('tristate_t {}(const char *name, std::map<std::string, std::string> args, std::ostringstream &logstream, void *log);\n'.format(functions[0]))
         if functions[1]:
-            cpp_file.write('tristate_t {}(const char *name, std::map<std::string, std::string> args, std::string &vlog, void *log);\n'.format(functions[1]))
+            cpp_file.write('tristate_t {}(const char *name, std::map<std::string, std::string> args, std::ostringstream &logstream, void *log);\n'.format(functions[1]))
     cpp_file.write('std::map<std::string, std::pair<action_func_t, action_func_t> > complianceProcedureMap = {\n')
 
     for procedure_name, functions in procedure_map.items():
