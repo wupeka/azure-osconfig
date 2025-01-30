@@ -1425,22 +1425,21 @@ instance of OsConfigResource as $OsConfigResource83ref
     ConfigurationName = "Compliance";
     SourceInfo = "::4::5::OsConfigResource";
 };
-
 instance of OsConfigResource as $OsConfigResource84ref
 {
-    ResourceID = "Ensure permissions on /etc/cron.hourly are configured";
-    PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/3";
-    RuleId = "fb59b8f09cf219bcdeccbde4c7f49c7dff0cfb3882af3102983257725c08eb60";
-    ComponentName = "Compliance";
-    InitObjectName = "eyJwYXJhbWV0ZXJzIjoge319";
-    ReportedObjectName = "eyJhdWRpdCI6IHsicmV0dXJuRmFpbCI6IHsibWVzc2FnZSI6ICJOb3QgaW1wbGVtZW50ZWQgeWV0In19fQ==";
-    ExpectedObjectValue = "PASS";
-    DesiredObjectName = "eyJyZW1lZGlhdGUiOiB7InJldHVybkZhaWwiOiB7Im1lc3NhZ2UiOiAiTm90IGltcGxlbWVudGVkIHlldCJ9fX0=";
-    DesiredObjectValue = "";
-    ModuleName = "GuestConfiguration";
-    ModuleVersion = "1.0.0";
-    ConfigurationName = "Compliance";
-    SourceInfo = "::4::5::OsConfigResource";
+   ResourceID = "Ensure permissions on /etc/cron.hourly are configured";
+   PayloadKey = "/cis/Ubuntu/22.04/v2.0.0/2/4/1/3";
+   RuleId = "fb59b8f09cf219bcdeccbde4c7f49c7dff0cfb3882af3102983257725c08eb60";
+   ComponentName = "Compliance";
+   InitObjectName = "eyJwYXJhbWV0ZXJzIjp7IkNST05fUEtHX05BTUUiOiJjcm9uIn19";
+   ReportedObjectName = "eyJhdWRpdCI6eyJhbnlPZiI6W3sibm90Ijp7ImFueU9mIjpbeyJwYWNrYWdlSW5zdGFsbGVkIjp7InBhY2thZ2VOYW1lIjoiJENST05fUEtHX05BTUUifX0seyJwYWNrYWdlSW5zdGFsbGVkIjp7InBhY2thZ2VOYW1lIjoiY3JvbmllIn19XX19LHsiZW5zdXJlRmlsZVBlcm1pc3Npb25zIjp7ImZpbGVuYW1lIjoiL2V0Yy9jcm9uLmhvdXJseSIsInVzZXIiOiJyb290IiwiZ3JvdXAiOiJyb290IiwicGVybWlzc2lvbnMiOiI2MDAifX1dfX0=";
+   ExpectedObjectValue = "PASS";
+   DesiredObjectName = "eyJyZW1lZGlhdGUiOnt9fQ==";
+   DesiredObjectValue = "CRON_PKG_NAME=cron";
+   ModuleName = "GuestConfiguration";
+   ModuleVersion = "1.0.0";
+   ConfigurationName = "ComplianceExample";
+   SourceInfo = "::4::5::OsConfigResource";
 };
 
 instance of OsConfigResource as $OsConfigResource85ref
