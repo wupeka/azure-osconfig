@@ -18,6 +18,6 @@ target_link_libraries(OsConfigResourceCompliance
         mpiclient
         parsonlib
         base64
-        compliance)
+        compliance_mc_iface)
 
 add_subdirectory(example)

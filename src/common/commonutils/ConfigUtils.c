@@ -26,6 +26,7 @@
 #define GIT_MANAGEMENT "GitManagement"
 #define GIT_REPOSITORY_URL "GitRepositoryUrl"
 #define GIT_BRANCH "GitBranch"
+#define COMPLIANCE_DATABASE "ComplianceDatabase"
 
 #define MIN_DEVICE_MODEL_ID 7
 #define MAX_DEVICE_MODEL_ID 999
@@ -351,4 +352,9 @@ char* GetGitRepositoryUrlFromJsonConfig(const char* jsonString, void* log)
 char* GetGitBranchFromJsonConfig(const char* jsonString, void* log)
 {
     return GetStringFromJsonConfig(GIT_BRANCH, jsonString, log);
+}
+
+char* GetComplianceDatabaseFromJsonConfig(const char* jsonString, void* log)
+{
+    return GetStringFromJsonConfig(COMPLIANCE_DATABASE, jsonString, log);
 }
