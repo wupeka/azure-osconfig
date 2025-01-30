@@ -8,8 +8,8 @@
 
 REMEDIATE_FN(returnFailure) {
     (void)args;
-    (void)vlog;
-    (void)name;
+    (void)logstream;
+    (void)name; 
     (void)log;
     return FAILURE;
 }
@@ -19,11 +19,11 @@ REMEDIATE_FN(ensureFilePermissions) {
     (void)name;
     struct stat statbuf;
     if (args.find("filename") == args.end()) {
-        vlog += "No filename provided";
+        logstream << "ERROR: No filename provided";
         return FAILURE;
     }
     if (stat(args["filename"].c_str(), &statbuf) < 0) {
-        vlog += "Stat error";
+        logstream << "ERROR: Stat error";
         return FAILURE;
     }
     uid_t uid = statbuf.st_uid;
@@ -32,7 +32,7 @@ REMEDIATE_FN(ensureFilePermissions) {
     if (args.find("user") != args.end()) {
         struct passwd *pwd = getpwnam(args["user"].c_str());
         if (pwd == NULL) {
-            vlog += "No user with name";
+            logstream << "ERROR: No user with name " << args["user"];
             return FAILURE;
         }
         uid = pwd->pw_uid;
@@ -41,7 +41,7 @@ REMEDIATE_FN(ensureFilePermissions) {
     if (args.find("group") != args.end()) {
         struct group *grp = getgrnam(args["group"].c_str());
         if (grp == NULL) {
-            vlog += "No group with name";
+            logstream << "ERROR: No group with name " << args["group"];
             return FAILURE;
         }
         gid = grp->gr_gid;
@@ -49,7 +49,7 @@ REMEDIATE_FN(ensureFilePermissions) {
     }
     if (owner_changed) {
         if (chown(args["filename"].c_str(), uid, gid) < 0) {
-            vlog += "Chown error";
+            logstream << "ERROR: Chown error";
             return FAILURE;
         }
     }
@@ -62,7 +62,7 @@ REMEDIATE_FN(ensureFilePermissions) {
         unsigned short new_perms = (statbuf.st_mode & ~mask) | (perms & mask);
         if (new_perms != statbuf.st_mode) {
             if (chmod(args["filename"].c_str(), new_perms) < 0) {
-                vlog += "Chmod error";
+                logstream << "ERROR: Chmod error";
                 return FAILURE;
             }
         }

@@ -117,94 +117,146 @@ static int DecodeB64JSON(const char *input, JSON_Value **output)
     return 0;
 }
 
-tristate_t EvaluateProcedure(JSON_Object *json, bool remediate, std::string &vlog, void *log)
+tristate_t EvaluateProcedure(JSON_Object *json, bool remediate, std::ostringstream &logstream, void *log)
 {
     // checks!
     const char *name = json_object_get_name(json, 0);
     JSON_Value *value = json_object_get_value_at(json, 0);
-    if (!strcmp(name, "anyOf")) {
-        if (json_value_get_type(value) != JSONArray) {
+    if (!strcmp(name, "anyOf"))
+    {
+        if (json_value_get_type(value) != JSONArray)
+        {
+            logstream << "ERROR: anyOf value is not an array";
             return FAILURE;
         }
         JSON_Array *array = json_value_get_array(value);
         size_t count = json_array_get_count(array);
-        for (size_t i = 0; i < count; ++i) {
+        logstream << "{ anyOf: [";
+        for (size_t i = 0; i < count; ++i)
+        {
             JSON_Object *subObject = json_array_get_object(array, i);
-            tristate_t result = EvaluateProcedure(subObject, remediate, vlog, log);
-            if (result == TRUE || result == FAILURE) {
+            tristate_t result = EvaluateProcedure(subObject, remediate, logstream, log);
+            switch (result)
+            {
+            case TRUE:
+                logstream << "] == TRUE }";
+                return result;
+            case FALSE:
+                if (i < count - 1)
+                {
+                    logstream << ", ";
+                }
+                break;
+            case FAILURE:
+                logstream << "] == FAILURE }";
                 return result;
             }
         }
+        logstream << "] == FALSE }";
         return FALSE;
-    } else if (!strcmp(name, "allOf")) {
-        if (json_value_get_type(value) != JSONArray) {
+    }
+    else if (!strcmp(name, "allOf"))
+    {
+        if (json_value_get_type(value) != JSONArray)
+        {
+            logstream << "ERROR: allOf value is not an array";
             return FAILURE;
         }
         JSON_Array *array = json_value_get_array(value);
         size_t count = json_array_get_count(array);
-        for (size_t i = 0; i < count; ++i) {
+        logstream << "{ allOf: [";
+        for (size_t i = 0; i < count; ++i)
+        {
             JSON_Object *subObject = json_array_get_object(array, i);
-            tristate_t result = EvaluateProcedure(subObject, remediate, vlog, log);
-            if (result != TRUE) {
+            tristate_t result = EvaluateProcedure(subObject, remediate, logstream, log);
+            switch (result)
+            {
+            case TRUE:
+                if (i < count - 1)
+                {
+                    logstream << ", ";
+                }
+                break;
+            case FALSE:
+                logstream << "] == FALSE }";
+                return result;
+            case FAILURE:
+                logstream << "] == FAILURE }";
                 return result;
             }
         }
+        logstream << "] == TRUE }";
         return TRUE;
-    } else if (!strcmp(name, "not")) {
-        if (json_value_get_type(value) != JSONObject) {
+    }
+    else if (!strcmp(name, "not"))
+    {
+        if (json_value_get_type(value) != JSONObject)
+        {
+            logstream << "ERROR: not value is not an object";
             return FAILURE;
         }
+        logstream << "{ not: ";
         // NOT can be only used as an audit!
-        tristate_t rv = EvaluateProcedure(json_value_get_object(value), false, vlog, log);
-        if (rv == TRUE) {
+        tristate_t rv = EvaluateProcedure(json_value_get_object(value), false, logstream, log);
+        switch (rv)
+        {
+        case TRUE:
+            logstream << " } == FALSE";
             return FALSE;
-        }
-        else if (rv == FALSE)
-        {
+        case FALSE:
+            logstream << " } == TRUE";
             return TRUE;
-        }
-        else
-        {
+        case FAILURE:
+            logstream << " } == FAILURE";
             return FAILURE;
         }
-    } else {
-        if (json_value_get_type(value) != JSONObject) {
+    }
+    else
+    {
+        if (json_value_get_type(value) != JSONObject)
+        {
             return FAILURE;
         }
         std::map<std::string, std::string> arguments;
         JSON_Object *args_object = json_value_get_object(value);
         size_t count = json_object_get_count(args_object);
-        for (size_t i = 0; i < count; ++i) {
+        for (size_t i = 0; i < count; ++i)
+        {
             const char *key = json_object_get_name(args_object, i);
             JSON_Value *val = json_object_get_value_at(args_object, i);
-            if (json_value_get_type(val) != JSONString) {
+            if (json_value_get_type(val) != JSONString)
+            {
                 return FAILURE;
             }
             arguments[key] = json_value_get_string(val);
-            if (!arguments[key].empty() && arguments[key][0] == '$') {
+            if (!arguments[key].empty() && arguments[key][0] == '$')
+            {
                 auto f = gParameters.find(arguments[key].substr(1));
-                if (f == gParameters.end()) {
-                    vlog += "Unknown parameter " + arguments[key];
+                if (f == gParameters.end())
+                {
+                    logstream << "ERROR: Unknown parameter " << arguments[key];
                     return FAILURE;
                 }
                 arguments[key] = f->second;
             }
-
         }
 
         auto f = complianceProcedureMap.find(name);
-        if (f == complianceProcedureMap.end()) {
-            vlog += "Unknown function " + std::string(name);
+        if (f == complianceProcedureMap.end())
+        {
+            logstream << "ERROR: Unknown function " << name;
             return FAILURE;
         }
         action_func_t fn;
         if (remediate)
         {
             fn = f->second.second;
-            if (fn == NULL) {
+            if (fn == NULL)
+            {
                 fn = f->second.first;
             }
-            if (fn == NULL) {
+            if (fn == NULL)
+            {
                 return FAILURE;
             }
         }
@@ -212,12 +264,28 @@ tristate_t EvaluateProcedure(JSON_Object *json, bool remediate, std::string &vlo
         {
             fn = f->second.first;
         }
-        if (fn == NULL) {
+        if (fn == NULL)
+        {
             return FAILURE;
         }
-        tristate_t result = fn(name, arguments, vlog, log);
+        logstream << "{ " << name << ": ";
+        tristate_t result = fn(name, arguments, logstream, log);
+        logstream << " } == ";
+        switch (result)
+        {
+        case TRUE:
+            logstream << "TRUE";
+            break;
+        case FALSE:
+            logstream << "FALSE";
+            break;
+        case FAILURE:
+            logstream << "FAILURE";
+            break;
+        }
         return result;
     }
+    return FAILURE; // unreachable
 }
 
 void ComplianceInitialize(void *log) {
@@ -231,8 +299,8 @@ void ComplianceShutdown(void *log) {
 int ComplianceMmiGet(const char *componentName, const char *objectName, char **payload, int *payloadSizeBytes, unsigned int maxPayloadSizeBytes, void *log) {
     int status = 0;
     tristate_t result = FAILURE;
-    std::string vlog;
-    
+    std::ostringstream logstream;
+
     OsConfigLogInfo(log, "ComplianceMmiGet(%s, %s, %s, %p) called with arguments", componentName, objectName, *payload, payloadSizeBytes);
 
     if ((NULL == componentName) || (NULL == objectName) || (NULL == payload) || (NULL == payloadSizeBytes))
@@ -264,17 +332,17 @@ int ComplianceMmiGet(const char *componentName, const char *objectName, char **p
 
     if (!strcmp(name, "audit")) {
         JSON_Object *subObject = json_value_get_object(value);
-        result = EvaluateProcedure(subObject, false, vlog, log);
+        result = EvaluateProcedure(subObject, false, logstream, log);
     } else {
         OsConfigLogError(log, "ComplianceMmiGet root JSON is not an audit object");
         return EINVAL;
     }
     
     if (result == FAILURE) {
-        OsConfigLogError(log, "ComplianceMmiGet failed to evaluate procedure - %s", vlog.c_str());
+        OsConfigLogError(log, "ComplianceMmiGet failed to evaluate procedure - %s", logstream.str().c_str());
         return EINVAL;
     }
-    vlog = vlog.substr(0, maxPayloadSizeBytes - (1 + 4 + 2)); // 4 for "PASS" or "FAIL", 2 for quotes
+    std::string vlog = logstream.str().substr(0, maxPayloadSizeBytes - (1 + 4 + 2)); // 4 for "PASS" or "FAIL", 2 for quotes
     if (result == TRUE) {
         vlog = "\"PASS" + vlog + "\"";
     } else {
@@ -289,7 +357,7 @@ int ComplianceMmiGet(const char *componentName, const char *objectName, char **p
 
 int ComplianceMmiSet(const char *componentName, const char *objectName, const char *payload, const int payloadSizeBytes, void *log) {
     int status = 0; 
-    std::string vlog;
+    std::ostringstream logstream;
     OsConfigLogInfo(log, "ComplianceMmiSet(%s, %s, %s, %d) called with arguments", componentName, objectName, payload, payloadSizeBytes);
     if ((NULL == componentName) || (NULL == objectName))
     {
@@ -323,8 +391,8 @@ int ComplianceMmiSet(const char *componentName, const char *objectName, const ch
             return EINVAL;
         }
         JSON_Object *subObject = json_value_get_object(value);
-        if (EvaluateProcedure(subObject, true, vlog, log) != TRUE) {
-            OsConfigLogError(log, "ComplianceMmiSet failed to evaluate procedure - %s", vlog.c_str());
+        if (EvaluateProcedure(subObject, true, logstream, log) != TRUE) {
+            OsConfigLogError(log, "ComplianceMmiSet failed to evaluate procedure - %s", logstream.str().c_str());
             return EINVAL;
         }
     } else if (!strcmp(name, "parameters")) {
@@ -341,6 +409,7 @@ int ComplianceMmiSet(const char *componentName, const char *objectName, const ch
         OsConfigLogError(log, "ComplianceMmiSet root JSON is not an known object");
         return EINVAL;
     }
+    OsConfigLogInfo(log, "ComplianceMmiSet(%s, %s, %s, %d) completed, result log '%s'", componentName, objectName, payload, payloadSizeBytes, logstream.str().c_str());
     return status;
 
 };
