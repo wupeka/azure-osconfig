@@ -1,0 +1,46 @@
+{
+    "Compliance": {
+        "Ensure permissions on /etc/crontab are configured": 
+        {
+            "remediate": [
+                {
+                    "anyOf": [
+                        {
+                            "not": [
+                                {
+                                    "fileExists": {
+                                        "filename": "/etc/crontab"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "ensureFilePermissions": {
+                                "filename": "/etc/crontab",
+                                "user": "root",
+                                "group": "root",
+                                "$permissions": "600"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "rule1" : {
+            "foo": "x",
+            "bar": [
+                "y",
+                "z"
+            ],
+            "baz": true
+        },
+        "rule2": {
+            "foo": "a",
+            "bar": [
+                "b",
+                "c"
+            ],
+            "baz": false
+        }
+    }
+}

@@ -15,6 +15,7 @@ char* LoadStringFromFile(const char* fileName, bool stopAtEol, void* log)
 
     if (false == FileExists(fileName))
     {
+        OsConfigLogError(log, "LoadStringFromFile: file '%s' does not exist", fileName);
         return string;
     }
 
@@ -58,8 +59,16 @@ char* LoadStringFromFile(const char* fileName, bool stopAtEol, void* log)
 
             UnlockFile(file, log);
         }
+        else
+        {
+            OsConfigLogError(log, "LoadStringFromFile: cannot lock '%s' for exclusive access while reading (%d)", fileName, errno);
+        }
 
         fclose(file);
+    }
+    else
+    {
+        OsConfigLogError(log, "LoadStringFromFile: cannot open '%s' for reading (%d)", fileName, errno);
     }
 
     return string;
