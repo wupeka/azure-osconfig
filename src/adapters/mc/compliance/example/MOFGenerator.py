@@ -40,7 +40,7 @@ def generate_osconfig_resource(resource, index):
     reported_object_name = compact_base64_encode({"audit": audit})
     desired_object_name = compact_base64_encode({"remediate": remediate})
 
-    init_object_name = compact_base64_encode({"parameters": list(parameters.keys())})
+    init_object_name = compact_base64_encode({"parameters": parameters})
     desired_object_value = " ".join([f"{param}={default}" for param, default in parameters.items()])
 
     return f'''instance of OsConfigResource as $OsConfigResource{index}ref
