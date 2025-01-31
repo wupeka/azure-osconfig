@@ -1697,6 +1697,92 @@ static MI_CONST MI_PropertyDecl OsConfigResource_InitObjectName_prop =
     NULL,
 };
 
+static MI_CONST MI_Boolean OsConfigResource_RulesObjectName_Write_qual_value = 1;
+
+static MI_CONST MI_Qualifier OsConfigResource_RulesObjectName_Write_qual =
+{
+    MI_T("Write"),
+    MI_BOOLEAN,
+    MI_FLAG_ENABLEOVERRIDE | MI_FLAG_TOSUBCLASS,
+    &OsConfigResource_RulesObjectName_Write_qual_value
+};
+
+static MI_CONST MI_Char* OsConfigResource_RulesObjectName_Description_qual_value = MI_T("28");
+
+static MI_CONST MI_Qualifier OsConfigResource_RulesObjectName_Description_qual =
+{
+    MI_T("Description"),
+    MI_STRING,
+    MI_FLAG_ENABLEOVERRIDE | MI_FLAG_TOSUBCLASS | MI_FLAG_TRANSLATABLE,
+    &OsConfigResource_RulesObjectName_Description_qual_value
+};
+
+static MI_Qualifier MI_CONST* MI_CONST OsConfigResource_RulesObjectName_quals[] =
+{
+    &OsConfigResource_RulesObjectName_Write_qual,
+    &OsConfigResource_RulesObjectName_Description_qual,
+};
+
+/* property OsConfigResource.RulesObjectName */
+static MI_CONST MI_PropertyDecl OsConfigResource_RulesObjectName_prop =
+{
+    MI_FLAG_PROPERTY, /* flags */
+    0x0072650F, /* code */
+    MI_T("RulesObjectName"), /* name */
+    OsConfigResource_RulesObjectName_quals, /* qualifiers */
+    MI_COUNT(OsConfigResource_RulesObjectName_quals), /* numQualifiers */
+    MI_STRING, /* type */
+    NULL, /* className */
+    0, /* subscript */
+    offsetof(OsConfigResource, RulesObjectName), /* offset */
+    MI_T("OsConfigResource"), /* origin */
+    MI_T("OsConfigResource"), /* propagator */
+    NULL,
+};
+
+static MI_CONST MI_Boolean OsConfigResource_RulesObjectValue_Write_qual_value = 1;
+
+static MI_CONST MI_Qualifier OsConfigResource_RulesObjectValue_Write_qual =
+{
+    MI_T("Write"),
+    MI_BOOLEAN,
+    MI_FLAG_ENABLEOVERRIDE | MI_FLAG_TOSUBCLASS,
+    &OsConfigResource_RulesObjectValue_Write_qual_value
+};
+
+static MI_CONST MI_Char* OsConfigResource_RulesObjectValue_Description_qual_value = MI_T("29");
+
+static MI_CONST MI_Qualifier OsConfigResource_RulesObjectValue_Description_qual =
+{
+    MI_T("Description"),
+    MI_STRING,
+    MI_FLAG_ENABLEOVERRIDE | MI_FLAG_TOSUBCLASS | MI_FLAG_TRANSLATABLE,
+    &OsConfigResource_RulesObjectValue_Description_qual_value
+};
+
+static MI_Qualifier MI_CONST* MI_CONST OsConfigResource_RulesObjectValue_quals[] =
+{
+    &OsConfigResource_RulesObjectValue_Write_qual,
+    &OsConfigResource_RulesObjectValue_Description_qual,
+};
+
+/* property OsConfigResource.RulesObjectValue */
+static MI_CONST MI_PropertyDecl OsConfigResource_RulesObjectValue_prop =
+{
+    MI_FLAG_PROPERTY, /* flags */
+    0x00726510, /* code */
+    MI_T("RulesObjectValue"), /* name */
+    OsConfigResource_RulesObjectValue_quals, /* qualifiers */
+    MI_COUNT(OsConfigResource_RulesObjectValue_quals), /* numQualifiers */
+    MI_STRING, /* type */
+    NULL, /* className */
+    0, /* subscript */
+    offsetof(OsConfigResource, RulesObjectValue), /* offset */
+    MI_T("OsConfigResource"), /* origin */
+    MI_T("OsConfigResource"), /* propagator */
+    NULL,
+};
+
 static MI_CONST MI_Boolean OsConfigResource_ReportedObjectName_Write_qual_value = 1;
 
 static MI_CONST MI_Qualifier OsConfigResource_ReportedObjectName_Write_qual =
@@ -2011,6 +2097,8 @@ static MI_PropertyDecl MI_CONST* MI_CONST OsConfigResource_props[] =
     &OsConfigResource_PayloadKey_prop,
     &OsConfigResource_ComponentName_prop,
     &OsConfigResource_InitObjectName_prop,
+    &OsConfigResource_RulesObjectName_prop,
+    &OsConfigResource_RulesObjectValue_prop,
     &OsConfigResource_ReportedObjectName_prop,
     &OsConfigResource_ReportedObjectValue_prop,
     &OsConfigResource_ExpectedObjectValue_prop,
