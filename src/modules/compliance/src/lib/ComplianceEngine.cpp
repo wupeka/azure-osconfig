@@ -335,8 +335,8 @@ namespace compliance
                 auto it = mDatabase.find("NRP-placeholder");
                 if (it != mDatabase.end())
                 {
-                    OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
-                    return Error("Out-of-order NRP operation: parameters must be called first", EINVAL);
+                    OsConfigLogInfo(log(), "Resetting parameters for NRP operation");
+                    mDatabase.erase(it);
                 }
 
                 auto paramsObj = json_value_get_object(value);
