@@ -31,6 +31,12 @@ static int mapUserParameters(const std::string& input, std::map<std::string, std
 
     while (std::getline(stream, token, ' '))
     {
+        // In the non-NRP scenario the token is delimited by double quotes
+        if (token.size() >= 2 && token.front() == '"' && token.back() == '"')
+        {
+            token = token.substr(1, token.size() - 2);
+        }
+
         size_t pos = token.find('=');
         if (pos == std::string::npos)
         {
@@ -295,7 +301,6 @@ int ComplianceExecuteAudit(const json_object_t* rule, const std::map<std::string
 int ComplianceExecuteRemediation(const JSON_Object* rule, std::map<std::string, std::string> parameters, const char* payload, int payloadSizeBytes, void* log) {
     std::ostringstream logstream;
 
-    // TODO(robertwoj): for some reason the payload is delimited by double quotes in RC/DC scenario
     if(mapUserParameters(payload, parameters, log) != 0)
     {
         OsConfigLogError(log, "ComplianceExecuteSetRule failed to map user parameters");
