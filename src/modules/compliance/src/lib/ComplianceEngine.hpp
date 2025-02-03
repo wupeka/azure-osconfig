@@ -10,13 +10,13 @@
 #include <Result.hpp>
 #include <Optional.hpp>
 #include <Procedure.hpp>
+#include <JSON.hpp>
 
 #include <memory>
 #include <string>
 #include <map>
 
 struct json_object_t;
-struct json_value_t;
 
 namespace compliance
 {
@@ -38,7 +38,7 @@ namespace compliance
 
         Optional<Error> loadDatabase(const char* fileName);
 
-        Result<json_value_t*> decodeB64JSON(const char* input) const;
+        Result<JSON> decodeB64JSON(const char* input) const;
         Optional<Error> parseDatabase(const char* jsonStr);
     public:
         // Create engine with external log file

@@ -28,20 +28,6 @@ namespace compliance
         "\"UserAccount\": 0}";
 
 
-    struct JSONDeleter
-    {
-        void operator()(JSON_Value* value) const
-        {
-            json_value_free(value);
-        }
-    };
-    using JSON = std::unique_ptr<JSON_Value, JSONDeleter>;
-
-    static JSON parseJSON(const char* input)
-    {
-        return JSON(json_parse_string(input), JSONDeleter());
-    }
-
     Optional<Error> Engine::parseDatabase(const char* jsonStr)
     {
         auto json = parseJSON(jsonStr);
@@ -237,10 +223,9 @@ namespace compliance
                 return EINVAL;
             }
 
-            auto object = json_value_get_object(result.value());
+            auto object = json_value_get_object(result.value().get());
             if (object == nullptr)
             {
-                json_value_free(result.value());
                 OsConfigLogError(log(), "Failed to parse JSON object");
                 return EINVAL;
             }
@@ -248,7 +233,6 @@ namespace compliance
             auto value = json_object_get_value(object, "audit");
             if (value == nullptr)
             {
-                json_value_free(result.value());
                 OsConfigLogError(log(), "Failed to get audit value");
                 return EINVAL;
             }
@@ -256,7 +240,6 @@ namespace compliance
             rule = json_value_get_object(value);
             if (rule == nullptr)
             {
-                json_value_free(result.value());
                 OsConfigLogError(log(), "Failed to get audit object");
                 return EINVAL;
             }
@@ -274,10 +257,9 @@ namespace compliance
         return ENOENT;
     }
 
-    Result<JSON_Value*> Engine::decodeB64JSON(const char* input) const
+    Result<JSON> Engine::decodeB64JSON(const char* input) const
     {
         unsigned int baseLen = 0;
-        JSON_Value* result = NULL;
 
         Base64Decode(input, NULL, &baseLen);
         if (0 == baseLen)
@@ -291,13 +273,13 @@ namespace compliance
             return Error("Failed to decode base64 input", EINVAL);
         }
 
-        result = json_parse_string(inputJSONString.get());
+        auto result = json_parse_string(inputJSONString.get());
         if (NULL == result)
         {
             return Error("Failed to parse JSON", EINVAL);
         }
 
-        return result;
+        return JSON(result);
     }
 
     int Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
@@ -347,10 +329,9 @@ namespace compliance
                 return EINVAL;
             }
 
-            auto object = json_value_get_object(result.value());
+            auto object = json_value_get_object(result.value().get());
             if (object == nullptr)
             {
-                json_value_free(result.value());
                 OsConfigLogError(log(), "Failed to parse JSON object");
                 return EINVAL;
             }
@@ -363,7 +344,6 @@ namespace compliance
                 auto it = mDatabase.find("NRP-placeholder");
                 if (it != mDatabase.end())
                 {
-                    json_value_free(result.value());
                     OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
                     return EINVAL;
                 }
@@ -392,7 +372,6 @@ namespace compliance
                 auto it = mDatabase.find("NRP-placeholder");
                 if (it == mDatabase.end())
                 {
-                    json_value_free(result.value());
                     OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
                     return EINVAL;
                 }

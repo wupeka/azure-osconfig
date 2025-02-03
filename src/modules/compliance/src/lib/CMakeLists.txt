@@ -7,6 +7,7 @@ add_library(compliancelib STATIC
     ComplianceInterface.cpp
     ComplianceEngine.cpp
     Procedure.cpp
+    JSON.cpp
     )
 
 set_property(TARGET compliancelib PROPERTY POSITION_INDEPENDENT_CODE ON)
