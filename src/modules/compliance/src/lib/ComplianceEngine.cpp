@@ -225,7 +225,7 @@ namespace compliance
                 return Error("Failed to parse JSON object");
             }
 
-            auto value = json_object_get_value(object, "audit");
+            auto value = json_object_get_value(object, auditPrefix);
             if (value == nullptr)
             {
                 OsConfigLogError(log(), "Failed to get audit value");
@@ -278,20 +278,21 @@ namespace compliance
     Optional<Error> Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
         OsConfigLogInfo(log(), "Engine::mmiSet(%s, %.*s)", objectName, payloadSizeBytes, payload);
         const JSON_Object* rule = nullptr;
+        constexpr const char* remediatePrefix = "remediate";
+        constexpr const char* initPrefix = "init";
 
         if (mContext == Context::MMI)
         {
             auto key = std::string(objectName);
-            if (key.find("remediate") == 0)
+            if (key.find(remediatePrefix) == 0)
             {
-                key = key.substr(strlen("remediate"));
+                key = key.substr(strlen(remediatePrefix));
             }
-            else if (key.find("init") == 0)
+            else if (key.find(initPrefix) == 0)
             {
-                key = key.substr(strlen("init"));
+                key = key.substr(strlen(initPrefix));
             }
 
-            OsConfigLogInfo(log(), "Looking for rule %s", key.c_str());
             auto it = mDatabase.find(key);
             if (it == mDatabase.end())
             {
@@ -299,11 +300,6 @@ namespace compliance
                 return Error("Rule not found");
             }
 
-            OsConfigLogInfo(log(), "Executing rule %s, parameters count: %lu", objectName, it->second.parameters().size());
-            for(const auto& param : it->second.parameters())
-            {
-                OsConfigLogInfo(log(), "Parameter %s=%s", param.first.c_str(), param.second.c_str());
-            }
             auto result = ComplianceExecuteRemediation(it->second.remediation(), it->second.parameters(), payload, payloadSizeBytes, log());
             if (result != 0)
             {
