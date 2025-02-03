@@ -132,7 +132,6 @@ int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const 
     try
     {
         auto result = g_compliance->mmiGet(objectName);
-
         if(result.has_value())
         {
             *payload = strdup(result.value().data);
@@ -170,16 +169,16 @@ int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const 
 
     try
     {
-        auto result = g_compliance->mmiSet(objectName, payload, payloadSizeBytes);
-        if (!result.has_value())
+        auto error = g_compliance->mmiSet(objectName, payload, payloadSizeBytes);
+        if (!error)
         {
             OsConfigLogInfo(g_compliance->log(), "MmiSet(%p, %s, %s, %.*s, %d)", clientSession, componentName, objectName, payloadSizeBytes, payload, payloadSizeBytes);
             return 0;
         }
         else
         {
-            OsConfigLogError(g_compliance->log(), "ComplianceMmiSet failed: %s", result->message.c_str());
-            return result->code;
+            OsConfigLogError(g_compliance->log(), "ComplianceMmiSet failed: %s", error->message.c_str());
+            return error->code;
         }
     }
     catch (const std::exception& e)
