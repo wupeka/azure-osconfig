@@ -108,7 +108,7 @@ static void LoadModules(const char* directory, const char* configJson)
         {
             while (NULL != (entry = readdir(dir)))
             {
-                if ((DT_REG != entry->d_type) || 
+                if ((DT_REG != entry->d_type) ||
                     ((strcmp(entry->d_name, "") == 0) || (strcmp(entry->d_name, ".") == 0) || (strcmp(entry->d_name, "..") == 0)) ||
                     (NULL == strstr(entry->d_name, MODULE_EXT)))
                 {
@@ -374,7 +374,7 @@ MPI_HANDLE MpiOpen(const char* clientName, const unsigned int maxPayloadSizeByte
         if (NULL != (session = (SESSION*)malloc(sizeof(SESSION))))
         {
             memset(session, 0, sizeof(MODULE_SESSION));
-            
+
             if (NULL != (session->client = strdup(clientName)))
             {
                 if (NULL != (session->uuid = strdup(uuid)))
@@ -726,7 +726,7 @@ int MpiGetReported(MPI_HANDLE handle, MPI_JSON_STRING* payload, int* payloadSize
     JSON_Value* componentValue = NULL;
     JSON_Object* componentObject = NULL;
     JSON_Value* objectValue = NULL;
-    MMI_JSON_STRING mmiPayload = NULL;
+    char* mmiPayload = NULL;
     int mmiPayloadSizeBytes = 0;
     int mmiStatus = MMI_OK;
     char* payloadJson = NULL;

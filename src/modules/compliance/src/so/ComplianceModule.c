@@ -3,18 +3,19 @@
 
 #include <Mmi.h>
 #include <ComplianceInterface.hpp>
+#include <stddef.h>
 
 void __attribute__((constructor)) InitModule(void)
 {
-    ComplianceInitialize();
+    ComplianceInitialize(NULL);
 }
 
 void __attribute__((destructor)) DestroyModule(void)
 {
-    ComplianceShutdown();
+    ComplianceShutdown(NULL);
 }
 
-// This module implements one global static session for all clients. This allows the MMI implementation 
+// This module implements one global static session for all clients. This allows the MMI implementation
 // to be placed in the static module library and the module to get increased unit-test coverage.
 // The module SO library remains a simple wrapper for the MMI calls without any additional implementation.
 
@@ -25,7 +26,20 @@ int MmiGetInfo(const char* clientName, MMI_JSON_STRING* payload, int* payloadSiz
 
 MMI_HANDLE MmiOpen(const char* clientName, const unsigned int maxPayloadSizeBytes)
 {
-    return ComplianceMmiOpen(clientName, maxPayloadSizeBytes);
+    MMI_HANDLE result;
+
+    if (NULL == (result = ComplianceMmiOpen(clientName, maxPayloadSizeBytes)))
+    {
+        return NULL;
+    }
+
+    if (ComplianceLoadLocalDatabase(result) != 0)
+    {
+        ComplianceMmiClose(result);
+        return NULL;
+    }
+
+    return result;
 }
 
 void MmiClose(MMI_HANDLE clientSession)

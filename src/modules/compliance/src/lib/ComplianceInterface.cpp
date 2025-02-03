@@ -14,13 +14,25 @@
 
 static std::unique_ptr <compliance::Engine> g_compliance;
 
-void ComplianceInitialize()
+static bool IsValidSession(MMI_HANDLE clientSession)
+{
+    return clientSession == g_compliance.get();
+}
+
+void ComplianceInitialize(void* log)
 {
     try
     {
-        g_compliance.reset(new compliance::Engine());
+        if (log)
+        {
+            g_compliance.reset(new compliance::Engine(log));
+        }
+        else
+        {
+            g_compliance.reset(new compliance::Engine());
+        }
     }
-    catch(const std::exception& e)
+    catch (const std::exception& e)
     {
         OsConfigLogError(nullptr, "ComplianceInitialize failed: %s", e.what());
     }
@@ -34,29 +46,33 @@ void ComplianceShutdown(void)
 
 MMI_HANDLE ComplianceMmiOpen(const char* clientName, const unsigned int maxPayloadSizeBytes)
 {
-    try
-    {
-        g_compliance->setMaxPayloadSize(maxPayloadSizeBytes);
-        if (g_compliance->loadConfigurationFile() == false)
-        {
-            OsConfigLogError(g_compliance->log(), "ComplianceMmiOpen failed to load configuration file");
-            return NULL;
-        }
-
-        OsConfigLogInfo(g_compliance->log(), "MmiOpen(%s, %d) returning %p", clientName, maxPayloadSizeBytes, g_compliance.get());
-        return g_compliance.get();
-    }
-    catch(const std::exception& e)
-    {
-        OsConfigLogError(g_compliance->log(), "ComplianceMmiOpen failed: %s", e.what());
-    }
-
-    return nullptr;
+    OsConfigLogInfo(g_compliance->log(), "MmiOpen(%s, %d) returning %p", clientName, maxPayloadSizeBytes, g_compliance.get());
+    return g_compliance.get();
 }
 
-static bool IsValidSession(MMI_HANDLE clientSession)
+int ComplianceSetMaxPayloadSize(MMI_HANDLE clientSession, const unsigned int maxPayloadSizeBytes)
 {
-    return clientSession == g_compliance.get();
+    if (!IsValidSession(clientSession))
+    {
+        OsConfigLogError(g_compliance->log(), "SetMaxPayloadSize() called outside of a valid session");
+        return EINVAL;
+    }
+
+    g_compliance->setMaxPayloadSize(maxPayloadSizeBytes);
+    OsConfigLogInfo(g_compliance->log(), "SetMaxPayloadSize(%p, %d)", clientSession, maxPayloadSizeBytes);
+    return 0;
+}
+
+int ComplianceLoadLocalDatabase(MMI_HANDLE clientSession)
+{
+    if (!IsValidSession(clientSession))
+    {
+        OsConfigLogError(g_compliance->log(), "EnableLocalDatabase() called outside of a valid session");
+        return EINVAL;
+    }
+
+    OsConfigLogInfo(g_compliance->log(), "ComplianceEnableLocalDatabase(%p)", clientSession);
+    return g_compliance->loadConfigurationFile() ? 0 : EINVAL;
 }
 
 void ComplianceMmiClose(MMI_HANDLE clientSession)
@@ -71,7 +87,7 @@ void ComplianceMmiClose(MMI_HANDLE clientSession)
     }
 }
 
-int ComplianceMmiGetInfo(const char* clientName, MMI_JSON_STRING* payload, int* payloadSizeBytes)
+int ComplianceMmiGetInfo(const char* clientName, char** payload, int* payloadSizeBytes)
 {
     if ((NULL == payload) || (NULL == payloadSizeBytes))
     {
@@ -79,7 +95,7 @@ int ComplianceMmiGetInfo(const char* clientName, MMI_JSON_STRING* payload, int* 
         return EINVAL;
     }
 
-    *payload = (MMI_JSON_STRING)strdup(g_compliance->getMoguleInfo());
+    *payload = (char*)strdup(g_compliance->getMoguleInfo());
     if (!*payload)
     {
         OsConfigLogError(g_compliance->log(), "ComplianceMmiGetInfo: failed to duplicate module info");
@@ -90,7 +106,7 @@ int ComplianceMmiGetInfo(const char* clientName, MMI_JSON_STRING* payload, int* 
     return 0;
 }
 
-int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, MMI_JSON_STRING* payload, int* payloadSizeBytes)
+int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, char** payload, int* payloadSizeBytes)
 {
     if ((NULL == componentName) || (NULL == objectName) || (NULL == payload) || (NULL == payloadSizeBytes))
     {
@@ -131,7 +147,7 @@ int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const 
     return result;
 }
 
-int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, const MMI_JSON_STRING payload, const int payloadSizeBytes)
+int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes)
 {
     if (!IsValidSession(clientSession))
     {
@@ -150,16 +166,21 @@ int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const 
     {
         result = g_compliance->mmiSet(objectName, payload, payloadSizeBytes);
     }
-    catch(const std::exception& e)
+    catch (const std::exception& e)
     {
         OsConfigLogError(g_compliance->log(), "ComplianceMmiSet failed: %s", e.what());
     }
-    
+
     OsConfigLogInfo(g_compliance->log(), "MmiSet(%p, %s, %s, %.*s, %d), returning %d", clientSession, componentName, objectName, payloadSizeBytes, payload, payloadSizeBytes, result);
     return result;
 }
 
-void ComplianceMmiFree(MMI_JSON_STRING payload)
+void ComplianceMmiFree(char* payload)
 {
     FREE_MEMORY(payload);
+}
+
+void ComplianceSetNRPContext(void)
+{
+    g_compliance->setContext(compliance::Engine::Context::NRP);
 }

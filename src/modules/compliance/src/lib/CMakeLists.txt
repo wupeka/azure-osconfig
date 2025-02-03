@@ -4,17 +4,20 @@
 project(compliancelib)
 
 add_library(compliancelib STATIC
-    ComplianceInterface.cpp 
+    ComplianceInterface.cpp
     ComplianceEngine.cpp
+    Procedure.cpp
     )
 
 set_property(TARGET compliancelib PROPERTY POSITION_INDEPENDENT_CODE ON)
 
 target_link_libraries(compliancelib PRIVATE
-    logging 
+    logging
     commonutils
     parsonlib
-    asb)
+    asb
+    compliance_mc_iface
+    base64)
 
 target_include_directories(compliancelib PUBLIC
     ${MODULES_INC_DIR}

@@ -225,7 +225,7 @@ MODULE* LoadModule(const char* client, const char* path)
     MODULE* module = NULL;
     MODULE_INFO* info = NULL;
     JSON_Value* value = NULL;
-    MMI_JSON_STRING payload = NULL;
+    char* payload = NULL;
     int payloadSize = 0;
 
     if ((NULL == client) || (NULL == path))

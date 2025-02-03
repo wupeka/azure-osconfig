@@ -7,20 +7,47 @@
 #include <Mmi.h>
 #include <Logging.h>
 
+#include <Result.hpp>
+#include <Optional.hpp>
+#include <Procedure.hpp>
+
 #include <memory>
 #include <string>
+#include <map>
+
+struct json_object_t;
+struct json_value_t;
 
 namespace compliance
 {
     class Engine
     {
-        OSCONFIG_LOG_HANDLE mLog = nullptr;
-        unsigned int mMaxPayloadSize = 0;
-
-        bool loadDatabase(const char* fileName) noexcept;
     public:
+        enum class Context
+        {
+            MMI,
+            NRP
+        };
+
+    private:
+        OSCONFIG_LOG_HANDLE mLog = nullptr;
+        bool mLocalLog = false;
+        unsigned int mMaxPayloadSize = 0;
+        std::map<std::string, Procedure> mDatabase;
+        Context mContext = Context::MMI;
+
+        Optional<Error> loadDatabase(const char* fileName);
+
+        Result<json_value_t*> decodeB64JSON(const char* input) const;
+        Optional<Error> parseDatabase(const char* jsonStr);
+    public:
+        // Create engine with external log file
+        Engine(void* log) noexcept;
+        // Create engine with locally initialized log file
         Engine() noexcept;
-        ~Engine() = default;
+        ~Engine();
+
+        void setContext(Context context) noexcept;
 
         void setMaxPayloadSize(unsigned int value) noexcept;
         unsigned int getMaxPayloadSize() const noexcept;
@@ -29,8 +56,8 @@ namespace compliance
         const char* getMoguleInfo() const noexcept;
         bool loadConfigurationFile() noexcept;
 
-        int mmiGet(const char* objectName) const;
-        int mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) const;
+        int mmiGet(const char* objectName);
+        int mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes);
     };
 }
 

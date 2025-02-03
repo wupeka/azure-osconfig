@@ -4,6 +4,13 @@
 #include "ComplianceEngine.hpp"
 
 #include <CommonUtils.h>
+#include "../../../../common/compliance/Compliance.h"
+#include "base64.h"
+
+#include "parson.h"
+#include <string>
+#include <vector>
+#include <map>
 
 namespace compliance
 {
@@ -20,29 +27,147 @@ namespace compliance
         "\"Lifetime\": 2,"
         "\"UserAccount\": 0}";
 
-    bool Engine::loadDatabase(const char* fileName) noexcept
+
+    struct JSONDeleter
+    {
+        void operator()(JSON_Value* value) const
+        {
+            json_value_free(value);
+        }
+    };
+    using JSON = std::unique_ptr<JSON_Value, JSONDeleter>;
+
+    static JSON parseJSON(const char* input)
+    {
+        return JSON(json_parse_string(input), JSONDeleter());
+    }
+
+    Optional<Error> Engine::parseDatabase(const char* jsonStr)
+    {
+        auto json = parseJSON(jsonStr);
+        const auto* rootObject = json_value_get_object(json.get());
+        if (!rootObject)
+        {
+            return Error("Failed to parse root object");
+        }
+
+        auto count = json_object_get_count(rootObject);
+        for (decltype(count) i = 0; i < count; ++i)
+        {
+            const char* key = json_object_get_name(rootObject, i);
+            if(!key)
+            {
+                return Error("Failed to get object key");
+            }
+
+            OsConfigLogInfo(log(), "Loading rule %s", key);
+            auto* itemObj = json_object_get_object(rootObject, key);
+            if(!itemObj)
+            {
+                return Error(std::string("Expected JSON object at key ") + std::string(key));
+            }
+
+            // Audit is mandatory
+            const auto* auditRule = json_object_get_object(itemObj, "audit");
+            if (auditRule == nullptr)
+            {
+                return Error("Failed to parse audit object");
+            }
+
+            // Remediation is optional
+            const auto* remediationRule = json_object_get_object(itemObj, "remediate");
+
+            // Parameters are mandatory
+            const auto* parametersObject = json_object_get_object(itemObj, "parameters");
+
+            std::map<std::string, std::string> parameters;
+            auto paramsCount = json_object_get_count(parametersObject);
+            for (decltype(paramsCount) j = 0; j < paramsCount; ++j)
+            {
+                const char* paramKey = json_object_get_name(parametersObject, j);
+                const char* paramVal = json_object_get_string(parametersObject, paramKey);
+                if(paramKey == nullptr || paramVal == nullptr)
+                {
+                    return Error("Failed to parse parameters");
+                }
+
+                OsConfigLogInfo(log(), "Adding parameter %s=%s", paramKey, paramVal);
+                parameters[paramKey] = paramVal;
+            }
+
+            auto procedure = Procedure(std::move(parameters));
+            auto error = procedure.setAudit(json_value_deep_copy(json_object_get_wrapping_value(auditRule)));
+            if (error)
+            {
+                return error;
+            }
+
+            if (remediationRule != nullptr)
+            {
+                error = procedure.setRemediation(json_value_deep_copy(json_object_get_wrapping_value(remediationRule)));
+                if (error)
+                {
+                    return error;
+                }
+            }
+
+            mDatabase.insert({key, std::move(procedure)});
+        }
+
+        return {};
+    }
+
+    Optional<Error> Engine::loadDatabase(const char* fileName)
     {
         auto* database = LoadStringFromFile(fileName, false, log());
         if (!database)
         {
-            OsConfigLogError(log(), "Failed to load configuration file");
-            return false;
+            return Error("Failed to load configuration file");
         }
 
-        OsConfigLogInfo(log(), "Loaded compliance database from %s", fileName);
-        // TODO: Implement database loading
-        return true;
+        auto error = parseDatabase(database);
+        FREE_MEMORY(database);
+        if (error)
+        {
+            OsConfigLogError(log(), "%s", error->message.c_str());
+        }
+        else
+        {
+            OsConfigLogInfo(log(), "Loaded compliance database from %s", fileName);
+        }
+
+        return error;
     }
 
-    Engine::Engine() noexcept
+    Engine::Engine(void* log) noexcept : mLog{ log }, mLocalLog{ false }
+    {
+        if (nullptr == mLog)
+        {
+            return;
+        }
+    }
+
+    Engine::Engine() noexcept : mLocalLog{ true }
     {
         mLog = OpenLog(cLogFile, cRolledLogFile);
     }
 
-    bool loadConfigurationFile() noexcept;
-    
+    Engine::~Engine()
+    {
+        if(mLocalLog)
+        {
+            CloseLog(&mLog);
+        }
+    }
+
     void Engine::setMaxPayloadSize(unsigned int value) noexcept {
         mMaxPayloadSize = value;
+    }
+
+    void Engine::setContext(Context context) noexcept
+    {
+        OsConfigLogInfo(log(), "Engine::setContext(%d)", static_cast<int>(context));
+        mContext = context;
     }
 
     unsigned int Engine::getMaxPayloadSize() const noexcept {
@@ -58,13 +183,242 @@ namespace compliance
         return cModuleInfo;
     }
 
-    int Engine::mmiGet(const char* objectName) const {
+    int Engine::mmiGet(const char* objectName) {
         OsConfigLogInfo(log(), "Engine::mmiGet(%s)", objectName);
-        return 0;
+
+        char* payload = nullptr;
+        int payloadSizeBytes = 0;
+        const JSON_Object* rule = nullptr;
+        constexpr const char* auditPrefix = "audit";
+
+        if (mContext == Context::MMI) // RC/DC and other scenarios
+        {
+            auto key = std::string(objectName);
+            if (key.find(auditPrefix) == 0)
+            {
+                key = key.substr(strlen(auditPrefix));
+            }
+
+            OsConfigLogInfo(log(), "Looking for rule %s", key.c_str());
+            auto it = mDatabase.find(key);
+            if (it == mDatabase.end())
+            {
+                OsConfigLogError(log(), "Rule not found");
+                return EINVAL;
+            }
+
+            rule = it->second.audit();
+
+            auto rc = ComplianceExecuteAudit(rule, it->second.parameters(), &payload, &payloadSizeBytes, log());
+            if (rc != 0)
+            {
+                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
+                return rc;
+            }
+
+            return 0;
+        }
+        else // NRP transaction
+        {
+            auto it = mDatabase.find("NRP-placeholder");
+            if (it == mDatabase.end())
+            {
+                OsConfigLogError(log(), "Rule not found");
+                return EINVAL;
+            }
+            const auto& parameters = it->second.parameters();
+
+            // try to decode base64 rule
+            OsConfigLogInfo(log(), "Attempting to decode base64 rule %s", objectName);
+            auto result = decodeB64JSON(objectName);
+            if (!result.has_value())
+            {
+                OsConfigLogError(log(), "Failed to decode base64 JSON: %s", result.error().message.c_str());
+                return EINVAL;
+            }
+
+            auto object = json_value_get_object(result.value());
+            if (object == nullptr)
+            {
+                json_value_free(result.value());
+                OsConfigLogError(log(), "Failed to parse JSON object");
+                return EINVAL;
+            }
+
+            auto value = json_object_get_value(object, "audit");
+            if (value == nullptr)
+            {
+                json_value_free(result.value());
+                OsConfigLogError(log(), "Failed to get audit value");
+                return EINVAL;
+            }
+
+            rule = json_value_get_object(value);
+            if (rule == nullptr)
+            {
+                json_value_free(result.value());
+                OsConfigLogError(log(), "Failed to get audit object");
+                return EINVAL;
+            }
+
+            auto rc = ComplianceExecuteAudit(rule, parameters, &payload, &payloadSizeBytes, log());
+            if (rc != 0)
+            {
+                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
+                return rc;
+            }
+
+            return 0;
+        }
+
+        return ENOENT;
     }
 
-    int Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) const {
+    Result<JSON_Value*> Engine::decodeB64JSON(const char* input) const
+    {
+        unsigned int baseLen = 0;
+        JSON_Value* result = NULL;
+
+        Base64Decode(input, NULL, &baseLen);
+        if (0 == baseLen)
+        {
+            return Error("Failed to decode base64 input length", EINVAL);
+        }
+
+        std::unique_ptr<char[]> inputJSONString(new char[baseLen]);
+        if (Base64Decode(input, (unsigned char*)inputJSONString.get(), &baseLen) != 0)
+        {
+            return Error("Failed to decode base64 input", EINVAL);
+        }
+
+        result = json_parse_string(inputJSONString.get());
+        if (NULL == result)
+        {
+            return Error("Failed to parse JSON", EINVAL);
+        }
+
+        return result;
+    }
+
+    int Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
         OsConfigLogInfo(log(), "Engine::mmiSet(%s, %.*s)", objectName, payloadSizeBytes, payload);
+        const JSON_Object* rule = nullptr;
+
+        if (mContext == Context::MMI)
+        {
+            auto key = std::string(objectName);
+            if (key.find("remediate") == 0)
+            {
+                key = key.substr(strlen("remediate"));
+            }
+            else if (key.find("init") == 0)
+            {
+                key = key.substr(strlen("init"));
+            }
+
+            OsConfigLogInfo(log(), "Looking for rule %s", key.c_str());
+            auto it = mDatabase.find(key);
+            if (it == mDatabase.end())
+            {
+                OsConfigLogError(log(), "Rule not found");
+                return EINVAL;
+            }
+
+            OsConfigLogInfo(log(), "Executing rule %s, parameters count: %lu", objectName, it->second.parameters().size());
+            for(const auto& param : it->second.parameters())
+            {
+                OsConfigLogInfo(log(), "Parameter %s=%s", param.first.c_str(), param.second.c_str());
+            }
+            auto result = ComplianceExecuteRemediation(it->second.remediation(), it->second.parameters(), payload, payloadSizeBytes, log());
+            if (result != 0)
+            {
+                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
+                return result;
+            }
+        }
+        else
+        {
+            // try to decode base64 rule
+            OsConfigLogInfo(log(), "Attempting to decode base64 rule %s", objectName);
+            auto result = decodeB64JSON(objectName);
+            if (!result.has_value())
+            {
+                OsConfigLogError(log(), "Failed to decode base64 JSON: %s", result.error().message.c_str());
+                return EINVAL;
+            }
+
+            auto object = json_value_get_object(result.value());
+            if (object == nullptr)
+            {
+                json_value_free(result.value());
+                OsConfigLogError(log(), "Failed to parse JSON object");
+                return EINVAL;
+            }
+
+            auto value = json_object_get_value(object, "parameters");
+            if (nullptr != value)
+            {
+                OsConfigLogInfo(log(), "Setting parameters");
+                // TODO(robertwoj): This should be based on rule name
+                auto it = mDatabase.find("NRP-placeholder");
+                if (it != mDatabase.end())
+                {
+                    json_value_free(result.value());
+                    OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
+                    return EINVAL;
+                }
+
+                auto paramsObj = json_value_get_object(value);
+                if (paramsObj)
+                {
+                    std::map<std::string, std::string> parameters;
+                    auto count = json_object_get_count(paramsObj);
+                    for (decltype(count) i = 0; i < count; ++i)
+                    {
+                        const char* key = json_object_get_name(paramsObj, i);
+                        OsConfigLogInfo(log(), "Setting parameter %s", key);
+                        const char* val = json_object_get_string(paramsObj, key);
+                        if (val)
+                        {
+                            parameters.insert({key, val});
+                        }
+                    }
+                    mDatabase.insert({ "NRP-placeholder", std::move(parameters) });
+                }
+            }
+            else
+            {
+                // TODO(robertwoj): This should be based on rule name
+                auto it = mDatabase.find("NRP-placeholder");
+                if (it == mDatabase.end())
+                {
+                    json_value_free(result.value());
+                    OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
+                    return EINVAL;
+                }
+
+                value = json_object_get_value(object, "remediate");
+                if (value != nullptr)
+                {
+                    rule = json_value_get_object(value);
+                    if (rule == nullptr)
+                    {
+                        OsConfigLogError(log(), "Failed to get remediate object");
+                        return EINVAL;
+                    }
+
+                    OsConfigLogInfo(log(), "Executing rule %s", objectName);
+                    mDatabase.erase("NRP-placeholder");
+                    auto result = ComplianceExecuteRemediation(rule, it->second.parameters(), payload, payloadSizeBytes, log());
+                    if (result != 0)
+                    {
+                        OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
+                        return result;
+                    }
+                }
+            }
+        }
+
         return 0;
     }
 
@@ -85,10 +439,25 @@ namespace compliance
             return false;
         }
 
-        auto result = loadDatabase(databaseFile);
-        OsConfigLogInfo(log(), "Loaded compliance database from %s", databaseFile);
-        FREE_MEMORY(databaseFile);
-        FREE_MEMORY(config);
-        return result;
+        try
+        {
+            auto error = loadDatabase(databaseFile);
+            FREE_MEMORY(databaseFile);
+            FREE_MEMORY(config);
+            if (error)
+            {
+                OsConfigLogError(log(), "%s", error->message.c_str());
+                return false;
+            }
+
+            return true;
+        }
+        catch(const std::exception& e)
+        {
+            OsConfigLogError(log(), "Failed to load compliance database: %s", e.what());
+            FREE_MEMORY(databaseFile);
+            FREE_MEMORY(config);
+            return false;
+        }
     }
 }
