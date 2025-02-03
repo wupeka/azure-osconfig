@@ -62,7 +62,7 @@ namespace compliance
         bool loadConfigurationFile() noexcept;
 
         Result<Payload> mmiGet(const char* objectName);
-        int mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes);
+        Optional<Error> mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes);
     };
 }
 

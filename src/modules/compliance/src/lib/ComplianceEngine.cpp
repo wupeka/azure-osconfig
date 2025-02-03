@@ -275,7 +275,7 @@ namespace compliance
         return JSON(result);
     }
 
-    int Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
+    Optional<Error> Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
         OsConfigLogInfo(log(), "Engine::mmiSet(%s, %.*s)", objectName, payloadSizeBytes, payload);
         const JSON_Object* rule = nullptr;
 
@@ -296,7 +296,7 @@ namespace compliance
             if (it == mDatabase.end())
             {
                 OsConfigLogError(log(), "Rule not found");
-                return EINVAL;
+                return Error("Rule not found");
             }
 
             OsConfigLogInfo(log(), "Executing rule %s, parameters count: %lu", objectName, it->second.parameters().size());
@@ -308,37 +308,35 @@ namespace compliance
             if (result != 0)
             {
                 OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
-                return result;
+                return Error("ComplianceExecuteRule failed", result);
             }
         }
         else
         {
             // try to decode base64 rule
-            OsConfigLogInfo(log(), "Attempting to decode base64 rule %s", objectName);
             auto result = decodeB64JSON(objectName);
             if (!result.has_value())
             {
                 OsConfigLogError(log(), "Failed to decode base64 JSON: %s", result.error().message.c_str());
-                return EINVAL;
+                return result.error();
             }
 
             auto object = json_value_get_object(result.value().get());
             if (object == nullptr)
             {
                 OsConfigLogError(log(), "Failed to parse JSON object");
-                return EINVAL;
+                return Error("Failed to parse JSON object");
             }
 
             auto value = json_object_get_value(object, "parameters");
             if (nullptr != value)
             {
-                OsConfigLogInfo(log(), "Setting parameters");
                 // TODO(robertwoj): This should be based on rule name
                 auto it = mDatabase.find("NRP-placeholder");
                 if (it != mDatabase.end())
                 {
                     OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
-                    return EINVAL;
+                    return Error("Out-of-order NRP operation: parameters must be called first", EINVAL);
                 }
 
                 auto paramsObj = json_value_get_object(value);
@@ -349,7 +347,6 @@ namespace compliance
                     for (decltype(count) i = 0; i < count; ++i)
                     {
                         const char* key = json_object_get_name(paramsObj, i);
-                        OsConfigLogInfo(log(), "Setting parameter %s", key);
                         const char* val = json_object_get_string(paramsObj, key);
                         if (val)
                         {
@@ -366,7 +363,7 @@ namespace compliance
                 if (it == mDatabase.end())
                 {
                     OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
-                    return EINVAL;
+                    return Error("Out-of-order NRP operation: parameters must be called first", EINVAL);
                 }
 
                 value = json_object_get_value(object, "remediate");
@@ -376,7 +373,7 @@ namespace compliance
                     if (rule == nullptr)
                     {
                         OsConfigLogError(log(), "Failed to get remediate object");
-                        return EINVAL;
+                        return Error("Failed to get remediate object");
                     }
 
                     OsConfigLogInfo(log(), "Executing rule %s", objectName);
@@ -385,13 +382,13 @@ namespace compliance
                     if (result != 0)
                     {
                         OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
-                        return result;
+                        return Error("ComplianceExecuteRule failed", result);
                     }
                 }
             }
         }
 
-        return 0;
+        return {};
     }
 
     bool Engine::loadConfigurationFile() noexcept

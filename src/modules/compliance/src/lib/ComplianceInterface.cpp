@@ -168,18 +168,26 @@ int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const 
         return EINVAL;
     }
 
-    int result = -1;
     try
     {
-        result = g_compliance->mmiSet(objectName, payload, payloadSizeBytes);
+        auto result = g_compliance->mmiSet(objectName, payload, payloadSizeBytes);
+        if (!result.has_value())
+        {
+            OsConfigLogInfo(g_compliance->log(), "MmiSet(%p, %s, %s, %.*s, %d)", clientSession, componentName, objectName, payloadSizeBytes, payload, payloadSizeBytes);
+            return 0;
+        }
+        else
+        {
+            OsConfigLogError(g_compliance->log(), "ComplianceMmiSet failed: %s", result->message.c_str());
+            return result->code;
+        }
     }
     catch (const std::exception& e)
     {
         OsConfigLogError(g_compliance->log(), "ComplianceMmiSet failed: %s", e.what());
     }
 
-    OsConfigLogInfo(g_compliance->log(), "MmiSet(%p, %s, %s, %.*s, %d), returning %d", clientSession, componentName, objectName, payloadSizeBytes, payload, payloadSizeBytes, result);
-    return result;
+    return -1;
 }
 
 void ComplianceMmiFree(char* payload)
