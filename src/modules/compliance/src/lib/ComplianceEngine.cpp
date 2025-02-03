@@ -169,11 +169,10 @@ namespace compliance
         return cModuleInfo;
     }
 
-    int Engine::mmiGet(const char* objectName) {
+    Result<Engine::Payload> Engine::mmiGet(const char* objectName) {
         OsConfigLogInfo(log(), "Engine::mmiGet(%s)", objectName);
 
-        char* payload = nullptr;
-        int payloadSizeBytes = 0;
+        auto result = Payload{};
         const JSON_Object* rule = nullptr;
         constexpr const char* auditPrefix = "audit";
 
@@ -189,20 +188,16 @@ namespace compliance
             auto it = mDatabase.find(key);
             if (it == mDatabase.end())
             {
-                OsConfigLogError(log(), "Rule not found");
-                return EINVAL;
+                return Error("Rule not found");
             }
 
             rule = it->second.audit();
 
-            auto rc = ComplianceExecuteAudit(rule, it->second.parameters(), &payload, &payloadSizeBytes, log());
+            auto rc = ComplianceExecuteAudit(rule, it->second.parameters(), &result.data, &result.size, log());
             if (rc != 0)
             {
-                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
-                return rc;
+                return Error("ComplianceExecuteRule failed", rc);
             }
-
-            return 0;
         }
         else // NRP transaction
         {
@@ -210,51 +205,49 @@ namespace compliance
             if (it == mDatabase.end())
             {
                 OsConfigLogError(log(), "Rule not found");
-                return EINVAL;
+                return Error("Rule not found");
             }
             const auto& parameters = it->second.parameters();
 
             // try to decode base64 rule
             OsConfigLogInfo(log(), "Attempting to decode base64 rule %s", objectName);
-            auto result = decodeB64JSON(objectName);
-            if (!result.has_value())
+            auto json = decodeB64JSON(objectName);
+            if (!json.has_value())
             {
-                OsConfigLogError(log(), "Failed to decode base64 JSON: %s", result.error().message.c_str());
-                return EINVAL;
+                OsConfigLogError(log(), "Failed to decode base64 JSON: %s", json.error().message.c_str());
+                return json.error();
             }
 
-            auto object = json_value_get_object(result.value().get());
+            auto object = json_value_get_object(json.value().get());
             if (object == nullptr)
             {
                 OsConfigLogError(log(), "Failed to parse JSON object");
-                return EINVAL;
+                return Error("Failed to parse JSON object");
             }
 
             auto value = json_object_get_value(object, "audit");
             if (value == nullptr)
             {
                 OsConfigLogError(log(), "Failed to get audit value");
-                return EINVAL;
+                return Error("Failed to get audit value");
             }
 
             rule = json_value_get_object(value);
             if (rule == nullptr)
             {
                 OsConfigLogError(log(), "Failed to get audit object");
-                return EINVAL;
+                return Error("Failed to get audit object");
             }
 
-            auto rc = ComplianceExecuteAudit(rule, parameters, &payload, &payloadSizeBytes, log());
+            auto rc = ComplianceExecuteAudit(rule, parameters, &result.data, &result.size, log());
             if (rc != 0)
             {
                 OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
-                return rc;
+                return Error("ComplianceExecuteRule failed", rc);
             }
-
-            return 0;
         }
 
-        return ENOENT;
+        return result;
     }
 
     Result<JSON> Engine::decodeB64JSON(const char* input) const

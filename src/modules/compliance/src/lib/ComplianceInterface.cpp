@@ -129,22 +129,29 @@ int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const 
     *payload = NULL;
     *payloadSizeBytes = 0;
 
-    int result = -1;
     try
     {
-        result = g_compliance->mmiGet(objectName);
+        auto result = g_compliance->mmiGet(objectName);
 
-        // To be replaced by results from the engine
-        *payload = strdup("test");
-        *payloadSizeBytes = 4;
+        if(result.has_value())
+        {
+            *payload = strdup(result.value().data);
+            *payloadSizeBytes = result.value().size;
+            OsConfigLogInfo(g_compliance->log(), "MmiGet(%p, %s, %s, %.*s)", clientSession, componentName, objectName, *payloadSizeBytes, *payload);
+            return 0;
+        }
+        else
+        {
+            OsConfigLogError(g_compliance->log(), "ComplianceMmiGet failed: %s", result.error().message.c_str());
+            return result.error().code;
+        }
     }
     catch (const std::exception& e)
     {
         OsConfigLogError(g_compliance->log(), "ComplianceMmiGet failed: %s", e.what());
     }
 
-    OsConfigLogInfo(g_compliance->log(), "MmiGet(%p, %s, %s, %.*s, %d) returning %d", clientSession, componentName, objectName, *payloadSizeBytes, *payload, *payloadSizeBytes, result);
-    return result;
+    return -1;
 }
 
 int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes)

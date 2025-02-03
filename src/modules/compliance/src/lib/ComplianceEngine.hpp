@@ -29,6 +29,11 @@ namespace compliance
             NRP
         };
 
+        struct Payload
+        {
+            char* data = nullptr;
+            int size = 0;
+        };
     private:
         OSCONFIG_LOG_HANDLE mLog = nullptr;
         bool mLocalLog = false;
@@ -56,7 +61,7 @@ namespace compliance
         const char* getMoguleInfo() const noexcept;
         bool loadConfigurationFile() noexcept;
 
-        int mmiGet(const char* objectName);
+        Result<Payload> mmiGet(const char* objectName);
         int mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes);
     };
 }
