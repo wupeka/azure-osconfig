@@ -14,6 +14,9 @@
 #include <Logging.h>
 #include <Asb.h>
 
+#define PERF_LOG_FILE "/var/log/osconfig_asb_perf.log"
+#define ROLLED_PERF_LOG_FILE "/var/log/osconfig_asb_perf.bak"
+
 #define RETURN_REASON_IF_ZERO(call) {\
     if (0 == (call)) {\
         return reason;\
@@ -370,7 +373,7 @@ static const char* g_remediateEnsureNoUsersHaveDotRhostsFilesObject = "remediate
 static const char* g_remediateEnsureRloginServiceIsDisabledObject = "remediateEnsureRloginServiceIsDisabled";
 static const char* g_remediateEnsureUnnecessaryAccountsAreRemovedObject = "remediateEnsureUnnecessaryAccountsAreRemoved";
 
-// Initialization for audit before remediation 
+// Initialization for audit before remediation
 static const char* g_initEnsurePermissionsOnEtcSshSshdConfigObject = "initEnsurePermissionsOnEtcSshSshdConfig";
 static const char* g_initEnsureSshPortIsConfiguredObject = "initEnsureSshPortIsConfigured";
 static const char* g_initEnsureSshBestPracticeProtocolObject = "initEnsureSshBestPracticeProtocol";
@@ -629,6 +632,23 @@ static char* g_desiredEnsureDefaultDenyFirewallPolicyIsSet = NULL;
 static const int g_shadowGid = 42;
 static const int g_varLogJournalMode = 2755;
 
+static PERF_CLOCK g_perfClock = {{0, 0}, {0, 0}};
+
+// Expected time limits under ideal conditions
+// Maximum per-rule audit time: 5 seconds
+static const long g_maxAuditTime = 5000000;
+// Maximum ASB rule remediation time: 55 seconds
+static const long g_maxRemediateTime = 55000000;
+// Maximum baseline run times: 30 minutes
+static const long g_maxTotalTime = 1800000000;
+
+static OSCONFIG_LOG_HANDLE g_perfLog = NULL;
+
+OSCONFIG_LOG_HANDLE GetPerfLog(void)
+{
+    return g_perfLog;
+}
+
 typedef struct BASELINE_RULE
 {
     const char* resourceId;
@@ -636,7 +656,7 @@ typedef struct BASELINE_RULE
     const char* payloadKey;
 } BASELINE_RULE;
 
-const BASELINE_RULE g_rules[] = 
+const BASELINE_RULE g_rules[] =
 {
     { "Ensure permissions on /etc/ssh/sshd_config are configured (CIS: L1 - Server - 5.2.1)", "43119747-263c-2c92-4ce5-726e63259049", "EnsurePermissionsOnEtcSshSshdConfig" },
     { "Ensure that the SSH protocol is configured (CIS: L1 - Server - 5.2.4)", "35868e8c-97eb-4981-ab79-99b25101cc86", "EnsureSshBestPracticeProtocol" },
@@ -849,7 +869,31 @@ void AsbInitialize(void* log)
 {
     char* prettyName = NULL;
     char* kernelVersion = NULL;
-    
+    char* cpuModel = NULL;
+    long totalMemory = 0;
+    long freeMemory = 0;
+    unsigned short freeMemoryPercentage = 0;
+
+    g_perfLog = OpenLog(PERF_LOG_FILE, ROLLED_PERF_LOG_FILE);
+
+    StartPerfClock(&g_perfClock, GetPerfLog());
+
+    OsConfigLogInfo(log, "AsbInitialize: %s", g_asbName);
+
+    if (NULL != (cpuModel = GetCpuModel(GetPerfLog())))
+    {
+        OsConfigLogInfo(log, "AsbInitialize: CPU model: %s", cpuModel);
+    }
+
+    OsConfigLogInfo(log, "AsbInitialize: CPU cores: %u", GetNumberOfCpuCores(log));
+
+    totalMemory = GetTotalMemory(log);
+    OsConfigLogInfo(log, "AsbInitialize: total memory: %lu kB", totalMemory);
+
+    freeMemory = GetFreeMemory(log);
+    freeMemoryPercentage = (freeMemory * 100) / totalMemory;
+    OsConfigLogInfo(log, "AsbInitialize: free memory: %u%% (%lu kB)", freeMemoryPercentage, freeMemory);
+
     InitializeSshAudit(log);
 
     if ((NULL == (g_desiredEnsurePermissionsOnEtcIssue = DuplicateString(g_defaultEnsurePermissionsOnEtcIssue))) ||
@@ -897,8 +941,9 @@ void AsbInitialize(void* log)
             OsConfigLogError(log, "AsbInitialize: failed to make a local backup copy of '%s'", g_etcFstab);
         }
     }
-    
+
     kernelVersion = GetOsKernelVersion(log);
+
     if (NULL != (prettyName = GetOsPrettyName(log)))
     {
         OsConfigLogInfo(log, "AsbInitialize: running on '%s' ('%s')", prettyName, kernelVersion);
@@ -907,8 +952,6 @@ void AsbInitialize(void* log)
     {
         OsConfigLogInfo(log, "AsbInitialize: running on an unknown Linux distribution with kernel version '%s' and without a valid PRETTY_NAME in /etc/os-release", kernelVersion);
     }
-    FREE_MEMORY(prettyName);
-    FREE_MEMORY(kernelVersion);
 
     if (IsCommodore(log))
     {
@@ -920,13 +963,17 @@ void AsbInitialize(void* log)
         OsConfigLogInfo(log, "AsbInitialize: SELinux present");
     }
 
+    FREE_MEMORY(prettyName);
+    FREE_MEMORY(kernelVersion);
+    FREE_MEMORY(cpuModel);
+
     OsConfigLogInfo(log, "%s initialized", g_asbName);
 }
 
 void AsbShutdown(void* log)
 {
     OsConfigLogInfo(log, "%s shutting down", g_asbName);
-        
+
     FREE_MEMORY(g_desiredEnsurePermissionsOnEtcIssue);
     FREE_MEMORY(g_desiredEnsurePermissionsOnEtcIssueNet);
     FREE_MEMORY(g_desiredEnsurePermissionsOnEtcHostsAllow);
@@ -963,12 +1010,23 @@ void AsbShutdown(void* log)
     FREE_MEMORY(g_desiredEnsureDefaultDenyFirewallPolicyIsSet);
 
     SshAuditCleanup(log);
+
+    if (0 == StopPerfClock(&g_perfClock, GetPerfLog()))
+    {
+        LogPerfClock(&g_perfClock, g_asbName, NULL, 0, g_maxTotalTime, GetPerfLog());
+    }
+
+    CloseLog(&g_perfLog);
+
+    // When done, allow others access to read the performance log
+    SetFileAccess(PERF_LOG_FILE, 0, 0, 6774, NULL);
+    SetFileAccess(ROLLED_PERF_LOG_FILE, 0, 0, 6774, NULL);
 }
 
 static char* AuditEnsurePermissionsOnEtcIssue(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcIssue, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcIssue ? 
+    CheckFileAccess(g_etcIssue, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcIssue ?
         g_desiredEnsurePermissionsOnEtcIssue : g_defaultEnsurePermissionsOnEtcIssue), &reason, log);
     return reason;
 }
@@ -976,7 +1034,7 @@ static char* AuditEnsurePermissionsOnEtcIssue(void* log)
 static char* AuditEnsurePermissionsOnEtcIssueNet(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcIssueNet, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcIssueNet ? 
+    CheckFileAccess(g_etcIssueNet, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcIssueNet ?
         g_desiredEnsurePermissionsOnEtcIssueNet : g_defaultEnsurePermissionsOnEtcIssueNet), &reason, log);
     return reason;
 }
@@ -984,7 +1042,7 @@ static char* AuditEnsurePermissionsOnEtcIssueNet(void* log)
 static char* AuditEnsurePermissionsOnEtcHostsAllow(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcHostsAllow, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcHostsAllow ? 
+    CheckFileAccess(g_etcHostsAllow, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcHostsAllow ?
         g_desiredEnsurePermissionsOnEtcHostsAllow : g_defaultEnsurePermissionsOnEtcHostsAllow), &reason, log);
     return reason;
 }
@@ -992,7 +1050,7 @@ static char* AuditEnsurePermissionsOnEtcHostsAllow(void* log)
 static char* AuditEnsurePermissionsOnEtcHostsDeny(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcHostsDeny, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcHostsDeny ? 
+    CheckFileAccess(g_etcHostsDeny, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcHostsDeny ?
         g_desiredEnsurePermissionsOnEtcHostsDeny : g_defaultEnsurePermissionsOnEtcHostsDeny), &reason, log);
     return reason;
 }
@@ -1039,7 +1097,7 @@ static char* AuditEnsurePermissionsOnEtcGShadowDash(void* log)
 static char* AuditEnsurePermissionsOnEtcPasswd(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcPasswd, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcPasswd ? 
+    CheckFileAccess(g_etcPasswd, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcPasswd ?
         g_desiredEnsurePermissionsOnEtcPasswd : g_defaultEnsurePermissionsOnEtcPasswd), &reason, log);
     return reason;
 }
@@ -1047,7 +1105,7 @@ static char* AuditEnsurePermissionsOnEtcPasswd(void* log)
 static char* AuditEnsurePermissionsOnEtcPasswdDash(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcPasswdDash, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcPasswdDash ? 
+    CheckFileAccess(g_etcPasswdDash, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcPasswdDash ?
         g_desiredEnsurePermissionsOnEtcPasswdDash : g_defaultEnsurePermissionsOnEtcPasswdDash), &reason, log);
     return reason;
 }
@@ -1055,7 +1113,7 @@ static char* AuditEnsurePermissionsOnEtcPasswdDash(void* log)
 static char* AuditEnsurePermissionsOnEtcGroup(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcGroup, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcGroup ? 
+    CheckFileAccess(g_etcGroup, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcGroup ?
         g_desiredEnsurePermissionsOnEtcGroup : g_defaultEnsurePermissionsOnEtcGroup), &reason, log);
     return reason;
 }
@@ -1063,7 +1121,7 @@ static char* AuditEnsurePermissionsOnEtcGroup(void* log)
 static char* AuditEnsurePermissionsOnEtcGroupDash(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcGroupDash, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcGroupDash ? 
+    CheckFileAccess(g_etcGroupDash, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcGroupDash ?
         g_desiredEnsurePermissionsOnEtcGroupDash : g_defaultEnsurePermissionsOnEtcGroupDash), &reason, log);
     return reason;
 }
@@ -1071,7 +1129,7 @@ static char* AuditEnsurePermissionsOnEtcGroupDash(void* log)
 static char* AuditEnsurePermissionsOnEtcAnacronTab(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcAnacronTab, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcAnacronTab ? 
+    CheckFileAccess(g_etcAnacronTab, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcAnacronTab ?
         g_desiredEnsurePermissionsOnEtcAnacronTab : g_defaultEnsurePermissionsOnEtcAnacronTab), &reason, log);
     return reason;
 }
@@ -1079,7 +1137,7 @@ static char* AuditEnsurePermissionsOnEtcAnacronTab(void* log)
 static char* AuditEnsurePermissionsOnEtcCronD(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcCronD, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronD ? 
+    CheckFileAccess(g_etcCronD, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronD ?
         g_desiredEnsurePermissionsOnEtcCronD : g_defaultEnsurePermissionsOnEtcCronD), &reason, log);
     return reason;
 }
@@ -1087,7 +1145,7 @@ static char* AuditEnsurePermissionsOnEtcCronD(void* log)
 static char* AuditEnsurePermissionsOnEtcCronDaily(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcCronDaily, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronDaily ? 
+    CheckFileAccess(g_etcCronDaily, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronDaily ?
         g_desiredEnsurePermissionsOnEtcCronDaily : g_defaultEnsurePermissionsOnEtcCronDaily), &reason, log);
     return reason;
 }
@@ -1095,7 +1153,7 @@ static char* AuditEnsurePermissionsOnEtcCronDaily(void* log)
 static char* AuditEnsurePermissionsOnEtcCronHourly(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcCronHourly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronHourly ? 
+    CheckFileAccess(g_etcCronHourly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronHourly ?
         g_desiredEnsurePermissionsOnEtcCronHourly : g_defaultEnsurePermissionsOnEtcCronHourly), &reason, log);
     return reason;
 }
@@ -1103,7 +1161,7 @@ static char* AuditEnsurePermissionsOnEtcCronHourly(void* log)
 static char* AuditEnsurePermissionsOnEtcCronMonthly(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcCronMonthly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronMonthly ? 
+    CheckFileAccess(g_etcCronMonthly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronMonthly ?
         g_desiredEnsurePermissionsOnEtcCronMonthly : g_defaultEnsurePermissionsOnEtcCronMonthly), &reason, log);
     return reason;
 }
@@ -1111,7 +1169,7 @@ static char* AuditEnsurePermissionsOnEtcCronMonthly(void* log)
 static char* AuditEnsurePermissionsOnEtcCronWeekly(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcCronWeekly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronWeekly ? 
+    CheckFileAccess(g_etcCronWeekly, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcCronWeekly ?
         g_desiredEnsurePermissionsOnEtcCronWeekly : g_defaultEnsurePermissionsOnEtcCronWeekly), &reason, log);
     return reason;
 }
@@ -1119,7 +1177,7 @@ static char* AuditEnsurePermissionsOnEtcCronWeekly(void* log)
 static char* AuditEnsurePermissionsOnEtcMotd(void* log)
 {
     char* reason = NULL;
-    CheckFileAccess(g_etcMotd, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcMotd ? 
+    CheckFileAccess(g_etcMotd, 0, 0, atoi(g_desiredEnsurePermissionsOnEtcMotd ?
         g_desiredEnsurePermissionsOnEtcMotd : g_defaultEnsurePermissionsOnEtcMotd), &reason, log);
     return reason;
 }
@@ -1449,7 +1507,7 @@ static char* AuditEnsureRestrictedUserHomeDirectories(void* log)
     int numberOfModes = 0;
     char* reason = NULL;
 
-    if (0 == ConvertStringToIntegers(g_desiredEnsureRestrictedUserHomeDirectories ? 
+    if (0 == ConvertStringToIntegers(g_desiredEnsureRestrictedUserHomeDirectories ?
         g_desiredEnsureRestrictedUserHomeDirectories : g_defaultEnsureRestrictedUserHomeDirectories, ',', &modes, &numberOfModes, log))
     {
         CheckRestrictedUserHomeDirectories((unsigned int*)modes, (unsigned int)numberOfModes, &reason, log);
@@ -1467,7 +1525,7 @@ static char* AuditEnsureRestrictedUserHomeDirectories(void* log)
 static char* AuditEnsurePasswordHashingAlgorithm(void* log)
 {
     char* reason = NULL;
-    CheckPasswordHashingAlgorithm((unsigned int)atoi(g_desiredEnsurePasswordHashingAlgorithm ? 
+    CheckPasswordHashingAlgorithm((unsigned int)atoi(g_desiredEnsurePasswordHashingAlgorithm ?
         g_desiredEnsurePasswordHashingAlgorithm : g_defaultEnsurePasswordHashingAlgorithm), &reason, log);
     return reason;
 }
@@ -1475,7 +1533,7 @@ static char* AuditEnsurePasswordHashingAlgorithm(void* log)
 static char* AuditEnsureMinDaysBetweenPasswordChanges(void* log)
 {
     char* reason = NULL;
-    CheckMinDaysBetweenPasswordChanges(atoi(g_desiredEnsureMinDaysBetweenPasswordChanges ? 
+    CheckMinDaysBetweenPasswordChanges(atoi(g_desiredEnsureMinDaysBetweenPasswordChanges ?
         g_desiredEnsureMinDaysBetweenPasswordChanges : g_defaultEnsureMinDaysBetweenPasswordChanges), &reason, log);
     return reason;
 }
@@ -1492,7 +1550,7 @@ static char* AuditEnsureInactivePasswordLockPeriod(void* log)
 static char* AuditEnsureMaxDaysBetweenPasswordChanges(void* log)
 {
     char* reason = NULL;
-    CheckMaxDaysBetweenPasswordChanges(atoi(g_desiredEnsureMaxDaysBetweenPasswordChanges ? 
+    CheckMaxDaysBetweenPasswordChanges(atoi(g_desiredEnsureMaxDaysBetweenPasswordChanges ?
         g_desiredEnsureMaxDaysBetweenPasswordChanges : g_defaultEnsureMaxDaysBetweenPasswordChanges), &reason, log);
     return reason;
 }
@@ -1500,7 +1558,7 @@ static char* AuditEnsureMaxDaysBetweenPasswordChanges(void* log)
 static char* AuditEnsurePasswordExpiration(void* log)
 {
     char* reason = NULL;
-    CheckPasswordExpirationLessThan(atol(g_desiredEnsurePasswordExpiration ? 
+    CheckPasswordExpirationLessThan(atol(g_desiredEnsurePasswordExpiration ?
         g_desiredEnsurePasswordExpiration : g_defaultEnsurePasswordExpiration), &reason, log);
     return reason;
 }
@@ -1508,7 +1566,7 @@ static char* AuditEnsurePasswordExpiration(void* log)
 static char* AuditEnsurePasswordExpirationWarning(void* log)
 {
     char* reason = NULL;
-    CheckPasswordExpirationWarning(atol(g_desiredEnsurePasswordExpirationWarning ? 
+    CheckPasswordExpirationWarning(atol(g_desiredEnsurePasswordExpirationWarning ?
         g_desiredEnsurePasswordExpirationWarning : g_defaultEnsurePasswordExpirationWarning), &reason, log);
     return reason;
 }
@@ -1608,7 +1666,7 @@ static char* AuditEnsureSuRestrictedToRootGroup(void* log)
 static char* AuditEnsureDefaultUmaskForAllUsers(void* log)
 {
     char* reason = NULL;
-    CheckLoginUmask(g_desiredEnsureDefaultUmaskForAllUsers ? 
+    CheckLoginUmask(g_desiredEnsureDefaultUmaskForAllUsers ?
         g_desiredEnsureDefaultUmaskForAllUsers : g_defaultEnsureDefaultUmaskForAllUsers, &reason, log);
     return reason;
 }
@@ -1631,9 +1689,9 @@ static char* AuditEnsureDefaultDenyFirewallPolicyIsSet(void* log)
 {
     const char* readIpTables = "iptables -S";
     char* reason = NULL;
-    int forceDrop = atoi(g_desiredEnsureDefaultDenyFirewallPolicyIsSet ? 
+    int forceDrop = atoi(g_desiredEnsureDefaultDenyFirewallPolicyIsSet ?
         g_desiredEnsureDefaultDenyFirewallPolicyIsSet : g_defaultEnsureDefaultDenyFirewallPolicyIsSet);
-    
+
     if ((0 != CheckTextFoundInCommandOutput(readIpTables, "-P INPUT DROP", &reason, log)) ||
         (0 != CheckTextFoundInCommandOutput(readIpTables, "-P FORWARD DROP", &reason, log)) ||
         (0 != CheckTextFoundInCommandOutput(readIpTables, "-P OUTPUT DROP", &reason, log)))
@@ -1643,7 +1701,7 @@ static char* AuditEnsureDefaultDenyFirewallPolicyIsSet(void* log)
             "ACCEPT firewall policies set and then manually set the default firewall policy for "
             "INPUT, FORWARD and OUTPUT to DROP%s", forceDrop ? "." : ". Automatic remediation is not possible");
     }
-        
+
     return reason;
 }
 
@@ -1725,7 +1783,7 @@ static char* AuditEnsureSystemNotActingAsNetworkSniffer(void* log)
     const char* command = "ip address";
     const char* text = "PROMISC";
     char* reason = NULL;
-    RETURN_REASON_IF_ZERO(((0 == CheckLineNotFoundOrCommentedOut(g_etcNetworkInterfaces, '#', text, &reason, log)) && 
+    RETURN_REASON_IF_ZERO(((0 == CheckLineNotFoundOrCommentedOut(g_etcNetworkInterfaces, '#', text, &reason, log)) &&
         (0 == CheckLineNotFoundOrCommentedOut(g_etcRcLocal, '#', text, &reason, log))) ? 0 : ENOENT);
     CheckTextNotFoundInCommandOutput(command, text, &reason, log);
     return reason;
@@ -1788,7 +1846,7 @@ static char* AuditEnsureZeroconfNetworkingIsDisabled(void* log)
 
 static char* AuditEnsurePermissionsOnBootloaderConfig(void* log)
 {
-    const char* value = g_desiredEnsurePermissionsOnBootloaderConfig ? 
+    const char* value = g_desiredEnsurePermissionsOnBootloaderConfig ?
         g_desiredEnsurePermissionsOnBootloaderConfig : g_defaultEnsurePermissionsOnBootloaderConfig;
     unsigned int mode = (unsigned int)atoi(value);
     char* reason = NULL;
@@ -1828,14 +1886,14 @@ static char* AuditEnsurePasswordCreationRequirements(void* log)
     int numberOfValues = 0;
     char* reason = NULL;
 
-    if ((0 == ConvertStringToIntegers(g_desiredEnsurePasswordCreationRequirements ? g_desiredEnsurePasswordCreationRequirements : 
+    if ((0 == ConvertStringToIntegers(g_desiredEnsurePasswordCreationRequirements ? g_desiredEnsurePasswordCreationRequirements :
         g_defaultEnsurePasswordCreationRequirements, ',', &values, &numberOfValues, log)) && (7 == numberOfValues))
     {
         CheckPasswordCreationRequirements(values[0], values[1], values[2], values[3], values[4], values[5], values[6], &reason, log);
     }
     else
     {
-        reason = FormatAllocateString("Failed to parse '%s'. There must be 7 numbers, comma separated, in this order: retry, minlen, minclass, dcredit, ucredit, ocredit, lcredit", 
+        reason = FormatAllocateString("Failed to parse '%s'. There must be 7 numbers, comma separated, in this order: retry, minlen, minclass, dcredit, ucredit, ocredit, lcredit",
             g_desiredEnsurePasswordCreationRequirements ? g_desiredEnsurePasswordCreationRequirements : g_defaultEnsurePasswordCreationRequirements);
     }
 
@@ -1971,7 +2029,7 @@ static char* AuditEnsureFilePermissionsForAllRsyslogLogFiles(void* log)
     int numberOfModes = 0;
     char* reason = NULL;
 
-    if ((0 == ConvertStringToIntegers(g_desiredEnsureFilePermissionsForAllRsyslogLogFiles ? g_desiredEnsureFilePermissionsForAllRsyslogLogFiles : 
+    if ((0 == ConvertStringToIntegers(g_desiredEnsureFilePermissionsForAllRsyslogLogFiles ? g_desiredEnsureFilePermissionsForAllRsyslogLogFiles :
         g_defaultEnsureFilePermissionsForAllRsyslogLogFiles, ',', &modes, &numberOfModes, log)) && (numberOfModes > 0))
     {
         CheckIntegerOptionFromFileEqualWithAny(g_etcRsyslogConf, g_fileCreateMode, ' ', modes, numberOfModes, &reason, log);
@@ -2310,7 +2368,7 @@ static char* AuditEnsureSmbWithSambaIsDisabled(void* log)
     }
     else
     {
-        RETURN_REASON_IF_NOT_ZERO(CheckFileNotFound(g_etcSambaConf, &reason, log)); 
+        RETURN_REASON_IF_NOT_ZERO(CheckFileNotFound(g_etcSambaConf, &reason, log));
         CheckPackageNotInstalled(g_samba, &reason, log);
     }
     return reason;
@@ -2322,15 +2380,15 @@ static char* AuditEnsureUsersDotFilesArentGroupOrWorldWritable(void* log)
     int numberOfModes = 0;
     char* reason = NULL;
 
-    if ((0 == ConvertStringToIntegers(g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable ? g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable : 
+    if ((0 == ConvertStringToIntegers(g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable ? g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable :
         g_defaultEnsureUsersDotFilesArentGroupOrWorldWritable, ',', &modes, &numberOfModes, log)) && (numberOfModes >= 2))
     {
         CheckUsersRestrictedDotFiles((unsigned int*)modes, (unsigned int)numberOfModes, &reason, log);
     }
     else
     {
-        reason = FormatAllocateString("Failed to parse '%s'. There must be at least two access numbers, comma separated", 
-            g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable ? g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable : 
+        reason = FormatAllocateString("Failed to parse '%s'. There must be at least two access numbers, comma separated",
+            g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable ? g_desiredEnsureUsersDotFilesArentGroupOrWorldWritable :
             g_defaultEnsureUsersDotFilesArentGroupOrWorldWritable);
     }
 
@@ -2373,7 +2431,7 @@ static char* AuditEnsureRloginServiceIsDisabled(void* log)
 static char* AuditEnsureUnnecessaryAccountsAreRemoved(void* log)
 {
     char* reason = NULL;
-    CheckUserAccountsNotFound(g_desiredEnsureUnnecessaryAccountsAreRemoved ? 
+    CheckUserAccountsNotFound(g_desiredEnsureUnnecessaryAccountsAreRemoved ?
         g_desiredEnsureUnnecessaryAccountsAreRemoved : g_defaultEnsureUnnecessaryAccountsAreRemoved, &reason, log);
     return reason;
 }
@@ -2892,7 +2950,7 @@ static int RemediateEnsureCronServiceIsEnabled(char* value, void* log)
 {
     UNUSED(value);
 
-    return (((0 == InstallPackage(g_cron, log)) && EnableAndStartDaemon(g_cron, log)) || 
+    return (((0 == InstallPackage(g_cron, log)) && EnableAndStartDaemon(g_cron, log)) ||
         (((0 == InstallPackage(g_cronie, log)) && EnableAndStartDaemon(g_crond, log)))) ? 0 : ENOENT;
 }
 
@@ -3040,7 +3098,7 @@ static int RemediateEnsureAllAccountsHavePasswords(char* value, void* log)
 {
     UNUSED(value);
     // We cannot automatically add passwords for user accounts that can login and do not have passwords set.
-    // If we try for example to run a command such as usermod, the command line can reveal that password 
+    // If we try for example to run a command such as usermod, the command line can reveal that password
     // in clear before it gets encrypted and saved. Thus we simply delete such accounts:
     return RemoveUsersWithoutPasswords(log);
 }
@@ -3385,7 +3443,7 @@ static int RemediateEnsurePermissionsOnBootloaderConfig(char* value, void* log)
     unsigned int mode = 0;
     InitEnsurePermissionsOnBootloaderConfig(value);
     mode = (unsigned int)atoi(g_desiredEnsurePermissionsOnBootloaderConfig);
-    
+
     return ((FileExists(g_bootGrubGrubCfg) && (0 == SetFileAccess(g_bootGrubGrubCfg, 0, 0, mode, log))) ||
         (FileExists(g_bootGrubGrubConf) && (0 == SetFileAccess(g_bootGrubGrubConf, 0, 0, mode, log))) ||
         (FileExists(g_bootGrub2GrubCfg) && (0 == SetFileAccess(g_bootGrub2GrubCfg, 0, 0, mode, log)))) ? 0 : ENOENT;
@@ -3508,10 +3566,10 @@ static int RemediateEnsureAllBootloadersHavePasswordProtectionEnabled(char* valu
 static int RemediateEnsureLoggingIsConfigured(char* value, void* log)
 {
     UNUSED(value);
-    return (((0 == InstallPackage(g_systemd, log) && 
+    return (((0 == InstallPackage(g_systemd, log) &&
         ((0 == InstallPackage(g_rsyslog, log)) || (0 == InstallPackage(g_syslog, log)))) || (0 == InstallPackage(g_syslogNg, log))) &&
         (((0 == CheckPackageInstalled(g_systemd, NULL, log)) && EnableAndStartDaemon(g_systemdJournald, log))) &&
-        ((((0 == CheckPackageInstalled(g_rsyslog, NULL, log)) && EnableAndStartDaemon(g_rsyslog, log))) || 
+        ((((0 == CheckPackageInstalled(g_rsyslog, NULL, log)) && EnableAndStartDaemon(g_rsyslog, log))) ||
         (((0 == CheckPackageInstalled(g_syslog, NULL, log)) && EnableAndStartDaemon(g_syslog, log))) ||
         (((0 == CheckPackageInstalled(g_syslogNg, NULL, log)) && EnableAndStartDaemon(g_syslogNg, log))))) ? 0 : ENOENT;
 }
@@ -3519,8 +3577,8 @@ static int RemediateEnsureLoggingIsConfigured(char* value, void* log)
 static int RemediateEnsureSyslogPackageIsInstalled(char* value, void* log)
 {
     UNUSED(value);
-    return ((0 == InstallPackage(g_systemd, log) && 
-        ((0 == InstallPackage(g_rsyslog, log)) || (0 == InstallPackage(g_syslog, log)))) || 
+    return ((0 == InstallPackage(g_systemd, log) &&
+        ((0 == InstallPackage(g_rsyslog, log)) || (0 == InstallPackage(g_syslog, log)))) ||
         ((0 == InstallPackage(g_syslogNg, log)))) ? 0 : ENOENT;
 }
 
@@ -3535,7 +3593,7 @@ static int RemediateEnsureALoggingServiceIsEnabled(char* value, void* log)
 {
     UNUSED(value);
     return ((((0 == InstallPackage(g_systemd, log)) && EnableAndStartDaemon(g_systemdJournald, log)) &&
-        (((0 == InstallPackage(g_rsyslog, log)) && EnableAndStartDaemon(g_rsyslog, log)) || 
+        (((0 == InstallPackage(g_rsyslog, log)) && EnableAndStartDaemon(g_rsyslog, log)) ||
         (((0 == InstallPackage(g_syslog, log) && EnableAndStartDaemon(g_syslog, log)))))) ||
         (((0 == InstallPackage(g_syslogNg, log)) && EnableAndStartDaemon(g_syslogNg, log)))) ? 0 : ENOENT;
 }
@@ -3567,7 +3625,7 @@ static int RemediateEnsureFilePermissionsForAllRsyslogLogFiles(char* value, void
         }
         else
         {
-            OsConfigLogError(log, "RemediateEnsureFilePermissionsForAllRsyslogLogFiles: failed to parse desired value '%s'", 
+            OsConfigLogError(log, "RemediateEnsureFilePermissionsForAllRsyslogLogFiles: failed to parse desired value '%s'",
                 g_desiredEnsureFilePermissionsForAllRsyslogLogFiles);
             status = ENOENT;
         }
@@ -3864,7 +3922,7 @@ static int RemediateEnsureNisServerIsDisabled(char* value, void* log)
 static int RemediateEnsureRshClientNotInstalled(char* value, void* log)
 {
     UNUSED(value);
-    return ((0 == UninstallPackage(g_rsh, log)) && 
+    return ((0 == UninstallPackage(g_rsh, log)) &&
         (0 == UninstallPackage(g_rshClient, log))) ? 0 : ENOENT;
 }
 
@@ -3938,8 +3996,8 @@ static int RemediateEnsureRloginServiceIsDisabled(char* value, void* log)
     UninstallPackage(g_rlogin, log);
     UninstallPackage(g_inetd, log);
     UninstallPackage(g_inetUtilsInetd, log);
-    return ((0 == CheckPackageNotInstalled(g_rlogin, NULL, log)) && 
-        (0 == CheckPackageNotInstalled(g_inetd, NULL, log)) && 
+    return ((0 == CheckPackageNotInstalled(g_rlogin, NULL, log)) &&
+        (0 == CheckPackageNotInstalled(g_inetd, NULL, log)) &&
         (0 == CheckPackageNotInstalled(g_inetUtilsInetd, NULL, log)) &&
         (0 == ReplaceMarkedLinesInFile(g_etcInetdConf, g_login, NULL, '#', true, log))) ? 0 : ENOENT;
 }
@@ -3954,6 +4012,7 @@ int AsbMmiGet(const char* componentName, const char* objectName, char** payload,
 {
     JSON_Value* jsonValue = NULL;
     char* serializedValue = NULL;
+    PERF_CLOCK perfClock = {{0, 0}, {0, 0}};
     int status = 0;
     char* result = NULL;
 
@@ -3966,6 +4025,8 @@ int AsbMmiGet(const char* componentName, const char* objectName, char** payload,
 
     *payload = NULL;
     *payloadSizeBytes = 0;
+
+    StartPerfClock(&perfClock, GetPerfLog());
 
     if (0 != strcmp(componentName, g_securityBaselineComponentName))
     {
@@ -4665,7 +4726,7 @@ int AsbMmiGet(const char* componentName, const char* objectName, char** payload,
                 status = ENOMEM;
             }
         }
-        
+
         if (NULL != result)
         {
             if ((NULL == jsonValue) && (NULL == (jsonValue = json_value_init_string(result))))
@@ -4703,7 +4764,7 @@ int AsbMmiGet(const char* componentName, const char* objectName, char** payload,
                 }
             }
         }
-    }    
+    }
 
     OsConfigLogInfo(log, "AsbMmiGet(%s, %s, %.*s, %d) returning %d", componentName, objectName, *payloadSizeBytes, *payload, *payloadSizeBytes, status);
 
@@ -4719,14 +4780,21 @@ int AsbMmiGet(const char* componentName, const char* objectName, char** payload,
 
     FREE_MEMORY(result);
 
+    if (0 == StopPerfClock(&perfClock, GetPerfLog()))
+    {
+        LogPerfClock(&perfClock, componentName, objectName, status, g_maxAuditTime, GetPerfLog());
+    }
+
     return status;
 }
 
 int AsbMmiSet(const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes, void* log)
 {
+    const char* init = "init";
     JSON_Value* jsonValue = NULL;
     char* jsonString = NULL;
     char* payloadString = NULL;
+    PERF_CLOCK perfClock = {{0, 0}, {0, 0}};
     int status = 0;
 
     // No payload is accepted for now, this may change once the complete Azure Security Baseline is implemented
@@ -4735,6 +4803,8 @@ int AsbMmiSet(const char* componentName, const char* objectName, const char* pay
         OsConfigLogError(log, "AsbMmiSet(%s, %s, %s, %d) called with invalid arguments", componentName, objectName, payload, payloadSizeBytes);
         return EINVAL;
     }
+
+    StartPerfClock(&perfClock, GetPerfLog());
 
     if (0 != strcmp(componentName, g_securityBaselineComponentName))
     {
@@ -4769,7 +4839,7 @@ int AsbMmiSet(const char* componentName, const char* objectName, const char* pay
             OsConfigLogError(log, "AsbMmiSet: failed to allocate %d bytes of memory", payloadSizeBytes + 1);
         }
     }
-    
+
     if (0 == status)
     {
         if (0 == strcmp(objectName, g_remediateEnsurePermissionsOnEtcIssueObject))
@@ -5530,7 +5600,7 @@ int AsbMmiSet(const char* componentName, const char* objectName, const char* pay
             status = InitEnsureAppropriateCiphersForSsh(jsonString, log);
         }
         else if (0 == strcmp(objectName, g_initEnsurePermissionsOnEtcIssueObject))
-        { 
+        {
             status = InitEnsurePermissionsOnEtcIssue(jsonString);
         }
         else if (0 == strcmp(objectName, g_initEnsurePermissionsOnEtcIssueNetObject))
@@ -5671,15 +5741,24 @@ int AsbMmiSet(const char* componentName, const char* objectName, const char* pay
             status = EINVAL;
         }
     }
-    
+
     OsConfigLogInfo(log, "AsbMmiSet(%s, %s, %.*s, %d) returning %d", componentName, objectName, payloadSizeBytes, payload, payloadSizeBytes, status);
 
     if (NULL != jsonValue)
     {
         json_value_free(jsonValue);
     }
-    
+
     FREE_MEMORY(payloadString);
+
+    if (0 == StopPerfClock(&perfClock, GetPerfLog()))
+    {
+        // Ignore the successful init* objects and focus on remediate* ones
+        if (0 != strncmp(objectName, init, strlen(init)))
+        {
+            LogPerfClock(&perfClock, componentName, objectName, status, g_maxRemediateTime, GetPerfLog());
+        }
+    }
 
     return status;
 }

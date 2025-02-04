@@ -183,7 +183,14 @@ jobs:
               Write-Host "Renaming $($_.Name) to $name.zip"
               Rename-Item -Path $_.Name -NewName "$name.zip"
           }
-      
+
+      - name: Check package size
+        if: success() || failure()
+        uses: ./.github/actions/check-size
+        with:
+          package: '${{ steps.normalize.outputs.path }}'
+          limit: 290
+
       - name: Run Guest Configuration Test
         working-directory: ${{ steps.normalize.outputs.PolicyPackageDir }}
         run: |
@@ -221,6 +228,13 @@ jobs:
 
           sudo LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/omi/lib/ pwsh -Command $script
           stat *testResults.xml
+
+      - name: Check performance
+        if: success() || failure()
+        uses: ./.github/actions/check-perf
+        with:
+          perflog: /var/log/osconfig_asb_perf.log
+          mark: "is longer than"
 
       - name: Stage OSConfig Logs
         if: success() || failure()
@@ -291,6 +305,13 @@ jobs:
           echo "$output" > ../../$name.log
 
           exit $result
+
+      - name: Check performance
+        if: success() || failure()
+        uses: ./.github/actions/check-perf
+        with:
+          perflog: /var/log/osconfig_asb_perf.log
+          mark: "is longer than"
 
       - uses: actions/upload-artifact@v4
         if: success() || failure()

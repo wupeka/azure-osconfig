@@ -34,6 +34,14 @@ gcc --version
 
 For IoT Hub management, you can install and configure the *Azure IoT Identity Service (AIS)* package as described at [azure.github.io/iot-identity-service/](https://azure.github.io/iot-identity-service/).
 
+For contributing to the project, also install the following prerequisites for [pre-commit](https://pre-commit.com/):
+
+```bash
+sudo apt-get install python3
+pip3 install pre_commit
+python3 -m pre_commit install
+```
+
 ### Build
 
 Create a folder build folder under the repo root /build
@@ -116,7 +124,7 @@ Only the root user can view these log files.
 
 OSConfig can be configured via `/etc/osconfig/osconfig.json`. After changing this configuration file, restart OSConfig to apply the configuration changes. Only the root user can view or edit this configuration file.
 
-### Enabling management via IoT Hub 
+### Enabling management via IoT Hub
 
 Originally OSConfig was developed with the IoT Hub management channel by default and always enabled. Currently, this managament channel is by default disabled. You can enable it via the OSConfig general configuration file at `/etc/osconfig/osconfig.json`. Edit there the integer value named "IotHubManagement" to a non-zero value:
 
@@ -197,9 +205,9 @@ To disable local management, set "LocalManagement" to 0.
 
 OSConfig can apply to the device desired configuration in MIM JSON payload format (same as for RC/DC) read from a Git repository and branch. The DC file must be named `osconfig_desired.json` and be placed in the root of the repository.
 
-By default, desired configuration (DC) over GitOps is disabled and there are no configured Git repository or branch. 
+By default, desired configuration (DC) over GitOps is disabled and there are no configured Git repository or branch.
 
-To enable GitOps DC management, edit the OSConfig general configuration file `/etc/osconfig/osconfig.json` and there: 
+To enable GitOps DC management, edit the OSConfig general configuration file `/etc/osconfig/osconfig.json` and there:
 
 1. Set (or add if needed) a string value named "GitRepositoryUrl" to a string value containing the string that can be used to clone a Git repository, for example (this example uses OSConfig's own repository but can be anything):
 
