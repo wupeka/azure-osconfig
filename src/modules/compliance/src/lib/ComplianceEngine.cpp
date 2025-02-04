@@ -11,6 +11,7 @@
 #include <string>
 #include <vector>
 #include <map>
+#include <sstream>
 
 namespace compliance
 {
@@ -66,8 +67,8 @@ namespace compliance
             // Parameters are mandatory
             const auto* parametersObject = json_object_get_object(itemObj, "parameters");
 
-            std::map<std::string, std::string> parameters;
             auto paramsCount = json_object_get_count(parametersObject);
+            auto procedure = Procedure(key);
             for (decltype(paramsCount) j = 0; j < paramsCount; ++j)
             {
                 const char* paramKey = json_object_get_name(parametersObject, j);
@@ -78,10 +79,9 @@ namespace compliance
                 }
 
                 OsConfigLogInfo(log(), "Adding parameter %s=%s", paramKey, paramVal);
-                parameters[paramKey] = paramVal;
+                procedure.setParameter(paramKey, paramVal);
             }
 
-            auto procedure = Procedure(std::move(parameters));
             auto error = procedure.setAudit(json_value_deep_copy(json_object_get_wrapping_value(auditRule)));
             if (error)
             {
@@ -175,10 +175,10 @@ namespace compliance
         auto result = Payload{};
         const JSON_Object* rule = nullptr;
         constexpr const char* auditPrefix = "audit";
+        auto key = std::string(objectName);
 
         if (mContext == Context::MMI) // RC/DC and other scenarios
         {
-            auto key = std::string(objectName);
             if (key.find(auditPrefix) == 0)
             {
                 key = key.substr(strlen(auditPrefix));
@@ -198,48 +198,28 @@ namespace compliance
             {
                 return Error("ComplianceExecuteRule failed", rc);
             }
+            return result;
         }
-        else // NRP transaction
+
+        if (key.find(auditPrefix) == 0)
         {
-            auto it = mDatabase.find("NRP-placeholder");
+            key = key.substr(strlen(auditPrefix));
+
+            auto it = mDatabase.find(key);
             if (it == mDatabase.end())
             {
                 OsConfigLogError(log(), "Rule not found");
                 return Error("Rule not found");
             }
-            const auto& parameters = it->second.parameters();
+            const auto& procedure = it->second;
 
-            // try to decode base64 rule
-            OsConfigLogInfo(log(), "Attempting to decode base64 rule %s", objectName);
-            auto json = decodeB64JSON(objectName);
-            if (!json.has_value())
+            if (procedure.audit() == nullptr)
             {
-                OsConfigLogError(log(), "Failed to decode base64 JSON: %s", json.error().message.c_str());
-                return json.error();
+                OsConfigLogError(log(), "Failed to get audit contents");
+                return Error("Failed to get audit contents");
             }
 
-            auto object = json_value_get_object(json.value().get());
-            if (object == nullptr)
-            {
-                OsConfigLogError(log(), "Failed to parse JSON object");
-                return Error("Failed to parse JSON object");
-            }
-
-            auto value = json_object_get_value(object, auditPrefix);
-            if (value == nullptr)
-            {
-                OsConfigLogError(log(), "Failed to get audit value");
-                return Error("Failed to get audit value");
-            }
-
-            rule = json_value_get_object(value);
-            if (rule == nullptr)
-            {
-                OsConfigLogError(log(), "Failed to get audit object");
-                return Error("Failed to get audit object");
-            }
-
-            auto rc = ComplianceExecuteAudit(rule, parameters, &result.data, &result.size, log());
+            auto rc = ComplianceExecuteAudit(procedure.audit(), procedure.parameters(), &result.data, &result.size, log());
             if (rc != 0)
             {
                 OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
@@ -253,15 +233,23 @@ namespace compliance
     Result<JSON> Engine::decodeB64JSON(const char* input) const
     {
         unsigned int baseLen = 0;
-
-        Base64Decode(input, NULL, &baseLen);
+        if (input == nullptr)
+        {
+            return Error("Input is null", EINVAL);
+        }
+        std::string inputStr(input);
+        if (inputStr.length() > 2 && inputStr[0] == '"' && inputStr[inputStr.length() - 1] == '"')
+        {
+            inputStr = inputStr.substr(1, inputStr.length() - 2);
+        }
+        Base64Decode(inputStr.c_str(), NULL, &baseLen);
         if (0 == baseLen)
         {
             return Error("Failed to decode base64 input length", EINVAL);
         }
 
         std::unique_ptr<char[]> inputJSONString(new char[baseLen]);
-        if (Base64Decode(input, (unsigned char*)inputJSONString.get(), &baseLen) != 0)
+        if (Base64Decode(inputStr.c_str(), (unsigned char*)inputJSONString.get(), &baseLen) != 0)
         {
             return Error("Failed to decode base64 input", EINVAL);
         }
@@ -280,10 +268,11 @@ namespace compliance
         const JSON_Object* rule = nullptr;
         constexpr const char* remediatePrefix = "remediate";
         constexpr const char* initPrefix = "init";
+        constexpr const char* procedurePrefix = "procedure";
+        auto key = std::string(objectName);
 
         if (mContext == Context::MMI)
         {
-            auto key = std::string(objectName);
             if (key.find(remediatePrefix) == 0)
             {
                 key = key.substr(strlen(remediatePrefix));
@@ -300,90 +289,111 @@ namespace compliance
                 return Error("Rule not found");
             }
 
-            auto result = ComplianceExecuteRemediation(it->second.remediation(), it->second.parameters(), payload, payloadSizeBytes, log());
+            it->second.updateUserParameters(payload);
+            auto result = ComplianceExecuteRemediation(it->second.remediation(), it->second.parameters(), log());
             if (result != 0)
             {
                 OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
                 return Error("ComplianceExecuteRule failed", result);
             }
+            return {};
         }
-        else
+
+        if (key.find(procedurePrefix) == 0)
         {
-            // try to decode base64 rule
-            auto result = decodeB64JSON(objectName);
+            key = key.substr(strlen(procedurePrefix));
+            mDatabase.erase(key);
+            auto result = decodeB64JSON(payload);
             if (!result.has_value())
             {
                 OsConfigLogError(log(), "Failed to decode base64 JSON: %s", result.error().message.c_str());
                 return result.error();
             }
-
             auto object = json_value_get_object(result.value().get());
             if (object == nullptr)
             {
                 OsConfigLogError(log(), "Failed to parse JSON object");
                 return Error("Failed to parse JSON object");
             }
-
-            auto value = json_object_get_value(object, "parameters");
-            if (nullptr != value)
+            auto value = json_object_get_value(object, "name");
+            if (value == nullptr || json_value_get_type(value) != JSONString)
             {
-                // TODO(robertwoj): This should be based on rule name
-                auto it = mDatabase.find("NRP-placeholder");
-                if (it != mDatabase.end())
-                {
-                    OsConfigLogInfo(log(), "Resetting parameters for NRP operation");
-                    mDatabase.erase(it);
-                }
-
+                OsConfigLogError(log(), "Failed to get name value");
+                return Error("Failed to get name value");
+            }
+            Procedure procedure(json_value_get_string(value));
+            value = json_object_get_value(object, "audit");
+            if (value != nullptr)
+            {
+                procedure.setAudit(value);
+            }
+            value = json_object_get_value(object, "remediate");
+            if (value != nullptr)
+            {
+                procedure.setRemediation(value);
+            }
+            value = json_object_get_value(object, "parameters");
+            if (value != nullptr && json_value_get_type(value) == JSONObject)
+            {
                 auto paramsObj = json_value_get_object(value);
-                if (paramsObj)
+                auto count = json_object_get_count(paramsObj);
+                for (decltype(count) i = 0; i < count; ++i)
                 {
-                    std::map<std::string, std::string> parameters;
-                    auto count = json_object_get_count(paramsObj);
-                    for (decltype(count) i = 0; i < count; ++i)
+                    const char *key = json_object_get_name(paramsObj, i);
+                    const char *val = json_object_get_string(paramsObj, key);
+                    if (val)
                     {
-                        const char* key = json_object_get_name(paramsObj, i);
-                        const char* val = json_object_get_string(paramsObj, key);
-                        if (val)
-                        {
-                            parameters.insert({key, val});
-                        }
+                        procedure.setParameter(key, val);
                     }
-                    mDatabase.insert({ "NRP-placeholder", std::move(parameters) });
                 }
             }
-            else
+            mDatabase.insert({key, std::move(procedure)});
+        }
+        else if (key.find(initPrefix) == 0)
+        {
+            key = key.substr(strlen(initPrefix));
+            auto it = mDatabase.find(key);
+            if (it == mDatabase.end())
             {
-                // TODO(robertwoj): This should be based on rule name
-                auto it = mDatabase.find("NRP-placeholder");
-                if (it == mDatabase.end())
-                {
-                    OsConfigLogError(log(), "Out-of-order NRP operation: parameters must be called first");
-                    return Error("Out-of-order NRP operation: parameters must be called first", EINVAL);
-                }
+                OsConfigLogError(log(), "Out-of-order NRP operation: procedure must be set first");
+                return Error("Out-of-order NRP operation: procedure must be first", EINVAL);
+            }
 
-                value = json_object_get_value(object, "remediate");
-                if (value != nullptr)
-                {
-                    rule = json_value_get_object(value);
-                    if (rule == nullptr)
-                    {
-                        OsConfigLogError(log(), "Failed to get remediate object");
-                        return Error("Failed to get remediate object");
-                    }
-
-                    OsConfigLogInfo(log(), "Executing rule %s", objectName);
-                    mDatabase.erase("NRP-placeholder");
-                    auto result = ComplianceExecuteRemediation(rule, it->second.parameters(), payload, payloadSizeBytes, log());
-                    if (result != 0)
-                    {
-                        OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
-                        return Error("ComplianceExecuteRule failed", result);
-                    }
-                }
+            if (it->second.updateUserParameters(payload)) {
+                OsConfigLogError(log(), "Failed to update user parameters");
+                return Error("Failed to update user parameters");
             }
         }
+        else if (key.find(remediatePrefix) == 0)
+        {
+            key = key.substr(strlen(remediatePrefix));
+            auto it = mDatabase.find(key);
+            if (it == mDatabase.end())
+            {
+                OsConfigLogError(log(), "Out-of-order NRP operation: procedure must be set first");
+                return Error("Out-of-order NRP operation: procedure must be first", EINVAL);
+            }
+            auto &procedure = it->second;
+            if (procedure.remediation() == nullptr)
+            {
+                OsConfigLogError(log(), "Failed to get remediate object");
+                return Error("Failed to get remediate object");
+            }
 
+            if (procedure.updateUserParameters(payload)) {
+                OsConfigLogError(log(), "Failed to update user parameters");
+                return Error("Failed to update user parameters");
+            }
+
+            OsConfigLogInfo(log(), "Executing rule %s", objectName);
+            auto result = ComplianceExecuteRemediation(rule, procedure.parameters(), log());
+            mDatabase.erase(key);
+            if (result != 0)
+            {
+                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
+                return Error("ComplianceExecuteRule failed", result);
+            }
+        }
         return {};
     }
 

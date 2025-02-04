@@ -30,7 +30,7 @@ struct json_object_t;
 
 void ComplianceSetParameters(const std::map<std::string, std::string>& params);
 int ComplianceExecuteAudit(const json_object_t* rule, const std::map<std::string, std::string>& parameters, char** payload, int* payloadSizeBytes, void* log);
-int ComplianceExecuteRemediation(const json_object_t* rule, std::map<std::string, std::string> parameters, const char* payload, const int payloadSizeBytes, void* log);
+int ComplianceExecuteRemediation(const json_object_t* rule, std::map<std::string, std::string> parameters, void* log);
 #endif
 
 #endif // COMPLIANCE_H

@@ -33,7 +33,6 @@
             ]
         },
         "remediate": {
-            "remediate": {
                 "anyOf": [
                     {
                         "not": {
@@ -51,7 +50,6 @@
                         }
                     }
                 ]
-            }
         }
     },
     {

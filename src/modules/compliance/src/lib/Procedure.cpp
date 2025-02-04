@@ -2,11 +2,12 @@
 #include <Logging.h>
 
 #include <parson.h>
+#include <sstream>
 
 namespace compliance
 {
-    Procedure::Procedure(std::map<std::string, std::string> parameters)
-        : mParameters(std::move(parameters))
+    Procedure::Procedure(const std::string &name)
+        : mName(name)
     {
     }
 
@@ -41,13 +42,63 @@ namespace compliance
 
     Optional<Error> Procedure::setParameter(const std::string& key, std::string value) noexcept
     {
-        auto it = mParameters.find(key);
-        if(it == mParameters.end())
+        mParameters[key] = std::move(value);
+        return {};
+    }
+
+    Optional<Error> Procedure::updateUserParameters(const std::string &input) noexcept
+    {
+        std::istringstream stream(input);
+        std::string token;
+
+        while (std::getline(stream, token, ' '))
         {
-            return Error("Unknown parameter " + key);
+            // In the non-NRP scenario the token is delimited by double quotes
+            if (token.size() >= 2 && token.front() == '"' && token.back() == '"')
+            {
+                token = token.substr(1, token.size() - 2);
+            }
+
+            size_t pos = token.find('=');
+            if (pos == std::string::npos)
+            {
+                continue;
+            }
+
+            std::string key = token.substr(0, pos);
+            std::string value = token.substr(pos + 1);
+
+            if (!value.empty() && value[0] == '"')
+            {
+                value.erase(0, 1);
+                while (!value.empty() && value.back() == '\\')
+                {
+                    std::string nextToken;
+                    if (std::getline(stream, nextToken, ' '))
+                    {
+                        value.pop_back();
+                        value += ' ' + nextToken;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+                if (!value.empty() && value.back() == '"')
+                {
+                    value.pop_back();
+                }
+            }
+
+            auto it = mParameters.find(key);
+            if (it == mParameters.end())
+            {
+                return Error("User parameter not found");
+            }
+
+            it->second = value;
         }
 
-        mParameters[key] = std::move(value);
         return {};
     }
 

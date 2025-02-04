@@ -33,14 +33,18 @@ def generate_osconfig_resource(resource, index):
     payload_key = resource["key"]
     rule_id = generate_uuid(resource_id)
 
-    audit = resource.get("audit", {})
-    remediate = resource.get("remediate", {})
+    audit = resource.get("audit")
+    remediate = resource.get("remediate")
 
     parameters = extract_parameters(audit)
-    reported_object_name = compact_base64_encode({"audit": audit})
-    desired_object_name = compact_base64_encode({"remediate": remediate})
-
-    init_object_name = compact_base64_encode({"parameters": parameters})
+    d = {"name": resource_id}
+    if remediate is not None:
+        d["remediate"] = remediate
+    if audit is not None:
+        d["audit"] = audit
+    if parameters is not None:
+        d["parameters"] = parameters
+    procedure_object_value = compact_base64_encode(d)
     desired_object_value = " ".join([f"{param}={default}" for param, default in parameters.items()])
 
     return f'''instance of OsConfigResource as $OsConfigResource{index}ref
@@ -49,10 +53,12 @@ def generate_osconfig_resource(resource, index):
    PayloadKey = "{payload_key}";
    RuleId = "{rule_id}";
    ComponentName = "Compliance";
-   InitObjectName = "{init_object_name}";
-   ReportedObjectName = "{reported_object_name}";
+   ProcedureObjectName = "procedureObject";
+   ProcedureObjectValue = "{procedure_object_value}";
+   InitObjectName = "initObject";
+   ReportedObjectName = "auditObject";
    ExpectedObjectValue = "PASS";
-   DesiredObjectName = "{desired_object_name}";
+   DesiredObjectName = "remediateObject";
    DesiredObjectValue = "{desired_object_value}";
    ModuleName = "GuestConfiguration";
    ModuleVersion = "1.0.0";

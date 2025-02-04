@@ -14,12 +14,13 @@ namespace compliance
 {
     class Procedure
     {
+        std::string mName;
         std::map<std::string, std::string> mParameters;
         json_value_t* mAuditRule = nullptr;
         json_value_t* mRemediationRule = nullptr;
 
     public:
-        Procedure(std::map<std::string, std::string> parameters);
+        Procedure(const std::string &name);
         ~Procedure();
 
         Procedure(const Procedure&) = delete;
@@ -32,7 +33,8 @@ namespace compliance
         const json_object_t* remediation() const noexcept;
 
         Optional<Error> setParameter(const std::string& key, std::string value) noexcept;
-        Optional<Error> setAudit(const json_value_t* rule) noexcept;
+        Optional<Error> updateUserParameters(const std::string &userParameters) noexcept;
+        Optional<Error> setAudit(const json_value_t *rule) noexcept;
         Optional<Error> setRemediation(const json_value_t* rule) noexcept;
     };
 } // namespace compliance
