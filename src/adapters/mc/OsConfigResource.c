@@ -536,6 +536,108 @@ static MI_Result SetProcedureObjectValueToDevice(const char* who, char* objectNa
     return miResult;
 }
 
+static MI_Result SetProcedureObjectValueToDevice(const char* who, char* objectName, MI_Context* context)
+{
+    char* payloadString = NULL;
+    int payloadSize = 0;
+
+    JSON_Value* jsonValue = NULL;
+    char* serializedValue = NULL;
+
+    MI_Result miResult = MI_RESULT_OK;
+    int mpiResult = MPI_OK;
+
+    if ((NULL == objectName) || (NULL == g_procedureObjectValue))
+    {
+        LogError(context, miResult, GetLog(), "[%s] SetProcedureObjectValueToDevice called with an invalid object name and/or procedure object value", who);
+        return MI_RESULT_INVALID_PARAMETER;
+    }
+
+    if (NULL == (jsonValue = json_value_init_string(g_procedureObjectValue)))
+    {
+        miResult = MI_RESULT_FAILED;
+        mpiResult = ENOMEM;
+        LogError(context, miResult, GetLog(), "[%s] json_value_init_string('%s') failed", who, g_procedureObjectValue);
+    }
+    else if (NULL == (serializedValue = json_serialize_to_string(jsonValue)))
+    {
+        miResult = MI_RESULT_FAILED;
+        mpiResult = ENOMEM;
+        LogError(context, miResult, GetLog(), "[%s] json_serialize_to_string('%s') failed", who, g_procedureObjectValue);
+    }
+    else
+    {
+        payloadSize = (int)strlen(serializedValue);
+        if (NULL != (payloadString = malloc(payloadSize + 1)))
+        {
+            const OsConfigComponent *component = NULL;
+
+            memset(payloadString, 0, payloadSize + 1);
+            memcpy(payloadString, serializedValue, payloadSize);
+
+            for (component = g_components; NULL != component->Name; ++component)
+            {
+                if (!strcmp(component->Name, g_componentName))
+                {
+                    break;
+                }
+            }
+            if (NULL != component->MmiSet)
+            {
+                mpiResult = component->MmiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
+                LogInfo(context, GetLog(), "[%s] MmiSet(%s, %s, '%.*s', %d) returned %d",
+                    who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+
+            }
+            else
+            {
+                mpiResult = EINVAL;
+                LogError(context, MI_RESULT_FAILED, GetLog(), "[%s] No component found for ComponentName %s", who, g_componentName);
+            }
+
+            if (MPI_OK != mpiResult)
+            {
+                if (NULL == g_mpiHandle)
+                {
+                    g_mpiHandle = RefreshMpiClientSession(g_mpiHandle, context);
+                }
+
+                if (NULL != g_mpiHandle)
+                {
+                    mpiResult = CallMpiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
+                    LogInfo(context, GetLog(), "[%s] CallMpiSet(%s, %s, '%.*s', %d) returned %d",
+                        who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+                }
+            }
+
+            FREE_MEMORY(payloadString);
+        }
+        else
+        {
+            miResult = MI_RESULT_FAILED;
+            mpiResult = ENOMEM;
+            LogError(context, miResult, GetLog(), "[%s] Failed to allocate %d bytes", who, payloadSize);
+        }
+    }
+
+    if (NULL != serializedValue)
+    {
+        json_free_serialized_string(serializedValue);
+    }
+
+    if (NULL != jsonValue)
+    {
+        json_value_free(jsonValue);
+    }
+
+    if (MPI_OK != mpiResult)
+    {
+        g_reportedMpiResult = mpiResult;
+    }
+
+    return miResult;
+}
+
 static MI_Result GetReportedObjectValueFromDevice(const char* who, MI_Context* context)
 {
     JSON_Value* jsonValue = NULL;
