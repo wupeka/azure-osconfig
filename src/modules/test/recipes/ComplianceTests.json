@@ -1,0 +1,14 @@
+[
+  {
+    "Action": "LoadModule",
+    "Module": "compliance.so"
+  },
+  {
+    "ObjectType": "Reported",
+    "ComponentName": "Compliance",
+    "ObjectName": "auditEnsurePermissionsOnEtcCrontabAreConfigured"
+  },
+  {
+    "Action": "UnloadModule"
+  }
+]
