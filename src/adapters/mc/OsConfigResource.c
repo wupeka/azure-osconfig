@@ -21,7 +21,9 @@ static char* g_ruleId = NULL;
 static char* g_payloadKey = NULL;
 static char* g_componentName = NULL;
 static char* g_initObjectName = NULL;
-static char* g_reportedObjectName = NULL;
+static char *g_procedureObjectName = NULL;
+static char *g_procedureObjectValue = NULL;
+static char *g_reportedObjectName = NULL;
 static char* g_expectedObjectValue = NULL;
 static char* g_desiredObjectName = NULL;
 static char* g_desiredObjectValue = NULL;
@@ -78,6 +80,8 @@ void __attribute__((constructor)) Initialize()
     g_payloadKey = DuplicateString(g_defaultValue);
     g_componentName = DuplicateString(g_defaultValue);
     g_initObjectName = DuplicateString(g_defaultValue);
+    g_procedureObjectName = DuplicateString(g_defaultValue);
+    g_procedureObjectValue = DuplicateString(g_defaultValue);
     g_reportedObjectName = DuplicateString(g_defaultValue);
     g_expectedObjectValue = DuplicateString(g_passValue);
     g_desiredObjectName = DuplicateString(g_defaultValue);
@@ -93,6 +97,8 @@ void __attribute__((destructor)) Destroy()
     FREE_MEMORY(g_payloadKey);
     FREE_MEMORY(g_componentName);
     FREE_MEMORY(g_initObjectName);
+    FREE_MEMORY(g_procedureObjectName);
+    FREE_MEMORY(g_procedureObjectValue);
     FREE_MEMORY(g_reportedObjectName);
     FREE_MEMORY(g_expectedObjectValue);
     FREE_MEMORY(g_desiredObjectName);
@@ -428,6 +434,108 @@ static MI_Result SetDesiredObjectValueToDevice(const char* who, char* objectName
     return miResult;
 }
 
+static MI_Result SetProcedureObjectValueToDevice(const char* who, char* objectName, MI_Context* context)
+{
+    char* payloadString = NULL;
+    int payloadSize = 0;
+
+    JSON_Value* jsonValue = NULL;
+    char* serializedValue = NULL;
+
+    MI_Result miResult = MI_RESULT_OK;
+    int mpiResult = MPI_OK;
+
+    if ((NULL == objectName) || (NULL == g_procedureObjectValue))
+    {
+        LogError(context, miResult, GetLog(), "[%s] SetProcedureObjectValueToDevice called with an invalid object name and/or procedure object value", who);
+        return MI_RESULT_INVALID_PARAMETER;
+    }
+
+    if (NULL == (jsonValue = json_value_init_string(g_procedureObjectValue)))
+    {
+        miResult = MI_RESULT_FAILED;
+        mpiResult = ENOMEM;
+        LogError(context, miResult, GetLog(), "[%s] json_value_init_string('%s') failed", who, g_procedureObjectValue);
+    }
+    else if (NULL == (serializedValue = json_serialize_to_string(jsonValue)))
+    {
+        miResult = MI_RESULT_FAILED;
+        mpiResult = ENOMEM;
+        LogError(context, miResult, GetLog(), "[%s] json_serialize_to_string('%s') failed", who, g_procedureObjectValue);
+    }
+    else
+    {
+        payloadSize = (int)strlen(serializedValue);
+        if (NULL != (payloadString = malloc(payloadSize + 1)))
+        {
+            const OsConfigComponent *component = NULL;
+
+            memset(payloadString, 0, payloadSize + 1);
+            memcpy(payloadString, serializedValue, payloadSize);
+
+            for (component = g_components; NULL != component->Name; ++component)
+            {
+                if (!strcmp(component->Name, g_componentName))
+                {
+                    break;
+                }
+            }
+            if (NULL != component->MmiSet)
+            {
+                mpiResult = component->MmiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
+                LogInfo(context, GetLog(), "[%s] MmiSet(%s, %s, '%.*s', %d) returned %d",
+                    who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+
+            }
+            else
+            {
+                mpiResult = EINVAL;
+                LogError(context, MI_RESULT_FAILED, GetLog(), "[%s] No component found for ComponentName %s", who, g_componentName);
+            }
+
+            if (MPI_OK != mpiResult)
+            {
+                if (NULL == g_mpiHandle)
+                {
+                    g_mpiHandle = RefreshMpiClientSession(g_mpiHandle, context);
+                }
+
+                if (NULL != g_mpiHandle)
+                {
+                    mpiResult = CallMpiSet(g_componentName, objectName, payloadString, payloadSize, GetLog());
+                    LogInfo(context, GetLog(), "[%s] CallMpiSet(%s, %s, '%.*s', %d) returned %d",
+                        who, g_componentName, objectName, payloadSize, payloadString, payloadSize, mpiResult);
+                }
+            }
+
+            FREE_MEMORY(payloadString);
+        }
+        else
+        {
+            miResult = MI_RESULT_FAILED;
+            mpiResult = ENOMEM;
+            LogError(context, miResult, GetLog(), "[%s] Failed to allocate %d bytes", who, payloadSize);
+        }
+    }
+
+    if (NULL != serializedValue)
+    {
+        json_free_serialized_string(serializedValue);
+    }
+
+    if (NULL != jsonValue)
+    {
+        json_value_free(jsonValue);
+    }
+
+    if (MPI_OK != mpiResult)
+    {
+        g_reportedMpiResult = mpiResult;
+    }
+
+    return miResult;
+}
+
 static MI_Result GetReportedObjectValueFromDevice(const char* who, MI_Context* context)
 {
     JSON_Value* jsonValue = NULL;
@@ -439,12 +547,19 @@ static MI_Result GetReportedObjectValueFromDevice(const char* who, MI_Context* c
     MI_Result miResult = MI_RESULT_OK;
     const OsConfigComponent *component = NULL;
 
+    // If this reported object has a corresponding procedure object, initialize with the procedure object value.
+    // This has to be done before initObject is set, as the initObject (parameters) may depend on the procedure object.
+    if ((NULL != g_procedureObjectName) && (0 != strcmp(g_procedureObjectName, g_defaultValue)))
+    {
+        SetProcedureObjectValueToDevice(who, g_procedureObjectName, context);
+    }
+    
     // If this reported object has a corresponding init object, initalize it with the desired object value
     if ((NULL != g_initObjectName) && (0 != strcmp(g_initObjectName, g_defaultValue)))
     {
         SetDesiredObjectValueToDevice(who, g_initObjectName, context);
     }
-    
+
     for (component = g_components; NULL != component->Name; ++component)
     {
         if (!strcmp(component->Name, g_componentName))
@@ -694,6 +809,25 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
         FREE_MEMORY(g_initObjectName);
     }
 
+    // Read the MIM procedure object name from the input resource values
+    if ((MI_TRUE == in->InputResource.value->ProcedureObjectName.exists) && (NULL != in->InputResource.value->ProcedureObjectName.value))
+    {
+        FREE_MEMORY(g_procedureObjectName);
+        if (NULL == (g_procedureObjectName = DuplicateString(in->InputResource.value->ProcedureObjectName.value)))
+        {
+            LogError(context, miResult, GetLog(), "[OsConfigResource.Get] DuplicateString(%s) failed", in->InputResource.value->ProcedureObjectName.value);
+            g_procedureObjectName = DuplicateString(g_defaultValue);
+            miResult = MI_RESULT_FAILED;
+            goto Exit;
+        }
+    }
+    else
+    {
+        // Not an error
+        LogInfo(context, GetLog(), "[OsConfigResource.Get] No ProcedureObjectName");
+        FREE_MEMORY(g_procedureObjectName);
+    }
+
     // Read the MIM reported object name from the input resource values
     if ((MI_TRUE == in->InputResource.value->ReportedObjectName.exists) && (NULL != in->InputResource.value->ReportedObjectName.value))
     {
@@ -736,6 +870,17 @@ void MI_CALL OsConfigResource_Invoke_GetTargetResource(
         {
             LogError(context, miResult, GetLog(), "[OsConfigResource.Get] DuplicateString(%s) failed", in->InputResource.value->DesiredObjectValue.value);
             g_desiredObjectValue = DuplicateString(g_failValue);
+        }
+    }
+
+    // Read the procedure MIM object value from the input resource values
+    if ((in->InputResource.value->ProcedureObjectValue.exists == MI_TRUE) && (in->InputResource.value->ProcedureObjectValue.value != NULL))
+    {
+        FREE_MEMORY(g_procedureObjectValue);
+        if (NULL == (g_procedureObjectValue = DuplicateString(in->InputResource.value->ProcedureObjectValue.value)))
+        {
+            LogError(context, miResult, GetLog(), "[OsConfigResource.Get] DuplicateString(%s) failed", in->InputResource.value->ProcedureObjectValue.value);
+            g_procedureObjectValue = DuplicateString(g_defaultValue);
         }
     }
 
@@ -1106,6 +1251,25 @@ void MI_CALL OsConfigResource_Invoke_TestTargetResource(
         FREE_MEMORY(g_initObjectName);
     }
 
+    // Read the MIM procedure object name from the input resource values
+    if ((MI_TRUE == in->InputResource.value->ProcedureObjectName.exists) && (NULL != in->InputResource.value->ProcedureObjectName.value))
+    {
+        FREE_MEMORY(g_procedureObjectName);
+        if (NULL == (g_procedureObjectName = DuplicateString(in->InputResource.value->ProcedureObjectName.value)))
+        {
+            LogError(context, miResult, GetLog(), "[OsConfigResource.Test] DuplicateString(%s) failed", in->InputResource.value->ProcedureObjectName.value);
+            g_procedureObjectName = DuplicateString(g_defaultValue);
+            miResult = MI_RESULT_FAILED;
+            goto Exit;
+        }
+    }
+    else
+    {
+        // Not an error
+        LogInfo(context, GetLog(), "[OsConfigResource.Test] No ProcedureObjectName");
+        FREE_MEMORY(g_procedureObjectName);
+    }
+
     // Read the MIM reported object name from the input resource values
     if ((MI_TRUE == in->InputResource.value->ReportedObjectName.exists) && (NULL != in->InputResource.value->ReportedObjectName.value))
     {
@@ -1133,6 +1297,17 @@ void MI_CALL OsConfigResource_Invoke_TestTargetResource(
         {
             LogError(context, miResult, GetLog(), "[OsConfigResource.Test] DuplicateString(%s) failed", in->InputResource.value->DesiredObjectValue.value);
             g_desiredObjectValue = DuplicateString(g_failValue);
+        }
+    }
+
+    // Read the procedure MIM object value from the input resource values
+    if ((in->InputResource.value->ProcedureObjectValue.exists == MI_TRUE) && (in->InputResource.value->ProcedureObjectValue.value != NULL))
+    {
+        FREE_MEMORY(g_procedureObjectValue);
+        if (NULL == (g_procedureObjectValue = DuplicateString(in->InputResource.value->ProcedureObjectValue.value)))
+        {
+            LogError(context, miResult, GetLog(), "[OsConfigResource.Get] DuplicateString(%s) failed", in->InputResource.value->ProcedureObjectValue.value);
+            g_procedureObjectValue = DuplicateString(g_defaultValue);
         }
     }
 
