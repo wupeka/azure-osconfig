@@ -26,20 +26,7 @@ int MmiGetInfo(const char* clientName, MMI_JSON_STRING* payload, int* payloadSiz
 
 MMI_HANDLE MmiOpen(const char* clientName, const unsigned int maxPayloadSizeBytes)
 {
-    MMI_HANDLE result;
-
-    if (NULL == (result = ComplianceMmiOpen(clientName, maxPayloadSizeBytes)))
-    {
-        return NULL;
-    }
-
-    if (ComplianceLoadLocalDatabase(result) != 0)
-    {
-        ComplianceMmiClose(result);
-        return NULL;
-    }
-
-    return result;
+    return ComplianceMmiOpen(clientName, maxPayloadSizeBytes);
 }
 
 void MmiClose(MMI_HANDLE clientSession)

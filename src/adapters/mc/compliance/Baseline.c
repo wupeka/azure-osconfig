@@ -22,7 +22,6 @@ void BaselineInitialize(void* log)
     (void)log;
     ComplianceInitialize(log);
     g_compliance = ComplianceMmiOpen("Compliance", -1);
-    ComplianceSetNRPContext();
 }
 
 void BaselineShutdown(void* log)

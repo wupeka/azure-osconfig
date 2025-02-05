@@ -28,103 +28,6 @@ namespace compliance
         "\"Lifetime\": 2,"
         "\"UserAccount\": 0}";
 
-
-    Optional<Error> Engine::parseDatabase(const char* jsonStr)
-    {
-        auto json = parseJSON(jsonStr);
-        const auto* rootObject = json_value_get_object(json.get());
-        if (!rootObject)
-        {
-            return Error("Failed to parse root object");
-        }
-
-        auto count = json_object_get_count(rootObject);
-        for (decltype(count) i = 0; i < count; ++i)
-        {
-            const char* key = json_object_get_name(rootObject, i);
-            if(!key)
-            {
-                return Error("Failed to get object key");
-            }
-
-            OsConfigLogInfo(log(), "Loading rule %s", key);
-            auto* itemObj = json_object_get_object(rootObject, key);
-            if(!itemObj)
-            {
-                return Error(std::string("Expected JSON object at key ") + std::string(key));
-            }
-
-            // Audit is mandatory
-            const auto* auditRule = json_object_get_object(itemObj, "audit");
-            if (auditRule == nullptr)
-            {
-                return Error("Failed to parse audit object");
-            }
-
-            // Remediation is optional
-            const auto* remediationRule = json_object_get_object(itemObj, "remediate");
-
-            // Parameters are mandatory
-            const auto* parametersObject = json_object_get_object(itemObj, "parameters");
-
-            auto paramsCount = json_object_get_count(parametersObject);
-            auto procedure = Procedure(key);
-            for (decltype(paramsCount) j = 0; j < paramsCount; ++j)
-            {
-                const char* paramKey = json_object_get_name(parametersObject, j);
-                const char* paramVal = json_object_get_string(parametersObject, paramKey);
-                if(paramKey == nullptr || paramVal == nullptr)
-                {
-                    return Error("Failed to parse parameters");
-                }
-
-                OsConfigLogInfo(log(), "Adding parameter %s=%s", paramKey, paramVal);
-                procedure.setParameter(paramKey, paramVal);
-            }
-
-            auto error = procedure.setAudit(json_value_deep_copy(json_object_get_wrapping_value(auditRule)));
-            if (error)
-            {
-                return error;
-            }
-
-            if (remediationRule != nullptr)
-            {
-                error = procedure.setRemediation(json_value_deep_copy(json_object_get_wrapping_value(remediationRule)));
-                if (error)
-                {
-                    return error;
-                }
-            }
-
-            mDatabase.insert({key, std::move(procedure)});
-        }
-
-        return {};
-    }
-
-    Optional<Error> Engine::loadDatabase(const char* fileName)
-    {
-        auto* database = LoadStringFromFile(fileName, false, log());
-        if (!database)
-        {
-            return Error("Failed to load configuration file");
-        }
-
-        auto error = parseDatabase(database);
-        FREE_MEMORY(database);
-        if (error)
-        {
-            OsConfigLogError(log(), "%s", error->message.c_str());
-        }
-        else
-        {
-            OsConfigLogInfo(log(), "Loaded compliance database from %s", fileName);
-        }
-
-        return error;
-    }
-
     Engine::Engine(void* log) noexcept : mLog{ log }, mLocalLog{ false }
     {
         if (nullptr == mLog)
@@ -150,12 +53,6 @@ namespace compliance
         mMaxPayloadSize = value;
     }
 
-    void Engine::setContext(Context context) noexcept
-    {
-        OsConfigLogInfo(log(), "Engine::setContext(%d)", static_cast<int>(context));
-        mContext = context;
-    }
-
     unsigned int Engine::getMaxPayloadSize() const noexcept {
         return mMaxPayloadSize;
     }
@@ -173,58 +70,35 @@ namespace compliance
         OsConfigLogInfo(log(), "Engine::mmiGet(%s)", objectName);
 
         auto result = Payload{};
-        const JSON_Object* rule = nullptr;
         constexpr const char* auditPrefix = "audit";
         auto key = std::string(objectName);
 
-        if (mContext == Context::MMI) // RC/DC and other scenarios
+        if (key.find(auditPrefix) != 0)
         {
-            if (key.find(auditPrefix) == 0)
-            {
-                key = key.substr(strlen(auditPrefix));
-            }
-
-            OsConfigLogInfo(log(), "Looking for rule %s", key.c_str());
-            auto it = mDatabase.find(key);
-            if (it == mDatabase.end())
-            {
-                return Error("Rule not found");
-            }
-
-            rule = it->second.audit();
-
-            auto rc = ComplianceExecuteAudit(rule, it->second.parameters(), &result.data, &result.size, log());
-            if (rc != 0)
-            {
-                return Error("ComplianceExecuteRule failed", rc);
-            }
-            return result;
+            OsConfigLogError(log(), "Unknown object name");
+            return Error("Unknown object name");
         }
 
-        if (key.find(auditPrefix) == 0)
+        auto it = mDatabase.find(key.substr(strlen(auditPrefix)));
+        if (it == mDatabase.end())
         {
-            key = key.substr(strlen(auditPrefix));
+            OsConfigLogError(log(), "Rule not found");
+            return Error("Rule not found");
+        }
+        const auto& procedure = it->second;
 
-            auto it = mDatabase.find(key);
-            if (it == mDatabase.end())
-            {
-                OsConfigLogError(log(), "Rule not found");
-                return Error("Rule not found");
-            }
-            const auto& procedure = it->second;
+        if (procedure.audit() == nullptr)
+        {
+            OsConfigLogError(log(), "Failed to get audit contents");
+            return Error("Failed to get audit contents");
+        }
 
-            if (procedure.audit() == nullptr)
-            {
-                OsConfigLogError(log(), "Failed to get audit contents");
-                return Error("Failed to get audit contents");
-            }
-
-            auto rc = ComplianceExecuteAudit(procedure.audit(), procedure.parameters(), &result.data, &result.size, log());
-            if (rc != 0)
-            {
-                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
-                return Error("ComplianceExecuteRule failed", rc);
-            }
+        OsConfigLogInfo(log(), "Executing rule %s", objectName);
+        auto rc = ComplianceExecuteAudit(procedure.audit(), procedure.parameters(), &result.data, &result.size, log());
+        if (rc != 0)
+        {
+            OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
+            return Error("ComplianceExecuteRule failed", rc);
         }
 
         return result;
@@ -265,39 +139,10 @@ namespace compliance
 
     Optional<Error> Engine::mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes) {
         OsConfigLogInfo(log(), "Engine::mmiSet(%s, %.*s)", objectName, payloadSizeBytes, payload);
-        const JSON_Object* rule = nullptr;
         constexpr const char* remediatePrefix = "remediate";
         constexpr const char* initPrefix = "init";
         constexpr const char* procedurePrefix = "procedure";
         auto key = std::string(objectName);
-
-        if (mContext == Context::MMI)
-        {
-            if (key.find(remediatePrefix) == 0)
-            {
-                key = key.substr(strlen(remediatePrefix));
-            }
-            else if (key.find(initPrefix) == 0)
-            {
-                key = key.substr(strlen(initPrefix));
-            }
-
-            auto it = mDatabase.find(key);
-            if (it == mDatabase.end())
-            {
-                OsConfigLogError(log(), "Rule not found");
-                return Error("Rule not found");
-            }
-
-            it->second.updateUserParameters(payload);
-            auto result = ComplianceExecuteRemediation(it->second.remediation(), it->second.parameters(), log());
-            if (result != 0)
-            {
-                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
-                return Error("ComplianceExecuteRule failed", result);
-            }
-            return {};
-        }
 
         if (key.find(procedurePrefix) == 0)
         {
@@ -386,8 +231,7 @@ namespace compliance
             }
 
             OsConfigLogInfo(log(), "Executing rule %s", objectName);
-            auto result = ComplianceExecuteRemediation(rule, procedure.parameters(), log());
-            mDatabase.erase(key);
+            auto result = ComplianceExecuteRemediation(procedure.remediation(), procedure.parameters(), log());
             if (result != 0)
             {
                 OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
@@ -395,44 +239,5 @@ namespace compliance
             }
         }
         return {};
-    }
-
-    bool Engine::loadConfigurationFile() noexcept
-    {
-        auto* config = LoadStringFromFile("/etc/osconfig/osconfig.json", false, log());
-        if (!config)
-        {
-            OsConfigLogError(log(), "Failed to load configuration file");
-            return false;
-        }
-
-        auto* databaseFile = GetComplianceDatabaseFromJsonConfig(config, log());
-        if (!databaseFile)
-        {
-            OsConfigLogError(log(), "Failed to load compliance database from configuration file");
-            FREE_MEMORY(config);
-            return false;
-        }
-
-        try
-        {
-            auto error = loadDatabase(databaseFile);
-            FREE_MEMORY(databaseFile);
-            FREE_MEMORY(config);
-            if (error)
-            {
-                OsConfigLogError(log(), "%s", error->message.c_str());
-                return false;
-            }
-
-            return true;
-        }
-        catch(const std::exception& e)
-        {
-            OsConfigLogError(log(), "Failed to load compliance database: %s", e.what());
-            FREE_MEMORY(databaseFile);
-            FREE_MEMORY(config);
-            return false;
-        }
     }
 }

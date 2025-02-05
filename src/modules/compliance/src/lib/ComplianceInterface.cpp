@@ -63,18 +63,6 @@ int ComplianceSetMaxPayloadSize(MMI_HANDLE clientSession, const unsigned int max
     return 0;
 }
 
-int ComplianceLoadLocalDatabase(MMI_HANDLE clientSession)
-{
-    if (!IsValidSession(clientSession))
-    {
-        OsConfigLogError(g_compliance->log(), "EnableLocalDatabase() called outside of a valid session");
-        return EINVAL;
-    }
-
-    OsConfigLogInfo(g_compliance->log(), "ComplianceEnableLocalDatabase(%p)", clientSession);
-    return g_compliance->loadConfigurationFile() ? 0 : EINVAL;
-}
-
 void ComplianceMmiClose(MMI_HANDLE clientSession)
 {
     if (IsValidSession(clientSession))
@@ -192,9 +180,4 @@ int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const 
 void ComplianceMmiFree(char* payload)
 {
     FREE_MEMORY(payload);
-}
-
-void ComplianceSetNRPContext(void)
-{
-    g_compliance->setContext(compliance::Engine::Context::NRP);
 }

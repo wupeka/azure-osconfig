@@ -4,11 +4,11 @@
 #ifndef MMICLIENT_H
 #define MMICLIENT_H
 
-typedef int (*MMI_GETINFO)(const char*, char**, int*);
-typedef void (*MMI_FREE)(char*);
+typedef int (*MMI_GETINFO)(const char*, MMI_JSON_STRING*, int*);
+typedef void (*MMI_FREE)(MMI_JSON_STRING);
 typedef MMI_HANDLE(*MMI_OPEN)(const char*, const unsigned int);
-typedef int (*MMI_SET)(MMI_HANDLE, const char*, const char*, const char*, const int);
-typedef int (*MMI_GET)(MMI_HANDLE, const char*, const char*, char**, int*);
+typedef int (*MMI_SET)(MMI_HANDLE, const char*, const char*, const MMI_JSON_STRING, const int);
+typedef int (*MMI_GET)(MMI_HANDLE, const char*, const char*, MMI_JSON_STRING*, int*);
 typedef void (*MMI_CLOSE)(MMI_HANDLE);
 
 typedef enum Lifetime

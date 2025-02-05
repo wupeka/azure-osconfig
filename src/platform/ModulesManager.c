@@ -726,7 +726,7 @@ int MpiGetReported(MPI_HANDLE handle, MPI_JSON_STRING* payload, int* payloadSize
     JSON_Value* componentValue = NULL;
     JSON_Object* componentObject = NULL;
     JSON_Value* objectValue = NULL;
-    char* mmiPayload = NULL;
+    MMI_JSON_STRING mmiPayload = NULL;
     int mmiPayloadSizeBytes = 0;
     int mmiStatus = MMI_OK;
     char* payloadJson = NULL;

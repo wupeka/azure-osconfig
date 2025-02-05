@@ -23,12 +23,6 @@ namespace compliance
     class Engine
     {
     public:
-        enum class Context
-        {
-            MMI,
-            NRP
-        };
-
         struct Payload
         {
             char* data = nullptr;
@@ -39,12 +33,8 @@ namespace compliance
         bool mLocalLog = false;
         unsigned int mMaxPayloadSize = 0;
         std::map<std::string, Procedure> mDatabase;
-        Context mContext = Context::MMI;
-
-        Optional<Error> loadDatabase(const char* fileName);
 
         Result<JSON> decodeB64JSON(const char* input) const;
-        Optional<Error> parseDatabase(const char* jsonStr);
     public:
         // Create engine with external log file
         Engine(void* log) noexcept;
@@ -52,14 +42,11 @@ namespace compliance
         Engine() noexcept;
         ~Engine();
 
-        void setContext(Context context) noexcept;
-
         void setMaxPayloadSize(unsigned int value) noexcept;
         unsigned int getMaxPayloadSize() const noexcept;
         OSCONFIG_LOG_HANDLE log() const noexcept;
 
         const char* getMoguleInfo() const noexcept;
-        bool loadConfigurationFile() noexcept;
 
         Result<Payload> mmiGet(const char* objectName);
         Optional<Error> mmiSet(const char* objectName, const char* payload, const int payloadSizeBytes);

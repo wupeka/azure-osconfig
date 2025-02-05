@@ -248,8 +248,6 @@ int StopPerfClock(PERF_CLOCK* clock, void* log);
 long GetPerfClockTime(PERF_CLOCK* clock, void* log);
 void LogPerfClock(PERF_CLOCK* clock, const char* componentName, const char* objectName, int objectResult, long limit, void* log);
 
-char* GetComplianceDatabaseFromJsonConfig(const char* jsonString, void* log);
-
 #ifdef __cplusplus
 }
 #endif

@@ -21,9 +21,7 @@ int ComplianceMmiGet(MMI_HANDLE clientSession, const char* componentName, const 
 int ComplianceMmiSet(MMI_HANDLE clientSession, const char* componentName, const char* objectName, const char* payload, const int payloadSizeBytes);
 void ComplianceMmiFree(char* payload);
 
-void ComplianceSetNRPContext(void);
 int ComplianceSetMaxPayloadSize(MMI_HANDLE clientSession, const unsigned int maxPayloadSizeBytes);
-int ComplianceLoadLocalDatabase(MMI_HANDLE clientSession);
 
 #ifdef __cplusplus
 }
