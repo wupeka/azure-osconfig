@@ -4,7 +4,7 @@
 #include "ComplianceEngine.hpp"
 
 #include <CommonUtils.h>
-#include "../../../../common/compliance/Compliance.h"
+#include "Compliance.h"
 #include "base64.h"
 
 #include "parson.h"
