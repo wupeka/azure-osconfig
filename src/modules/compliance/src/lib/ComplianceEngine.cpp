@@ -4,7 +4,7 @@
 #include "ComplianceEngine.hpp"
 
 #include <CommonUtils.h>
-#include "Compliance.h"
+#include "Evaluator.hpp"
 #include "base64.h"
 
 #include "parson.h"
@@ -94,11 +94,12 @@ namespace compliance
         }
 
         OsConfigLogInfo(log(), "Executing rule %s", objectName);
-        auto rc = ComplianceExecuteAudit(procedure.audit(), procedure.parameters(), &result.data, &result.size, log());
-        if (rc != 0)
+        Evaluator evaluator(procedure.audit(), procedure.parameters(), log());
+        auto rc = evaluator.ExecuteAudit(&result.data, &result.size);
+        if (!rc.has_value())
         {
-            OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", rc);
-            return Error("ComplianceExecuteRule failed", rc);
+            OsConfigLogError(log(), "ExecuteAudit failed with %s", rc.error().message.c_str());
+            return rc.error();
         }
 
         return result;
@@ -231,11 +232,12 @@ namespace compliance
             }
 
             OsConfigLogInfo(log(), "Executing rule %s", objectName);
-            auto result = ComplianceExecuteRemediation(procedure.remediation(), procedure.parameters(), log());
-            if (result != 0)
+            Evaluator evaluator(procedure.remediation(), procedure.parameters(), log());
+            auto result = evaluator.ExecuteRemediation();
+            if (!result.has_value())
             {
-                OsConfigLogError(log(), "ComplianceExecuteRule failed with %d", result);
-                return Error("ComplianceExecuteRule failed", result);
+                OsConfigLogError(log(), "ExecuteRemediation failed with %s", result.error().message.c_str());
+                return result.error();
             }
         }
         return {};

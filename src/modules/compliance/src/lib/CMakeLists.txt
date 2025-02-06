@@ -10,7 +10,7 @@ add_library(compliancelib STATIC
     ComplianceEngine.cpp
     Procedure.cpp
     JSON.cpp
-    Compliance.cpp
+    Evaluator.cpp
     ProcedureMap.cpp
     ${PROCEDURES}
     )
@@ -23,7 +23,6 @@ target_link_libraries(compliancelib PRIVATE
     parsonlib
     asb
     base64)
-
 target_include_directories(compliancelib PUBLIC
     ${MODULES_INC_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR})
