@@ -1,0 +1,47 @@
+{
+    "EnsurePermissionsOnEtcCrontabAreConfigured": {
+        "remediate": {
+            "anyOf": [
+                {
+                    "not": {
+                        "packageInstalled": {
+                            "packageName": "$PKG_NAME"
+                        }
+                    }
+                },
+                {
+                    "ensureFilePermissions": {
+                        "filename": "/etc/crontab",
+                        "user": "root",
+                        "group": "root",
+                        "permissions": "600"
+                    }
+                }
+            ]
+        },
+
+        "audit": {
+            "anyOf": [
+                {
+                    "not": {
+                        "packageInstalled": {
+                            "packageName": "$PKG_NAME"
+                        }
+                    }
+                },
+                {
+                    "ensureFilePermissions": {
+                        "filename": "/etc/crontab",
+                        "user": "root",
+                        "group": "root",
+                        "permissions": "600"
+                    }
+                }
+            ]
+        },
+
+        "parameters": {
+            "PKG_NAME": "cron"
+        }
+    }
+}

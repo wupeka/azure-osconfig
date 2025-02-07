@@ -1,10 +1,10 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
 
-project(compliance)
+project(compliance_mc_iface)
 
 FILE(GLOB PROCEDURES procedures/*.cpp)
-add_library(compliance STATIC
+add_library(compliance_mc_iface OBJECT
     Compliance.cpp
     ProcedureMap.cpp
     ${PROCEDURES}
@@ -16,16 +16,16 @@ add_custom_command(
         DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/gen_procedures_map.py ${PROCEDURES}
         VERBATIM)
 
-target_compile_options(compliance PRIVATE -Wno-psabi)
+target_compile_options(compliance_mc_iface PRIVATE -Wno-psabi)
 
-target_link_libraries(compliance PRIVATE
+target_link_libraries(compliance_mc_iface PRIVATE
     logging
     commonutils
     parsonlib
-    base64)
+    base64
+    )
 
-set_target_properties(compliance PROPERTIES LINKER_LANGUAGE CXX)
-
-target_include_directories(compliance INTERFACE
-      ${CMAKE_CURRENT_SOURCE_DIR}
-      ${PLATFORM_INC_DIR})
+set_target_properties(compliance_mc_iface PROPERTIES LINKER_LANGUAGE CXX)
+target_include_directories(compliance_mc_iface INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${PLATFORM_INC_DIR})
